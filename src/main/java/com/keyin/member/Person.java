@@ -8,6 +8,13 @@ public abstract class Person {
     private String email;
     private int phone;
 
+    public Person() {
+        this.name = "";
+        this.address = "";
+        this.email = "";
+        this.phone = 0;
+    }
+
     public Person(String name, String address, String email, int phone) {
         this.name = name;
         this.address = address;

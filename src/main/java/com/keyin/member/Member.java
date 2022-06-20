@@ -11,23 +11,40 @@ public class Member extends Person {
     private Date memberStartDate;
     private String memberDuration;
     private String memberType;
+    private static int memberCount = 0;
 
-    public Member(String name, String address, String email, int phone, Date start, String duration, String type) {
-        super(name, address, email, phone);
-        this.memberType = type;
-        this.memberStartDate = start;
+    public Member() {
+       super("", "", "", 0);
+        this.memberStartDate = new Date();
+        this.memberDuration = "";
+        this.memberType = "";
+        memberCount++;
+    }
+
+    public Member(String duration, String type) {
+        super("", "", "", 0);
+        this.memberStartDate = new Date();
         this.memberDuration = duration;
         this.memberType = type;
+        memberCount++;
+    }
+
+    public Member(String name, String address, String email, int phone,  String duration, String type) {
+        super(name, address, email, phone);
+        this.memberStartDate = new Date();
+        this.memberDuration = duration;
+        this.memberType = type;
+        memberCount++;
     }
 
     // GETTERS
 
     public String getName() {
-        return memberName;
+        return this.memberName;
     }
 
     public String getAddress() {
-        return memberAddress;
+        return this.memberAddress;
     }
 
     public String getEmail() {
@@ -74,15 +91,18 @@ public class Member extends Person {
         this.memberPhone = phone;
     }
 
-    public void setStartDate(Date startDate) {
-        
-        this.memberStartDate = startDate;
-    }
+    // this method is probably unnecesary as the constructor will call a start date creation from a current date object
+    // public void setStartDate(Date startDate) {
 
-    public void setDuration(String duration) {
-        this.memberDuration = duration;
-    }
+    //     this.memberStartDate = startDate;
+    // }
 
+    // this will be a calculated value based on start date and current date
+    // public void setDuration(String duration) {
+    //     this.memberDuration = duration;
+    // }
+
+    // will membership types be defined as objects or strings?
     public void setType(String type) {
         this.memberType = type;
     }
