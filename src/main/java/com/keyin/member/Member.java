@@ -75,6 +75,7 @@ public class Member extends Person {
     }
 
     public void setStartDate(Date startDate) {
+        
         this.memberStartDate = startDate;
     }
 
