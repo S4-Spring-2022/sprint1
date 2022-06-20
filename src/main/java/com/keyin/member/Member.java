@@ -92,4 +92,4 @@ public class Member {
 
 // testing comment to Team2_MikeBranchFromGroup.
 // Here's another comment to Team2_MikeBranchFromGroup.
-
+// here's a comment after our Git error occured.
