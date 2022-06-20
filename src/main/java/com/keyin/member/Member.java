@@ -6,4 +6,6 @@ public class Member {
     private String memberLastName;
 
     private String phoneNumber;
+
+    private String address;
 }
