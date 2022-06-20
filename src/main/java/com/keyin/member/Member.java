@@ -52,6 +52,36 @@ public class Member {
         return memberType;
     }
 
+    // SETTERS
+
+    public void setName(String name) {
+        this.memberName = name;
+    }
+
+    public void setAddress(String address) {
+        this.memberAddress = address;
+    }
+
+    public void setEmail(String email) {
+        this.memberEmail = email;
+    }
+
+    public void setPhone(int phone) {
+        this.memberPhone = phone;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.memberStartDate = startDate;
+    }
+
+    public void setDuration(String duration) {
+        this.memberDuration = duration;
+    }
+
+    public void setType(String type) {
+        this.memberType = type;
+    }
+
 }
 
 // testing comment to Team2_MikeBranchFromGroup.
