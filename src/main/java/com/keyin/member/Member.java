@@ -4,4 +4,9 @@ package com.keyin.member;
 // testing branches
 // Testing again for the 3rd time
 public class Member {
+    private String memberFirstName;
+
+    private String memberLastName;
+
+    private String phoneNumber;
 }
