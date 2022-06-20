@@ -2,7 +2,7 @@ package com.keyin.member;
 
 import java.util.Date;
 
-public class Member {
+public class Member extends Person {
 
     private String memberName;
     private String memberAddress;
@@ -13,9 +13,7 @@ public class Member {
     private String memberType;
 
     public Member(String name, String address, String email, int phone, Date start, String duration, String type) {
-        this.memberName = name;
-        this.memberAddress = address;
-        this.memberPhone = phone;
+        super(name, address, email, phone);
         this.memberType = type;
         this.memberStartDate = start;
         this.memberDuration = duration;
