@@ -1,4 +1,4 @@
-package com.keyin;
+package com.keyin.member;
 
 public class MemberServiceTest {
 }
