@@ -8,14 +8,14 @@ public class CreateFile {
 
   public static void main(String[] args) {
 
-    String memberFile = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/";
+    String memberFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/";
 
     try {
         // user input for the file name
-        System.out.println("Enter the name of the file + it's file typeHere: ");
+        System.out.println("Enter the name of the file + it's file type: ");
         String fileName = new Scanner(System.in).nextLine();
 
-      File myObj = new File(memberFile + fileName);
+      File myObj = new File(memberFolder + fileName);
       if (myObj.createNewFile()) {
         System.out.println("File created: " + myObj.getName());
       } else {
@@ -28,4 +28,3 @@ public class CreateFile {
   }
 }
 
-// /Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member
