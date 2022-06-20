@@ -12,10 +12,10 @@ public class CreateFile {
 
     try {
         // user input for the file name
-        System.out.println("Enter the name of the file: ");
+        System.out.println("Enter the name of the file + it's file typeHere: ");
         String fileName = new Scanner(System.in).nextLine();
 
-      File myObj = new File(memberFile + fileName + ".json");
+      File myObj = new File(memberFile + fileName);
       if (myObj.createNewFile()) {
         System.out.println("File created: " + myObj.getName());
       } else {
