@@ -53,6 +53,12 @@ public class Member {
     }
 
     // SETTERS
+    // Do members have the authority to change their own information?
+    // Do we need a setter for each field?
+    // Would we enter the date or use a date method to set the start date?
+    // Given that this is a CLI how will the CLI use these methods?
+    // Will memberType be an object or a string?
+
 
     public void setName(String name) {
         this.memberName = name;
