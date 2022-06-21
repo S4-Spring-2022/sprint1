@@ -22,8 +22,8 @@ public class MemberTest {
     @Test
     public void testMember() {
         Member member = new Member();
-        // this test must be updated to reflect the number of members created in the test suite
-        // it will also fail if run alone when the expected value is set to match the number of tests
+        // will need to be updated with the number of members
+ 
         assertEquals(5, Member.memberCount);
     }
 
