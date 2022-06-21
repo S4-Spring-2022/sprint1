@@ -13,18 +13,14 @@ public class Membership {
     private String duration;
 
     public Membership() {
-        this.type = "Family Plan";
-        if (this.type.equals("Family Plan")) {
-            System.out.println("Family members included are ???");
-        }
-
+        this.type = "Normal";
         this.startDate = LocalDateTime.now();
-        // this.duration = ""; // current date subtract start date?
+        // this.duration = ""; //
 
     }
 
     public Membership(String type) {
-        this.type = type;
+        this.type = type; // if statement, throw error
         this.startDate = LocalDateTime.now();
         // this.duration = duration;
     }
