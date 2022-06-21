@@ -11,7 +11,7 @@ public class Member extends Person {
     private Date memberStartDate;
     private String memberDuration;
     private String memberType;
-    private static int memberCount = 0;
+    public static int memberCount = 0;
 
     public Member() {
         super("", "", "", 0);
