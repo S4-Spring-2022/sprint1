@@ -8,9 +8,9 @@ public class Member extends Person {
     private String memberAddress;
     private String memberEmail;
     private int memberPhone;
-    private Date memberStartDate;
-    private String memberDuration;
-    private String memberType;
+    // private Date memberStartDate;
+    // private String memberDuration;
+    // private String memberType;
     public static int memberCount = 0;
 
     public Member() {
