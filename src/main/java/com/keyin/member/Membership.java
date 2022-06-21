@@ -3,7 +3,6 @@ package com.keyin.member;
 import java.time.LocalDateTime;
 import java.time.chrono.*;
 import java.time.temporal.ChronoUnit;
-
 import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Membership {
@@ -13,14 +12,32 @@ public class Membership {
     private String duration;
 
     public Membership() {
-        this.type = "Normal";
+        this.type = "Normal"; // default
         this.startDate = LocalDateTime.now();
         // this.duration = ""; //
 
     }
 
     public Membership(String type) {
-        this.type = type; // if statement, throw error
+
+        if (this.type != "Normal") {
+            System.out.println("Error! Membership must be proper type!");
+        }
+        if (this.type != "Trial") {
+            System.out.println("Error! Membership must be proper type!");
+        }
+        if (this.type != "Special Offer") {
+            System.out.println("Error! Membership must be proper type!");
+        }
+        if (this.type != "Family Plan") {
+            System.out.println("Error! Membership must be proper type!");
+        }
+        if (this.type != "Other") {
+            System.out.println("Error! Membership must be proper type!");
+        } else {
+            this.type = type;
+        }
+
         this.startDate = LocalDateTime.now();
         // this.duration = duration;
     }
