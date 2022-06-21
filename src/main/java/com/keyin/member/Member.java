@@ -14,7 +14,7 @@ public class Member extends Person {
     private static int memberCount = 0;
 
     public Member() {
-       super("", "", "", 0);
+        super("", "", "", 0);
         this.memberStartDate = new Date();
         this.memberDuration = "";
         this.memberType = "";
@@ -29,7 +29,7 @@ public class Member extends Person {
         memberCount++;
     }
 
-    public Member(String name, String address, String email, int phone,  String duration, String type) {
+    public Member(String name, String address, String email, int phone, String duration, String type) {
         super(name, address, email, phone);
         this.memberStartDate = new Date();
         this.memberDuration = duration;
@@ -48,23 +48,23 @@ public class Member extends Person {
     }
 
     public String getEmail() {
-        return memberEmail;
+        return this.memberEmail;
     }
 
     public int getPhone() {
-        return memberPhone;
+        return this.memberPhone;
     }
 
     public Date getStartDate() {
-        return memberStartDate;
+        return this.memberStartDate;
     }
 
     public String getDuration() {
-        return memberDuration;
+        return this.memberDuration;
     }
 
     public String getType() {
-        return memberType;
+        return this.memberType;
     }
 
     // SETTERS
@@ -73,7 +73,6 @@ public class Member extends Person {
     // Would we enter the date or use a date method to set the start date?
     // Given that this is a CLI how will the CLI use these methods?
     // Will memberType be an object or a string?
-
 
     public void setName(String name) {
         this.memberName = name;
@@ -91,15 +90,16 @@ public class Member extends Person {
         this.memberPhone = phone;
     }
 
-    // this method is probably unnecesary as the constructor will call a start date creation from a current date object
+    // this method is probably unnecesary as the constructor will call a start date
+    // creation from a current date object
     // public void setStartDate(Date startDate) {
 
-    //     this.memberStartDate = startDate;
+    // this.memberStartDate = startDate;
     // }
 
     // this will be a calculated value based on start date and current date
     // public void setDuration(String duration) {
-    //     this.memberDuration = duration;
+    // this.memberDuration = duration;
     // }
 
     // will membership types be defined as objects or strings?
