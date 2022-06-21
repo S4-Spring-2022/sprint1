@@ -6,10 +6,10 @@ import java.io.IOException;  // Import the IOException class to handle errors
 public class WriteToFile {
   public static void main(String[] args) {
 
-    String memberFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/";
+    String memberDataFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/";
 
     try {
-      FileWriter myWriter = new FileWriter(memberFolder + "memberData.json");
+      FileWriter myWriter = new FileWriter(memberDataFolder + "memberData.json");
       myWriter.write("// Member { name: Mike, age: 30,}");
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
