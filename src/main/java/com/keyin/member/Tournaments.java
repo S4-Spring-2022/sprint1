@@ -3,6 +3,12 @@ package com.keyin.member;
 import java.util.*;
 
 public class Tournaments {
+    private String tournamentName;
+    private String location;
+    private double entryFee;
+    private String StartDate;
+    private String endDate;
+    private double cashPrizeAmount;
 
     private String tournamentName;
     private String location;
