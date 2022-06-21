@@ -1,13 +1,16 @@
-package com.keyin.member;
+package com.keyin.member.CRUD;
 
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
 
 public class WriteToFile {
   public static void main(String[] args) {
+
+    String memberFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/";
+
     try {
-      FileWriter myWriter = new FileWriter("filename.txt");
-      myWriter.write("Files in Java might be tricky, but it is fun enough!");
+      FileWriter myWriter = new FileWriter(memberFolder + "memberData.json");
+      myWriter.write("// Member { name: Mike, age: 30,}");
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
     } catch (IOException e) {

@@ -1,4 +1,4 @@
-package com.keyin.member;
+package com.keyin.member.CRUD;
 
 import java.util.UUID;
     import java.util.Date;

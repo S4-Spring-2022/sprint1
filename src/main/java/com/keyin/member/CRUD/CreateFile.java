@@ -1,4 +1,4 @@
-package com.keyin.member;
+package com.keyin.member.CRUD;
 
 import java.io.File;  // Import the File class
 import java.io.IOException;  // Import the IOException class to handle errors
@@ -8,14 +8,10 @@ public class CreateFile {
 
   public static void main(String[] args) {
 
-    String memberFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/";
+    String memberFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/";
 
     try {
-        // user input for the file name
-        System.out.println("Enter the name of the file + it's file type: ");
-        String fileName = new Scanner(System.in).nextLine();
-
-      File myObj = new File(memberFolder + fileName);
+      File myObj = new File(memberFolder + "memberData.json");
       if (myObj.createNewFile()) {
         System.out.println("File created: " + myObj.getName());
       } else {
