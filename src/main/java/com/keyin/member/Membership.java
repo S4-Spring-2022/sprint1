@@ -9,17 +9,17 @@ public class Membership {
     private String duration;
 
     public Membership() {
-        this.type = "Family Plan";
-        if (this.type.equals("Family Plan")) {
-            System.out.println("Family members included are ???");
-        }
-
+        // this.type = "Family Plan";
+        // if (this.type.equals("Family Plan")) {
+        // System.out.println("Family members included are ???");
+        // }
+        this.type = "Normal"; // default
         this.startDate = new Date();
         this.duration = ""; // current date subtract start date?
     }
 
     public Membership(String type, String duration) {
-        this.type = type;
+        this.type = type; // if statement, throw error
         this.startDate = new Date();
         this.duration = duration;
     }
