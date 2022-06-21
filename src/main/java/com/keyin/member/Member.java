@@ -8,32 +8,32 @@ public class Member extends Person {
     private String memberAddress;
     private String memberEmail;
     private int memberPhone;
-    private Date memberStartDate;
-    private String memberDuration;
-    private String memberType;
+    // private Date memberStartDate;
+    // private String memberDuration;
+    // private String memberType;
     public static int memberCount = 0;
 
     public Member() {
         super("", "", "", 0);
-        this.memberStartDate = new Date();
-        this.memberDuration = "";
-        this.memberType = "";
+        // this.memberStartDate = new Date();
+        // this.memberDuration = "";
+        // this.memberType = "";
         memberCount++;
     }
 
     public Member(String duration, String type) {
         super("", "", "", 0);
-        this.memberStartDate = new Date();
-        this.memberDuration = duration;
-        this.memberType = type;
+        // this.memberStartDate = new Date();
+        // this.memberDuration = duration;
+        // this.memberType = type;
         memberCount++;
     }
 
     public Member(String name, String address, String email, int phone, String duration, String type) {
         super(name, address, email, phone);
-        this.memberStartDate = new Date();
-        this.memberDuration = duration;
-        this.memberType = type;
+        // this.memberStartDate = new Date();
+        // this.memberDuration = duration;
+        // this.memberType = type;
         memberCount++;
     }
 
@@ -55,17 +55,17 @@ public class Member extends Person {
         return this.memberPhone;
     }
 
-    public Date getStartDate() {
-        return this.memberStartDate;
-    }
+    // public Date getStartDate() {
+    // return this.memberStartDate;
+    // }
 
-    public String getDuration() {
-        return this.memberDuration;
-    }
+    // public String getDuration() {
+    // return this.memberDuration;
+    // }
 
-    public String getType() {
-        return this.memberType;
-    }
+    // public String getType() {
+    // return this.memberType;
+    // }
 
     // SETTERS
     // Do members have the authority to change their own information?
@@ -91,18 +91,18 @@ public class Member extends Person {
     }
 
     // will membership types be defined as objects or strings?
-    public void setType(String type) {
-        this.memberType = type;
-    }
+    // public void setType(String type) {
+    // this.memberType = type;
+    // }
 
     public String toString() {
         return "Member name: " + memberName + "\n"
                 + "Address: " + memberAddress + "\n"
                 + "Email: " + memberEmail + "\n"
-                + "Phone: " + memberPhone + "\n"
-                + "Membership Start Date: " + memberStartDate + "\n"
-                + "Membership Duration: " + memberDuration + "\n"
-                + "Member Type: " + memberType + "\n";
+                + "Phone: " + memberPhone + "\n";
+        // + "Membership Start Date: " + memberStartDate + "\n"
+        // + "Membership Duration: " + memberDuration + "\n"
+        // + "Member Type: " + memberType + "\n";
     }
 
     // this method is probably unnecesary as the constructor will call a start date
