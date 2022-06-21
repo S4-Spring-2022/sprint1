@@ -16,6 +16,16 @@ class Demo {
         System.out.println("Member Start Date: "+ newMember.getStartDate());
         newMember.getDuration();
 
+    Tournaments newTournaments = new Tournaments("Dave's Cash", "Piper's Hole",   1500, "2022/06/23", "2022/06/26",  25000);
+    System.out.println("");
+    System.out.println("Tournament Name: " + newTournaments.getTournamentName());
+    System.out.println("Tournament Location " + newTournaments.getLocation());
+    System.out.println("Tournament Entry Fee $" + newTournaments.getEntryFee());
+    System.out.println("Tournament Start Date: " + newTournaments.getStartDate());
+    System.out.println("Tournament End Date: " + newTournaments.getEndDate());
+    System.out.println("Tournament Cash Prize Payout $" + newTournaments.getCashPrizeAmount());
+    System.out.println("");
+
     }
 
 }
