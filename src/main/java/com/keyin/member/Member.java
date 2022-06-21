@@ -90,6 +90,21 @@ public class Member extends Person {
         this.memberPhone = phone;
     }
 
+    // will membership types be defined as objects or strings?
+    public void setType(String type) {
+        this.memberType = type;
+    }
+
+    public String toString() {
+        return "Member name: " + memberName + "\n"
+                + "Address: " + memberAddress + "\n"
+                + "Email: " + memberEmail + "\n"
+                + "Phone: " + memberPhone + "\n"
+                + "Membership Start Date: " + memberStartDate + "\n"
+                + "Membership Duration: " + memberDuration + "\n"
+                + "Member Type: " + memberType + "\n";
+    }
+
     // this method is probably unnecesary as the constructor will call a start date
     // creation from a current date object
     // public void setStartDate(Date startDate) {
@@ -102,13 +117,4 @@ public class Member extends Person {
     // this.memberDuration = duration;
     // }
 
-    // will membership types be defined as objects or strings?
-    public void setType(String type) {
-        this.memberType = type;
-    }
-
 }
-
-// testing comment to Team2_MikeBranchFromGroup.
-// Here's another comment to Team2_MikeBranchFromGroup.
-// here's a comment after our Git error occured.
