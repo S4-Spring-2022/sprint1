@@ -24,7 +24,7 @@ public class Tournament {
         count = 0;
     }
 
-    public Object addMember(Object member){
+    public Object addMember(Member member){
         this.members[this.count] = member;
         this.count ++;
         return this.members;
@@ -32,6 +32,7 @@ public class Tournament {
 
     public String getStandings(){
         LocalDate today = LocalDate.now();
+        //if the end date has passed then standings are final and can be published
         if(today.isAfter(this.endDate)){
             this.standings = "Standings: " + Arrays.toString(this.members);
             System.out.println(this.standings);
@@ -41,4 +42,13 @@ public class Tournament {
             return "Event not ended.";
         }
     }
+
+//    public String getTournamentInfo(){
+//        //work in progress
+//        //print string of all the tournament information
+//    }
+
+    //more sets
+
+    //more gets
 }
