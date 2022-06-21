@@ -86,4 +86,14 @@ public class Tournament {
     public void setPlayers(String players) {
         this.players = players;
     }
+
+    public String toString() {
+        return "Tournament Information: " + "\n"
+                + "Start Date:" + startDate + "\n"
+                + ", End Date: " + endDate + "\n"
+                + ", Location: " + location + "\n"
+                + "Entry Fee: " + entryFee + "\n"
+                + ", Prize Amount: " + prizeAmount + "\n"
+                + ", Number of Players: " + players;
+    }
 }
