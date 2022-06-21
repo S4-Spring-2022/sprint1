@@ -9,7 +9,7 @@ public class CreateFile {
   public static void main(String[] args) {
 
     String memberFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/";
-
+    //src/main/java/com/keyin/member/data/memberData.json
     try {
       File myObj = new File(memberFolder + "memberData.json");
       if (myObj.createNewFile()) {
