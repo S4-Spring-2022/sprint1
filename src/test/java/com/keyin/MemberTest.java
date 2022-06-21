@@ -54,27 +54,5 @@ public class MemberTest {
         member.setPhone(1234567890);
         assertEquals(1234567890, member.getPhone());
     }
-
-    @Test
-    public void testMemberStartDate() {
-        Member member = new Member();
-       // this test fails if any other operation is performed between the creation of the member and the assertion
-        assertEquals(new Date(), member.getStartDate());
-    }
-
-    @Test
-    public void testMemberDuration() {
-        // this method doesn't exist yet, mocking its existence
-        Mockito.when(member1.getDuration()).thenReturn("1 year");
-        assertEquals("1 year", member1.getDuration());
-    }
-
-    @Test
-    public void testMemberType() {
-        // this method doesn't exist yet, mocking its existence
-        Mockito.when(member1.getType()).thenReturn("Standard");
-        assertEquals("Standard", member1.getType());
-    }
-       
-    
+   
 }
