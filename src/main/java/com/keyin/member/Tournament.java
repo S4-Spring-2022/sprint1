@@ -11,6 +11,7 @@ public class Tournament {
     private double prizeAmount;
     private String players; // String? "5" ... Should it be called from Member class using name?
     // Final standings?
+    // private TournamentRoster players;
 
     public Tournament() {
         this.startDate = new Date();
