@@ -35,12 +35,8 @@ public class MembershipTest {
 
     @Test
     public void testMembershipStartDate() {
-        // we need to determine how to set a start date in the past
-        //Mockito.when(membership1.getStartDate()).thenReturn(new Date());
-        // we need to write the function that will determine the duration of the membership
-        Mockito.when(membership1.getDuration()).thenReturn("30");
-
-        assertEquals("30", membership1.getDuration());
+        Membership membershipTest = new Membership();
+        assertEquals("30", membershipTest.getDuration());
 
 
     
