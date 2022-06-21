@@ -1,27 +1,32 @@
 package com.keyin.member;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.chrono.*;
+import java.time.temporal.ChronoUnit;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Membership {
 
     private String type;
-    private Date startDate;
+    private LocalDateTime startDate;
     private String duration;
 
     public Membership() {
-        // this.type = "Family Plan";
-        // if (this.type.equals("Family Plan")) {
-        // System.out.println("Family members included are ???");
-        // }
-        this.type = "Normal"; // default
-        this.startDate = new Date();
-        this.duration = ""; // current date subtract start date?
+        this.type = "Family Plan";
+        if (this.type.equals("Family Plan")) {
+            System.out.println("Family members included are ???");
+        }
+
+        this.startDate = LocalDateTime.now();
+        // this.duration = ""; // current date subtract start date?
+
     }
 
-    public Membership(String type, String duration) {
-        this.type = type; // if statement, throw error
-        this.startDate = new Date();
-        this.duration = duration;
+    public Membership(String type) {
+        this.type = type;
+        this.startDate = LocalDateTime.now();
+        // this.duration = duration;
     }
 
     // GETTERS
@@ -30,11 +35,19 @@ public class Membership {
         return this.type;
     }
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return this.startDate;
     }
 
     public String getDuration() {
+        // to find the difference as a CHRONO_UNIT we need to subtract the current date
+        // from the start date
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime start = this.getStartDate();
+        // this next line is here for testing purposes in the absence of data purpituity
+        now = now.plusDays(30);
+        long diff = ChronoUnit.DAYS.between(start, now);
+        this.duration = String.valueOf(diff);
         return this.duration;
     }
 
@@ -44,9 +57,9 @@ public class Membership {
         this.type = type;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
+    // public void setDuration(String duration) {
+    // this.duration = duration;
+    // }
 
     public String toString() {
         return "Membership[Type: " + type + ", Start Date: " + startDate + ", Duration: " + duration + "]";
