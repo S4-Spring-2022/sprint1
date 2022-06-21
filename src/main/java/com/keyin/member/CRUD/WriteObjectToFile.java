@@ -28,7 +28,17 @@ public class WriteObjectToFile {
 
         try {
             FileWriter myWriter = new FileWriter(memberDataFolder + "memberData2.json");
-            myWriter.write("{" + "\n" + newMember + "[" + ":" + name + address + email + phone + "\n" + "]" + "\n" + "}");
+            myWriter.write(
+              "{" + "\n" + "\t" + 
+              "\"Member\"" + ": " + "[" + "\t" + "\n" + 
+             "\t" + "{" + "\n"+ 
+             "\t" + "\t" + "\"Name\"" + ": " + "\"" + name + "\"" + "," + "\n" + 
+             "\t" + "\t" + "\"Address\"" + ": " + "\"" + address + "\"" + "," + "\n" + "\t" + 
+             "\t" + "\"Email\"" + ": " + "\"" + email + "\"" + "," + "\n" + "\t" + 
+             "\t" + "\"Phone\"" + ": " + "\"" + phone + "\"" +
+             "\n" + "\t" + "}" + 
+             "\t" + "\n" + "]" + 
+              "\n" + "}");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
           } catch (IOException e) {
