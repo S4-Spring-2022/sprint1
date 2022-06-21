@@ -9,7 +9,7 @@ public class WriteToFile {
     String memberDataFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/";
 
     try {
-      FileWriter myWriter = new FileWriter(memberDataFolder + "memberData.json");
+      FileWriter myWriter = new FileWriter(memberDataFolder + "memberData2.json");
       myWriter.write("// Member { name: Mike, age: 30,}");
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
