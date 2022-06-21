@@ -1,49 +1,59 @@
 package com.keyin;
 
-import com.keyin.members.Member;
-import com.keyin.members.MemberService;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Date;
+
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.web.bind.annotation.PathVariable;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.ArrayList;
-import java.util.List;
+import com.keyin.member.Member;
 
-//@SpringBootTest
-//@RunWith(MockitoJUnitRunner.class)
 @ExtendWith(MockitoExtension.class)
-public class MemberServiceTest {
+public class MemberTest {
 
     @Mock
-    private MemberService memberService;
+    private Member member1 = Mockito.mock(Member.class);
+
 
     @Test
-    public void testFindMember() {
-        List<Member> memberList = new ArrayList<Member>();
-
-        Member memberToFind = new Member();
-        memberToFind.setMemberId(1);
-        memberToFind.setMemberName("John Doe");
-        memberToFind.setMemberAddress("123 Main Street");
-        memberToFind.setMemberEmail("jdoe@mail.com");
-        memberToFind.setMemberPhoneNumber("7095555555");
-        memberToFind.setMembershipStartDate(LocalDate.of(2022, Month.JANUARY, 1));
-        memberToFind.setMembershipDuration("2 years");
-        memberToFind.setMembershipType("Premium");
-        memberToFind.setCurrentTournaments("Pebble, Scottish");
-        memberToFind.setPastTournaments("Pebble, Scottish, British, American");
-        memberToFind.setUpcomingTournaments("European");
-
-        memberList.add(memberToFind);
-
-        Mockito.when(memberService.getMembers(1)).thenReturn(memberList);
+    public void testMember() {
+        Member member = new Member();
+        // this test must be updated to reflect the number of members created in the test suite
+        // it will also fail if run alone when the expected value is set to match the number of tests
+        assertEquals(5, Member.memberCount);
     }
+
+    @Test
+    public void testMemberName() {
+        Member member = new Member();
+        member.setName("John");
+        assertEquals("John", member.getName());
+    }
+
+    @Test
+    public void testMemberAddress() {
+        Member member = new Member();
+        member.setAddress("123 Main St");
+        assertEquals("123 Main St", member.getAddress());
+    }
+
+    @Test
+    public void testMemberEmail() {
+        Member member = new Member();
+        member.setEmail("anemail@email.com");
+        assertEquals("anemail@email.com", member.getEmail());
+    }
+
+    @Test
+    public void testMemberPhone() {
+        Member member = new Member();
+        member.setPhone(1234567890);
+        assertEquals(1234567890, member.getPhone());
+    }
+
+}
 
