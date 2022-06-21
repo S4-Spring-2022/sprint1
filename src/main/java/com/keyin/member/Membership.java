@@ -1,6 +1,5 @@
 package com.keyin.member;
 
-
 import java.time.LocalDateTime;
 import java.time.chrono.*;
 import java.time.temporal.ChronoUnit;
@@ -14,20 +13,16 @@ public class Membership {
     private String duration;
 
     public Membership() {
-        this.type = "Family Plan";
-        if (this.type.equals("Family Plan")) {
-            System.out.println("Family members included are ???");
-        }
-
+        this.type = "Normal";
         this.startDate = LocalDateTime.now();
-        //this.duration = ""; // current date subtract start date?
+        // this.duration = ""; //
 
     }
 
     public Membership(String type) {
-        this.type = type;
+        this.type = type; // if statement, throw error
         this.startDate = LocalDateTime.now();
-        //this.duration = duration;
+        // this.duration = duration;
     }
 
     // GETTERS
@@ -41,11 +36,12 @@ public class Membership {
     }
 
     public String getDuration() {
-        // to find the difference as a CHRONO_UNIT we need to subtract the current date from the start date
+        // to find the difference as a CHRONO_UNIT we need to subtract the current date
+        // from the start date
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime start = this.getStartDate();
         // this next line is here for testing purposes in the absence of data purpituity
-        now = now.plusDays( 30);
+        now = now.plusDays(30);
         long diff = ChronoUnit.DAYS.between(start, now);
         this.duration = String.valueOf(diff);
         return this.duration;
@@ -58,7 +54,7 @@ public class Membership {
     }
 
     // public void setDuration(String duration) {
-    //     this.duration = duration;
+    // this.duration = duration;
     // }
 
     public String toString() {
