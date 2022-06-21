@@ -47,8 +47,8 @@ public class Member {
         return phoneNumber;
     }
     public void  setStartDate(LocalDate date) {
-       this.startDate = date;
-}
+        this.startDate = date;
+    }
     public LocalDate getStartDate(){
         return startDate;
     }
@@ -67,3 +67,5 @@ public class Member {
 }
 
 
+
+  
