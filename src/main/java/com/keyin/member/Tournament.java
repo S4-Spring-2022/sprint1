@@ -1,11 +1,11 @@
 package com.keyin.member;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Tournament {
 
-    private Date startDate;
-    private Date endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String location;
     private double entryFee; // Money or long, not double?
     private double prizeAmount;
@@ -14,8 +14,8 @@ public class Tournament {
     // private TournamentRoster players;
 
     public Tournament() {
-        this.startDate = new Date();
-        this.endDate = new Date();
+        this.startDate = LocalDateTime.now();
+        this.endDate = LocalDateTime.now();
         this.location = "";
         this.entryFee = 0;
         this.prizeAmount = 0;
@@ -23,7 +23,7 @@ public class Tournament {
         // final standings?
     }
 
-    public Tournament(Date start, Date end, String loc, double fee, double prize, String players) {
+    public Tournament(LocalDateTime start, LocalDateTime end, String loc, double fee, double prize, String players) {
         this.startDate = start;
         this.endDate = end;
         this.location = loc;
@@ -35,11 +35,11 @@ public class Tournament {
 
     // GETTERS
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return this.startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDateTime getEndDate() {
         return this.endDate;
     }
 
@@ -63,11 +63,11 @@ public class Tournament {
 
     // SETTERS
 
-    public void setStartDate(Date start) {
+    public void setStartDate(LocalDateTime start) {
         this.startDate = start;
     }
 
-    public void setEndDate(Date end) {
+    public void setEndDate(LocalDateTime end) {
         this.endDate = end;
     }
 

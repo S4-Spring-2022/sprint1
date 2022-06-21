@@ -1,7 +1,5 @@
 package com.keyin.member;
 
-import java.util.Date;
-
 public class Member extends Person {
 
     private String memberName;
