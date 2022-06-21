@@ -9,7 +9,7 @@ public class Tournament {
     private String location;
     private double entryFee; // Money or long, not double?
     private double prizeAmount;
-    private String players;
+    private String players; // String? "5" ... Should it be called from Member class using name?
     // Final standings?
 
     public Tournament() {
