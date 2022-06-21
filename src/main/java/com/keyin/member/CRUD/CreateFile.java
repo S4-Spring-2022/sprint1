@@ -11,7 +11,7 @@ public class CreateFile {
     String memberFolder = "/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/";
 
     try {
-      File myObj = new File(memberFolder + "memberData.json");
+      File myObj = new File(memberFolder + "memberData2.json");
       if (myObj.createNewFile()) {
         System.out.println("File created: " + myObj.getName());
       } else {
