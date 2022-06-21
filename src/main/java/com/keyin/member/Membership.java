@@ -24,6 +24,30 @@ public class Membership {
         this.duration = duration;
     }
 
+    // GETTERS
+
+    public String getType() {
+        return this.type;
+    }
+
+    public Date getStartDate() {
+        return this.startDate;
+    }
+
+    public String getDuration() {
+        return this.duration;
+    }
+
+    // SETTERS
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
     public String toString() {
         return "Membership[Type: " + type + ", Start Date: " + startDate + ", Duration: " + duration + "]";
     }
