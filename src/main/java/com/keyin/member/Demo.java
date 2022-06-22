@@ -7,9 +7,10 @@ import java.util.ArrayList;
 class Demo {
     public static void main(String[] args) {
 
-    Member newMember = new Member("Barry", "101 new way", "barry@barry", "709-550-1102", LocalDate.of(2020, Month.JUNE, 21));
+    Member newMember = new Member("Barry", "Poole", "101 new way", "barry@barry", "709-550-1102", LocalDate.of(2020, Month.JUNE, 21));
 
-        System.out.println("Member Name: "+ newMember.getMemberName() );
+        System.out.println("Member First Name: "+ newMember.getMemberFirstName());
+        System.out.println("Member Last Name: "+ newMember.getMemberLastName());
         System.out.println("Member Address: "+ newMember.getMemberAddress() );
         System.out.println("Member Email: "+ newMember.getEmail());
         System.out.println("Member Phone: "+ newMember.getPhoneNumber());

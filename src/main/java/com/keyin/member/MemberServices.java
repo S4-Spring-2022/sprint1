@@ -10,33 +10,33 @@ public class MemberServices {
         {
 
             System.out.println("Option Menu");
-            System.out.println("1. Add new member\n");
-            System.out.println("2. View Account\n");
-            System.out.println("3. (Update Account\n");
-            System.out.println("4. (Delete Account\n");
+            System.out.println("1. Add new member\n 2. View Account\n " +
+                    "3. Update Account\n 4. Delete Account\n");
             System.out.println();
-            System.out.println("Insert your option:");
+
             Scanner input = new Scanner(System.in);
+            System.out.println("Insert your option:");
             option = input.nextLine();
             input.close();
 
+            String userOption;
             switch (option) {
 
                 case "1":
-                    System.out.println("Add new member");
-                    System.out.println();
-
+                    userOption = "You would like to add a new member";
                 case "2":
-                    System.out.println("View Account");
+                    userOption = "You would like to view account";
+
                 case "3":
-                    System.out.println("Update Account ");
+                    userOption = "You would like to update account";
 
                 default:
-                    System.out.println("Invalid Membership ");
+                    userOption = "You would like to Delete an account";
                     break;
 
 
             }
+            System.out.println(userOption);
         }
     }
     }
