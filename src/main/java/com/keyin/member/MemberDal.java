@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface MemberDal {
-    public interface MemberDAL {
-        default int insertMember(Member member){ return this.insertMember(member); }
+        default int insertMember(Member member){ return insertMember(member); }
 
         List<Member> selectAllMembers ();
 
@@ -15,5 +14,5 @@ public interface MemberDal {
 
         Optional<Member> selectMemberByPhone (String memberPhone);
     }
-}
+
 

@@ -1,58 +1,29 @@
 package com.keyin;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Date;
+import Tournament.Tournament;
+import Tournament.TournamentArray;
+import com.keyin.member.Member;
+import com.keyin.member.MemberArray;
 
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-import com.keyin.member.MemberServiceTest;
-
-@ExtendWith(MockitoExtension.class)
 public class MemberServiceTest {
+    Member m1 = new Member("Nicholas Dobbin", "somewhereStreet Whitbourne", "dobbszerker@gmail.com", "7091231234", "2020-02-21",5, "family", new ArrayList(Arrays.asList("Nicholas Dobbin", "da missus")), new ArrayList(Arrays.asList("Golf 2022")), new ArrayList(Arrays.asList("Golf 2021")), new ArrayList(Arrays.asList("Golf 2023")));
+    Tournament t1 = new Tournament("2022-02-02", "2022-05-04", "NL St.johns", 50.00, 300.00, new ArrayList(Arrays.asList("Nicholas Dobbin", "Johnathon Dunne")), new ArrayList(Arrays.asList("Nicholas Dobbin", "Johnathon Dunne")));
+    MemberArray memberArray = new MemberArray();
+    TournamentArray tournamentArray = new TournamentArray();
 
-    @Mock
-    private Member member1 = Mockito.mock(Member.class);
 
+    public void setTournamentArray(TournamentArray tournamentArray) {
+        this.tournamentArray = tournamentArray;
+        tournamentArray.insertTournament(t1);
 
-    @Test
-    public void testMember() {
-        Member member = new Member();
-
-        assertEquals(5, Member.memberCount);
     }
 
-    @Test
-    public void testMemberName() {
-        Member member = new Member();
-        member.setName("Billy");
-        assertEquals("Billy", member.getName());
+    public void setMemberArray(MemberArray memberArray) {
+        this.memberArray = memberArray;
+        memberArray.insertMember(m1);
     }
-
-    @Test
-    public void testMemberAddress() {
-        Member member = new Member();
-        member.setAddress("123 My Street");
-        assertEquals("123 My Street", member.getAddress());
-    }
-
-    @Test
-    public void testMemberEmail() {
-        Member member = new Member();
-        member.setEmail("Billy@gmail.com");
-        assertEquals("Billy@gmail.com", member.getEmail());
-    }
-
-    @Test
-    public void testMemberPhone() {
-        Member member = new Member();
-        member.setPhone(7095551212);
-        assertEquals(7095551212, member.getPhone());
-    }
-
 }
-
