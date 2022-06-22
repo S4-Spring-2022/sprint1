@@ -5,7 +5,8 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Member {
-    private String memberName;
+    private String memberFirstName;
+    private String memberLastName;
     private String memberAddress;
     private String email;
     private String phoneNumber;
@@ -15,8 +16,9 @@ public class Member {
 
     public Member() {
     }
-    public Member(String memberName, String memberAddress, String email, String phoneNumber, LocalDate startDate){
-        this.memberName = memberName;
+    public Member(String memberFirstName, String memberLastName, String memberAddress, String email, String phoneNumber, LocalDate startDate){
+        this.memberFirstName = memberFirstName;
+        this.memberLastName = memberLastName;
         this.memberAddress = memberAddress;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -27,12 +29,20 @@ public class Member {
 
 
 
-    public String getMemberName(){
-        return memberName;
+    public String getMemberFirstName(){
+        return memberFirstName;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+    public void setMemberFirstName(String memberFirstName) {
+        this.memberFirstName = memberFirstName;
+    }
+
+    public String getMemberLastName(){
+        return memberFirstName;
+    }
+
+    public void setMemberLastName(String memberLastName) {
+        this.memberLastName = memberLastName;
     }
 
     public String getMemberAddress(){
