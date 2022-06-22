@@ -17,6 +17,9 @@ public class MemberServices extends MemberDatabase {
             System.out.println();
 
             System.out.println("Insert your option:");
+
+
+            // Non-Static to static data
             MemberDatabase memberInstance = new MemberDatabase();
             memberInstance.allMembers();
             Scanner input = new Scanner(System.in);
