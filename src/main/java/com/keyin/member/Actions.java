@@ -2,7 +2,7 @@ package com.keyin.member;
 
 import java.util.Scanner;
 
-public class MemberServices {
+public class Actions {
 
 
     public static void main(String[] args) {
@@ -10,10 +10,10 @@ public class MemberServices {
         {
 
             System.out.println("Option Menu");
-            System.out.println("1. (Add new member\n)");
-            System.out.println("2. (View Account\n)");
-            System.out.println("3. (Update Account\n)");
-            System.out.println("4. (Delete Account\n)");
+            System.out.println("1. Add new member\n");
+            System.out.println("2. View Account\n");
+            System.out.println("3. (Update Account\n");
+            System.out.println("4. (Delete Account\n");
             System.out.println();
             System.out.println("Insert your option:");
             Scanner input = new Scanner(System.in);
