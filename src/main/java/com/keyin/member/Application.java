@@ -3,9 +3,9 @@ package com.keyin.member;
 import java.awt.*;
 import javax.swing.*;
 
-public class Input {
+public class Application {
 
-    public static void main(String[] args) {
+    Application() {
         JPanel panel = new JPanel();
 
         JFrame frame = new JFrame("Input");
@@ -15,10 +15,9 @@ public class Input {
         frame.add(panel);
 
         panel.setLayout(null);
-        panel.setBackground(Color.RED);
 
         JLabel title = new JLabel("Golf Club Application");
-        title.setBounds(100,1,200,25);
+        title.setBounds(100, 1, 200, 25);
         panel.add(title);
 
         JLabel nameLabel = new JLabel("Enter Name: ");
@@ -66,7 +65,7 @@ public class Input {
         panel.add(durationLabel);
 
         JTextField durationField = new JTextField(20);
-        durationField.setBounds(100,180, 165,25);
+        durationField.setBounds(100, 180, 165, 25);
         panel.add(durationField);
 
         JLabel typeLabel = new JLabel("Membership: ");
@@ -79,11 +78,10 @@ public class Input {
         panel.add(typeBox);
 
         JButton button = new JButton("Submit");
-        button.setBounds(130,240,80,25);
+        button.setBounds(130, 240, 80, 25);
         panel.add(button);
 
         frame.setVisible(true);
 
     }
 }
-
