@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Date;
 
+// not currently using mocking. remember to cut if we don't bring it back to this test suite 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -15,6 +16,7 @@ import com.keyin.member.Member;
 @ExtendWith(MockitoExtension.class)
 public class MemberTest {
 
+    // not currently using mocking. remember to cut if we don't bring it back to this test suite 
     @Mock
     private Member member1 = Mockito.mock(Member.class);
 

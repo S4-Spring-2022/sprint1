@@ -20,23 +20,7 @@ public class Membership {
 
     public Membership(String type) {
 
-        if (this.type != "Normal") {
-            System.out.println("Error! Membership must be proper type!");
-        }
-        if (this.type != "Trial") {
-            System.out.println("Error! Membership must be proper type!");
-        }
-        if (this.type != "Special Offer") {
-            System.out.println("Error! Membership must be proper type!");
-        }
-        if (this.type != "Family Plan") {
-            System.out.println("Error! Membership must be proper type!");
-        }
-        if (this.type != "Other") {
-            System.out.println("Error! Membership must be proper type!");
-        } else {
-            this.type = type;
-        }
+       this.type = membershipTypeValidation(type);
 
         this.startDate = LocalDateTime.now();
         // this.duration = duration;
@@ -67,7 +51,7 @@ public class Membership {
     // SETTERS
 
     public void setType(String type) {
-        this.type = type;
+        this.type = membershipTypeValidation(type);
     }
 
     // public void setDuration(String duration) {
@@ -77,4 +61,14 @@ public class Membership {
     public String toString() {
         return "Membership[Type: " + type + ", Start Date: " + startDate + ", Duration: " + duration + "]";
     }
+
+    private String membershipTypeValidation(String type) {
+        if (type != "Normal" && type != "Trial" && type != "Special Offer" && type != "Family Plan" && type != "Other") {
+            System.out.println("Error! Membership must be a proper type!");
+        } else {
+           return type;
+        }
+        return null;
+    }
+
 }
