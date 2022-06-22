@@ -2,7 +2,7 @@ package com.keyin.member;
 
 import java.util.Scanner;
 
-public class Actions {
+public class MemberServices {
 
 
     public static void main(String[] args) {
