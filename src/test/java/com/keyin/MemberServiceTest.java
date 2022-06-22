@@ -10,10 +10,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.keyin.member.Member;
+import com.keyin.member.MemberServiceTest;
 
 @ExtendWith(MockitoExtension.class)
-public class MemberTest {
+public class MemberServiceTest {
 
     @Mock
     private Member member1 = Mockito.mock(Member.class);
@@ -22,37 +22,36 @@ public class MemberTest {
     @Test
     public void testMember() {
         Member member = new Member();
-        // will need to be updated with the number of members
- 
+
         assertEquals(5, Member.memberCount);
     }
 
     @Test
     public void testMemberName() {
         Member member = new Member();
-        member.setName("John");
-        assertEquals("John", member.getName());
+        member.setName("Billy");
+        assertEquals("Billy", member.getName());
     }
 
     @Test
     public void testMemberAddress() {
         Member member = new Member();
-        member.setAddress("123 Main St");
-        assertEquals("123 Main St", member.getAddress());
+        member.setAddress("123 My Street");
+        assertEquals("123 My Street", member.getAddress());
     }
 
     @Test
     public void testMemberEmail() {
         Member member = new Member();
-        member.setEmail("anemail@email.com");
-        assertEquals("anemail@email.com", member.getEmail());
+        member.setEmail("Billy@gmail.com");
+        assertEquals("Billy@gmail.com", member.getEmail());
     }
 
     @Test
     public void testMemberPhone() {
         Member member = new Member();
-        member.setPhone(1234567890);
-        assertEquals(1234567890, member.getPhone());
+        member.setPhone(7095551212);
+        assertEquals(7095551212, member.getPhone());
     }
 
 }
