@@ -53,9 +53,9 @@ public class Member extends Person {
         return this.memberPhone;
     }
 
-    public String getMembershipType() {
-        return this.membershipType;
-    }
+    // public String getMembershipType() {
+    // return this.membershipType;
+    // }
 
     // SETTERS
     // Do members have the authority to change their own information?
@@ -80,9 +80,9 @@ public class Member extends Person {
         this.memberPhone = phone;
     }
 
-    public void setMembershipType(String membershipType) {
-        this.membershipType = membershipType;
-    }
+    // public void setMembershipType(String membershipType) {
+    // this.membershipType = membershipType;
+    // }
 
     // will membership types be defined as objects or strings?
     // public void setType(String type) {

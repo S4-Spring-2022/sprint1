@@ -8,8 +8,8 @@ public class Family {
 
     public Family() {
         this.parent = ""; // null?
-        this.sibling = null;
-        this.child = null;
+        this.sibling = "";
+        this.child = "";
     }
 
     public Family(String parent, String sibling, String child) {
