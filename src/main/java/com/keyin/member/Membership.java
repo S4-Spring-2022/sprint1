@@ -19,9 +19,7 @@ public class Membership {
     }
 
     public Membership(String type) {
-
-       this.type = membershipTypeValidation(type);
-
+        this.type = membershipTypeValidation(type);
         this.startDate = LocalDateTime.now();
         // this.duration = duration;
     }
@@ -63,10 +61,11 @@ public class Membership {
     }
 
     private String membershipTypeValidation(String type) {
-        if (type != "Normal" && type != "Trial" && type != "Special Offer" && type != "Family Plan" && type != "Other") {
+        if (type != "Normal" && type != "Trial" && type != "Special Offer" && type != "Family Plan"
+                && type != "Other") {
             System.out.println("Error! Membership must be a proper type!");
         } else {
-           return type;
+            return type;
         }
         return null;
     }

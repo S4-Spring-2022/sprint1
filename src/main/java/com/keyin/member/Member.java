@@ -6,32 +6,24 @@ public class Member extends Person {
     private String memberAddress;
     private String memberEmail;
     private int memberPhone;
-    // private Date memberStartDate;
-    // private String memberDuration;
-    // private String memberType;
+    private String membershipType;
     public static int memberCount = 0;
 
     public Member() {
         super("", "", "", 0);
-        // this.memberStartDate = new Date();
-        // this.memberDuration = "";
-        // this.memberType = "";
+        this.membershipType = "";
         memberCount++;
     }
 
-    public Member(String duration, String type) {
+    public Member(String duration, String membershipType) {
         super("", "", "", 0);
-        // this.memberStartDate = new Date();
-        // this.memberDuration = duration;
-        // this.memberType = type;
+        this.membershipType = membershipType;
         memberCount++;
     }
 
-    public Member(String name, String address, String email, int phone, String duration, String type) {
+    public Member(String name, String address, String email, int phone, String duration, String membershipType) {
         super(name, address, email, phone);
-        // this.memberStartDate = new Date();
-        // this.memberDuration = duration;
-        // this.memberType = type;
+        this.membershipType = membershipType;
         memberCount++;
     }
 
@@ -53,17 +45,9 @@ public class Member extends Person {
         return this.memberPhone;
     }
 
-    // public Date getStartDate() {
-    // return this.memberStartDate;
-    // }
-
-    // public String getDuration() {
-    // return this.memberDuration;
-    // }
-
-    // public String getType() {
-    // return this.memberType;
-    // }
+    public String getMembershipType() {
+        return this.membershipType;
+    }
 
     // SETTERS
     // Do members have the authority to change their own information?
@@ -88,6 +72,10 @@ public class Member extends Person {
         this.memberPhone = phone;
     }
 
+    public void setMembershipType(String membershipType) {
+        this.membershipType = membershipType;
+    }
+
     // will membership types be defined as objects or strings?
     // public void setType(String type) {
     // this.memberType = type;
@@ -98,9 +86,6 @@ public class Member extends Person {
                 + "Address: " + memberAddress + "\n"
                 + "Email: " + memberEmail + "\n"
                 + "Phone: " + memberPhone + "\n";
-        // + "Membership Start Date: " + memberStartDate + "\n"
-        // + "Membership Duration: " + memberDuration + "\n"
-        // + "Member Type: " + memberType + "\n";
     }
 
     // this method is probably unnecesary as the constructor will call a start date
