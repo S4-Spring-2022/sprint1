@@ -92,6 +92,9 @@ public class Member extends Person {
     // public void setType(String type) {
     // this.memberType = type;
     // }
+    public void setMembership(String type) {
+        this.membership = new Membership(type);
+    }
 
     public String toString() {
         return "Member name: " + memberName + "\n"
