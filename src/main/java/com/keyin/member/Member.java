@@ -8,28 +8,28 @@ public class Member extends Person {
     private int memberPhone;
     // private Date memberStartDate;
     // private String memberDuration;
-    // private String memberType;
+    private Membership membership;
     public static int memberCount = 0;
 
     public Member() {
         super("", "", "", 0);
-        // this.memberStartDate = new Date();
+        this.membership = new Membership();
         // this.memberDuration = "";
         // this.memberType = "";
         memberCount++;
     }
 
-    public Member(String duration, String type) {
+    public Member(String type) {
         super("", "", "", 0);
-        // this.memberStartDate = new Date();
+        this.membership = new Membership(type);
         // this.memberDuration = duration;
         // this.memberType = type;
         memberCount++;
     }
 
-    public Member(String name, String address, String email, int phone, String duration, String type) {
+    public Member(String name, String address, String email, int phone, String type) {
         super(name, address, email, phone);
-        // this.memberStartDate = new Date();
+        this.membership = new Membership(type);
         // this.memberDuration = duration;
         // this.memberType = type;
         memberCount++;

@@ -3,7 +3,6 @@ package com.keyin.member;
 import java.time.LocalDateTime;
 import java.time.chrono.*;
 import java.time.temporal.ChronoUnit;
-
 import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Membership {
@@ -13,17 +12,20 @@ public class Membership {
     private String duration;
 
     public Membership() {
-        this.type = "Normal";
+        this.type = "Normal"; // default
         this.startDate = LocalDateTime.now();
         // this.duration = ""; //
 
     }
 
     public Membership(String type) {
-        this.type = type; // if statement, throw error
+
+       this.type = membershipTypeValidation(type);
+
         this.startDate = LocalDateTime.now();
         // this.duration = duration;
     }
+    // to handle the family membership we will need a new class of Family
 
     // GETTERS
 
@@ -50,7 +52,7 @@ public class Membership {
     // SETTERS
 
     public void setType(String type) {
-        this.type = type;
+        this.type = membershipTypeValidation(type);
     }
 
     // public void setDuration(String duration) {
@@ -60,4 +62,14 @@ public class Membership {
     public String toString() {
         return "Membership[Type: " + type + ", Start Date: " + startDate + ", Duration: " + duration + "]";
     }
+
+    private String membershipTypeValidation(String type) {
+        if (type != "Normal" && type != "Trial" && type != "Special Offer" && type != "Family Plan" && type != "Other") {
+            System.out.println("Error! Membership must be a proper type!");
+        } else {
+           return type;
+        }
+        return null;
+    }
+
 }
