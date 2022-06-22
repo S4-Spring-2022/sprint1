@@ -1,11 +1,7 @@
 package com.keyin.member;
 
-import java.time.*;
-import java.util.Date;
-import java.util.Locale;
-import java.time.LocalDate;
-import java.time.Month;
 
+import java.time.LocalDate;
 import java.time.Period;
 
 public class Member {
@@ -35,22 +31,43 @@ public class Member {
         return memberName;
     }
 
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
     public String getMemberAddress(){
         return memberAddress;
+    }
+
+    public void setMemberAddress(String memberAddress) {
+        this.memberAddress = memberAddress;
     }
 
     public String getEmail(){
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPhoneNumber(){
         return phoneNumber;
     }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public void  setStartDate(LocalDate date) {
         this.startDate = date;
     }
     public LocalDate getStartDate(){
         return startDate;
+    }
+
+    public void setDuration(LocalDate duration) {
+        this.duration = duration;
     }
 
     public LocalDate getDuration(){
@@ -64,6 +81,10 @@ public class Member {
         return duration;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
 
 
