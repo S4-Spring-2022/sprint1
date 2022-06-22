@@ -6,24 +6,32 @@ public class Member extends Person {
     private String memberAddress;
     private String memberEmail;
     private int memberPhone;
-    private String membershipType;
+    // private Date memberStartDate;
+    // private String memberDuration;
+    private Membership membership;
     public static int memberCount = 0;
 
     public Member() {
         super("", "", "", 0);
-        this.membershipType = "";
+        this.membership = new Membership();
+        // this.memberDuration = "";
+        // this.memberType = "";
         memberCount++;
     }
 
-    public Member(String duration, String membershipType) {
+    public Member(String type) {
         super("", "", "", 0);
-        this.membershipType = membershipType;
+        this.membership = new Membership(type);
+        // this.memberDuration = duration;
+        // this.memberType = type;
         memberCount++;
     }
 
-    public Member(String name, String address, String email, int phone, String duration, String membershipType) {
+    public Member(String name, String address, String email, int phone, String type) {
         super(name, address, email, phone);
-        this.membershipType = membershipType;
+        this.membership = new Membership(type);
+        // this.memberDuration = duration;
+        // this.memberType = type;
         memberCount++;
     }
 
