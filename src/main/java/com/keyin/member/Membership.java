@@ -25,6 +25,7 @@ public class Membership {
         this.startDate = LocalDateTime.now();
         // this.duration = duration;
     }
+    // to handle the family membership we will need a new class of Family
 
     // GETTERS
 
