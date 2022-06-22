@@ -1,21 +1,18 @@
 package com.keyin.member;
-
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
 import java.util.*;
 
 public class Tournaments {
     private String tournamentName;
     private String location;
     private double entryFee;
-    private String StartDate;
-    private String endDate;
-    private double cashPrizeAmount;
-
-    private String tournamentName;
-    private String location;
-    private double entryFee;
     private String startDate;
     private String endDate;
     private double cashPrizeAmount;
+
+
 
 
     public Tournaments(String tournamentName, String location, double entryFee, String startDate, String endDate, double cashPrizeAmount) {
