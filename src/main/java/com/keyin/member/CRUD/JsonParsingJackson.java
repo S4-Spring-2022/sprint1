@@ -10,11 +10,11 @@ public class JsonParsingJackson {
     
     public static void main(String[] args) {
         
+        // String memberDataFolder = "sprint1/src/main/java/com/keyin/member/data/memberData2.json";
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            MembersArray membersObj = mapper.readValue(new File("/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/memberData2.json"), MembersArray.class);
-            System.out.println();
+            MembersArray membersObj = mapper.readValue(new File( "sprint1/src/main/java/com/keyin/member/data/memberData2.json"), MembersArray.class);
             System.out.println("Members;");
             System.out.println();
             for ( MembersArray members : membersObj.getMembers() ) {
