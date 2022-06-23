@@ -60,7 +60,6 @@ public class MemberService {
             if (choice == options2[0]) {
                 System.out.println("Enter Member Name: ");
                 memberChoice = in.nextLine();
-                in.nextInt();
                 displayMenu(options, menuItems);
                 for(Member member : members){
                     if(Objects.equals(member.getName(), memberChoice)){
