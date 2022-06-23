@@ -53,6 +53,10 @@ public class Member extends Person {
         return this.memberPhone;
     }
 
+    public Family getFamily() {
+        return this.membership.getFamily();
+    }
+
     // public Date getStartDate() {
     // return this.memberStartDate;
     // }
@@ -101,8 +105,8 @@ public class Member extends Person {
                 + "Address: " + memberAddress + "\n"
                 + "Email: " + memberEmail + "\n"
                 + "Phone: " + memberPhone + "\n"
-        // + "Membership Start Date: " + memberStartDate + "\n"
-        // + "Membership Duration: " + memberDuration + "\n"
+                // + "Membership Start Date: " + memberStartDate + "\n"
+                // + "Membership Duration: " + memberDuration + "\n"
                 + "Member Type: " + membership + "\n";
     }
 
