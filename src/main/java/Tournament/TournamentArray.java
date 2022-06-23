@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class TournamentArray implements TournamentDal {
+public class TournamentArray {
         private static List<Tournament> DB = new ArrayList();
 
 
