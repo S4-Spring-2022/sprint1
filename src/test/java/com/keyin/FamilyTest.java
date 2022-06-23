@@ -54,4 +54,15 @@ public class FamilyTest {
         assertEquals("Keyin", familyUnderTest.getName());
     }
 
+    @Test
+    public void testFamilyGetMembers() {
+        familyUnderTest.addMember(memberDad);
+        familyUnderTest.addMember(memberMom);
+        familyUnderTest.addMember(memberSon);
+        familyUnderTest.addMember(memberGrandDaughter);
+        System.out.println(familyUnderTest.getMembers());
+
+        assertEquals(4, familyUnderTest.getMembers().size());
+    }
+
 }
