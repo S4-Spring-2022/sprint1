@@ -1,10 +1,8 @@
 package com.keyin.member;
 
 // import java.time.*; // Import the LocalDateTime class
-import java.util.Date;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
-import java.time.chrono.*;
 import java.time.temporal.ChronoUnit;
 
 public class Member{
@@ -15,9 +13,9 @@ public class Member{
     private LocalDateTime startOfMembership;
     private String durationOfMembership;
     private String typeOfMembership;
-    private ArrayList <Tournament> currentTournaments;
-    private ArrayList <Tournament> pastTournaments;
-    private ArrayList <Tournament> upcomingTournaments;
+    private ArrayList<String> currentTournaments;
+    private ArrayList<String> pastTournaments;
+    private ArrayList<String> upcomingTournaments;
 
 
 
@@ -126,6 +124,18 @@ public class Member{
         this.typeOfMembership = typeOfMembership;
 
 
+    }
+
+    public void setCurrentTournaments(ArrayList<String> currentTournaments){
+        this.currentTournaments = currentTournaments;
+    }
+
+    public void setPastTournaments(ArrayList<String> pastTournaments){
+        this.pastTournaments = pastTournaments;
+    }
+
+    public void setUpcomingTournaments(ArrayList<String> upcomingTournaments){
+        this.upcomingTournaments = upcomingTournaments;
     }
 
 

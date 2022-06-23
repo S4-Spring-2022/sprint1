@@ -2,6 +2,7 @@ package com.keyin;
 
 import com.keyin.member.Member;
 import com.keyin.member.MembersList;
+import com.keyin.member.Tournament;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -51,11 +52,11 @@ public class MemberTest {
 
     }
 
-    @Test
-    public void TestGetStartDate(){
-        Member memberUnderTest = new Member();
-    //come back to this later, not sure how to assert date times
-    }
+//    @Test
+//    public void TestGetStartDate(){
+//        Member memberUnderTest = new Member();
+//    //come back to this later, not sure how to assert date times
+//    }
 
     @Test
     public void TestGetType(){
@@ -66,9 +67,31 @@ public class MemberTest {
 
     }
 
-//    @Test
-//    public void tesGetCurrentTournaments(){
-//        part of tournament.test?
-//    }
+
+
+    @Mock
+    private Tournament tournamentUnderTest = Mockito.mock(Tournament.class);
+
+    @Test
+    public void testGetCurrentTournaments(){
+        Tournament tournamentUnderTest = new Member;
+        memberUnderTest.setCurrentTournaments("Tournament 3");
+        assertEquals("Tournament 3",memberUnderTest.getCurrentTournaments());
+    }
+
+    @Test
+    public void testGetUpcomingTournaments(){
+         memberUnderTest = new Member();
+        memberUnderTest.setPastTournaments("Tournament 1");
+        assertEquals("Tournament 1",memberUnderTest.getUpcomingTournaments());
+    }
+
+
+    @Test
+    public void testGetUpcomingTournaments(){
+        memberUnderTest = new Member();
+        memberUnderTest.setUpcomingTournaments("Tournament 2");
+        assertEquals("Tournament 2",memberUnderTest.getPastTournaments());
+    }
 
 }
