@@ -64,6 +64,9 @@ public class MemberService {
                 System.out.println("Enter your phone number: ");
                 int phone = scanner.nextInt();
 
+                // System.out.println("Enter your membership type: ");
+                // String type = scanner.next();
+
                 System.out.println("Enter your membership type: ");
                 String type = scanner.next();
 
