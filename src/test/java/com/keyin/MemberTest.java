@@ -56,5 +56,16 @@ public class MemberTest {
         member.setPhone(1234567890);
         assertEquals(1234567890, member.getPhone());
     }
+
+    @Test
+    public void testMemberFullConstructor() {
+        Member member = new Member();
+        member.setName("John");
+        member.setAddress("123 Main St");
+        member.setEmail("anemail@email.com");
+        member.setPhone(1234567890);
+        member.setMembership("Other");    
+        System.out.println(member.toString());
+    }
    
 }

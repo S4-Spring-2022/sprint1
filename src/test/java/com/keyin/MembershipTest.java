@@ -3,7 +3,7 @@ package com.keyin;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -19,11 +19,13 @@ public class MembershipTest {
     @Mock
     private Membership membership1 = Mockito.mock(Membership.class);
 
+    // test needs to be fixed or removed
     @Test
     public void testMembershipStartDate() {
         Membership membership = new Membership();
         // this test cannot have any other operations between instantiation and assertion
-        assertEquals(new Date(), membership.getStartDate());
+        // in fact changing to a LocalDateTime.now() broke this test as it is more specific down to the millisecond than the previous method
+        assertEquals(LocalDateTime.now(), membership.getStartDate());
     }
 
     @Test
