@@ -18,6 +18,7 @@ public class MemberServices extends MemberDatabase {
             Scanner input = new Scanner(System.in);
             option = input.nextInt();
             input.close();
+
             if (option == 1){
                 System.out.println("You've chose to create a new member");
             } else if (option == 2) {
@@ -42,6 +43,13 @@ public class MemberServices extends MemberDatabase {
     }
     }
 
+                // Non-Static to static data
+                String answer;
+                MemberDatabase memberInstance = new MemberDatabase();
+                Scanner memberScan = new Scanner(System.in);
+                System.out.println(memberInstance.allMembers());
+                memberInstance.allMembers();
+                memberScan.close();
 
 
 

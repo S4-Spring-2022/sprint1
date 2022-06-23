@@ -1,8 +1,4 @@
 package com.keyin.member;
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.ArrayList;
-import java.util.*;
 
 public class Tournaments {
     private String tournamentName;
@@ -11,8 +7,6 @@ public class Tournaments {
     private String startDate;
     private String endDate;
     private double cashPrizeAmount;
-
-
 
 
     public Tournaments(String tournamentName, String location, double entryFee, String startDate, String endDate, double cashPrizeAmount) {
@@ -25,7 +19,11 @@ public class Tournaments {
 
     }
 
-    public String getTournamentName() {
+    public Tournaments() {
+
+    }
+
+    public String getTournamentName(String string) {
         return tournamentName;
     }
 
@@ -33,7 +31,7 @@ public class Tournaments {
         this.tournamentName = tournamentName;
     }
 
-    public String getLocation() {
+    public String getLocation(String place) {
         return location;
     }
 
@@ -41,7 +39,7 @@ public class Tournaments {
         this.location = location;
     }
 
-    public double getEntryFee() {
+    public double getEntryFee(double v) {
         return entryFee;
     }
 
@@ -49,7 +47,7 @@ public class Tournaments {
         this.entryFee = entryFee;
     }
 
-    public String getStartDate() {
+    public String getStartDate(String name) {
         return startDate;
     }
 
@@ -57,7 +55,7 @@ public class Tournaments {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public String getEndDate(String date) {
         return endDate;
     }
 
@@ -65,7 +63,7 @@ public class Tournaments {
         this.endDate = endDate;
     }
 
-    public double getCashPrizeAmount() {
+    public double getCashPrizeAmount(double v) {
         return cashPrizeAmount;
     }
 
@@ -80,8 +78,6 @@ public class Tournaments {
         return toString();
 
     }
-
-
 
 
 }
