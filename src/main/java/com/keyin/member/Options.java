@@ -29,6 +29,13 @@ public class Options implements ActionListener {
 
         frame.add(btn2);
 
+        JButton btn3 = new JButton("TournamentList");
+        btn3.setBounds(95, 160, 150, 50);
+        btn3.setFocusable(false);
+        btn3.addActionListener(this);
+
+        frame.add(btn3);
+
     }
 
     @Override
@@ -37,6 +44,8 @@ public class Options implements ActionListener {
             new Application();
         } else if (arg0.getSource() == frame.getContentPane().getComponent(1)) {
             new MembersList();
+        } else if (arg0.getSource() == frame.getContentPane().getComponent(2)) {
+            new TournamentList();
         }
 
     }
