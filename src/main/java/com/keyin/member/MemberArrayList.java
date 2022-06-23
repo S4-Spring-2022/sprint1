@@ -1,4 +1,5 @@
 package com.keyin.member;
+import java.io.*;
 import java.util.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,7 +9,7 @@ public class MemberArrayList {
     public static void main(String[] args) {
         ArrayList<String> firstName = new ArrayList<String>();
         ArrayList<String> lastName = new ArrayList<String>();
-        ArrayList<Integer> memberId = new ArrayList<Integer>();;
+        ArrayList<String> memberId = new ArrayList<String>();;
         ArrayList<String> email = new ArrayList<String>();
         ArrayList<String> phone = new ArrayList<String>();
 
@@ -23,7 +24,7 @@ public class MemberArrayList {
                 System.out.println("Please enter Member Last Name: ");
                 lastName.add(scanner.next());
                 System.out.println("Please enter Member Id number: ");
-                memberId.add(scanner.nextInt());
+                memberId.add(scanner.next());
                 System.out.println("Please enter Member Email: ");
                 email.add(scanner.next());
                 System.out.println("Please enter Member phone: ");
@@ -47,19 +48,21 @@ public class MemberArrayList {
                 }
                 Path output = Paths.get("/Users/MXZ User/Desktop/ArrayOutput.txt");
                 try {
-                    Files.write(output,(firstName));
+                    String newline = System.getProperty("line.separator");
+                    StringBuilder str = new StringBuilder();
+                    str.append(firstName).append(newline);
+                    str.append(lastName).append(newline);
+                    str.append(memberId).append(newline);
+                    str.append(email).append(newline);
+                    str.append(phone);
+                    Files.write(output, Collections.singleton(str.toString()));
                     System.out.println(output.toFile().getAbsolutePath());
-
-
-//                    Files.write( output,(memberId));
-                    Files.write(output,(email));
-
-                    Files.write(output,(phone));
-                    Files.write(output,(lastName));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+            }
             }
         }
     }
-}
+
