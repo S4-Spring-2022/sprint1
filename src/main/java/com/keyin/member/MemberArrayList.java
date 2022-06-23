@@ -46,15 +46,16 @@ public class MemberArrayList {
                     System.out.print("Phone " + phone.get(i) );
                     System.out.println("");
                 }
-                Path output = Paths.get("/Users/MXZ User/Desktop/ArrayOutput.txt");
+//                Path output = Paths.get("/Users/MXZ User/Desktop/ArrayOutput.txt");
+                Path output = Paths.get("/Users/MXZ User/Desktop/SD_Architecture_&_Design/SDAT_Week_6/sprint1/src/main/java/com/keyin/member/ArrayOutput.txt");
                 try {
                     String newline = System.getProperty("line.separator");
                     StringBuilder str = new StringBuilder();
-                    str.append(firstName).append(newline);
-                    str.append(lastName).append(newline);
-                    str.append(memberId).append(newline);
-                    str.append(email).append(newline);
-                    str.append(phone);
+                    str.append(firstName ).append(newline );
+                    str.append(lastName ).append(newline  );
+                    str.append(memberId ).append(newline );
+                    str.append(email ).append(newline );
+                    str.append(phone );
                     Files.write(output, Collections.singleton(str.toString()));
                     System.out.println(output.toFile().getAbsolutePath());
                 } catch (Exception e) {
