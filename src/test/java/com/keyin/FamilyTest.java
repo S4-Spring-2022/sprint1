@@ -38,20 +38,20 @@ public class FamilyTest {
     }
 
     // this method does not exist yet, but it should
-    // @Test
-    // public void testFamilyRemoveMember() {
-    //     familyUnderTest.addMember(memberDad);
-    //     familyUnderTest.addMember(memberMom);
-    //     familyUnderTest.addMember(memberSon);
-    //     familyUnderTest.addMember(memberGrandDaughter);
-    //     familyUnderTest.removeMember(memberDad);
-    //     assertEquals(3, familyUnderTest.getMembers().size());
-    // }
+    @Test
+    public void testFamilyRemoveMember() {
+        familyUnderTest.addMember(memberDad);
+        familyUnderTest.addMember(memberMom);
+        familyUnderTest.addMember(memberSon);
+        familyUnderTest.addMember(memberGrandDaughter);
+        familyUnderTest.removeMember(memberDad);
+        assertEquals(3, familyUnderTest.getMembers().size());
+    }
 
     @Test
     public void testFamilyName() {
         familyUnderTest.setName("Keyin");
         assertEquals("Keyin", familyUnderTest.getName());
     }
-    
+
 }
