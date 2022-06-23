@@ -11,6 +11,12 @@
 			"address": "221B Baker Street",
 			"email": "j.watson@mysterysolvers.com",
 			"phone": 4208888
+		},
+		{
+			"name": "Mycroft Holmes",
+			"address": "221B Baker Street",
+			"email": "mycroftholmes@mysterysolvers.com",
+			"phone": 4209999
 		}
 	]
 }
