@@ -11,7 +11,7 @@ public class Member {
     private String phoneNumber;
     private LocalDate startDate;
     private LocalDate duration;
-//    private LocalDate todaysDate;
+
 
     public Member() {
     }
@@ -23,10 +23,6 @@ public class Member {
         this.startDate = startDate;
 
     }
-
-
-
-
     public String getMemberName(){
         return memberName;
     }

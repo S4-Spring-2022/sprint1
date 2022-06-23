@@ -1,11 +1,9 @@
 package com.keyin.member;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
+public class MemberDatabase extends Member{
 
     public List<MembershipType> getMembershipTypes() {
         ArrayList<MembershipType> membershipTypes = new ArrayList<>();

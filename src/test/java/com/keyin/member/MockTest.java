@@ -10,11 +10,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class MockTest {
     @Mock
-    Database databaseMock;
+    MemberDatabase memberDatabaseMock;
 
     @Test
     public void testQuery() {
-        Assertions.assertNotNull(databaseMock);
+        Assertions.assertNotNull(memberDatabaseMock);
 
     }
 }
