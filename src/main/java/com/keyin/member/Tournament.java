@@ -1,54 +1,74 @@
 package com.keyin.member;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.time.LocalDate;
 import java.util.Date;
 
 public class Tournament {
+    private String name;
     private LocalDate startDate;
     private LocalDate endDate;
     private String location;
     private int entryFee;
     private int prizeAmount;
-    private Object members[];
-    private String standings;
-    private int count;
+    private ArrayList<Member> members = new ArrayList<Member>();
 
-    public Tournament(String start, String end, String loc, int fee, int prize){
+    public Tournament(String n, String start, String end, String loc, int fee, int prize){
+        name = n;
         startDate = LocalDate.parse(start);
         endDate = LocalDate.parse(end);
         location = loc;
         entryFee = fee;
         prizeAmount = prize;
-        count = 0;
     }
 
     public Object addMember(Member member){
-        this.members[this.count] = member;
-        this.count ++;
-        return this.members;
+        members.add(member);
+        return members;
     }
 
-    public String getStandings(){
+    public void getStandings(){
         LocalDate today = LocalDate.now();
         //if the end date has passed then standings are final and can be published
+
         if(today.isAfter(this.endDate)){
-            this.standings = "Standings: " + Arrays.toString(this.members);
-            System.out.println(this.standings);
-            return this.standings;
+            System.out.println("\n--- Standings ---");
+            for(int i = 0; i < members.size(); i ++){
+                System.out.println(i+1 + ". " + members.get(i).getName());
+            }
+
         } else {
-            System.out.println("Event not ended.");
-            return "Event not ended.";
+            System.out.println("\nEvent not ended.");
         }
     }
 
-//    public String getTournamentInfo(){
-//        //work in progress
-//        //print string of all the tournament information
-//    }
+    public String toString(){
+        //work in progress
+        //print string of all the tournament information
+        return "\n--- Tournament Info ---"
+                + "\nTournament Name: " + this.name
+                + "\nTournament Start Date: " + this.startDate
+                + "\nTournament Name: " + this.endDate
+                + "\nTournament Name: " + this.location
+                + "\nTournament Name: $" + this.entryFee
+                + "\nTournament Name: $" + this.prizeAmount;
+    }
 
     //more sets
 
     //more gets
+    public LocalDate getStartDate(){
+        return startDate;
+    }
+    public LocalDate getEndDate(){
+        return endDate;
+    }
+    public ArrayList<Member> getMembers(){
+        return members;
+    }
+    public String getName(){
+        return this.name;
+    }
 }
