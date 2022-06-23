@@ -17,6 +17,7 @@ public class Member {
     private String memberType;
     private int memberMonthCost;
     private ArrayList<Tournament> tourArray = new ArrayList<Tournament>();
+    private Member familyMember;
 
     /*
     Member Types: if not specified memberships last 365 days
@@ -40,7 +41,7 @@ public class Member {
         memberMonthCost = 125;
     }
     //new member with set membership
-    public Member(String n, String a, String e, String num, String sDate, String mem){
+    public Member(String n, String a, String e, String num, String sDate, String mem){ //find out how to have 'if' parameter
         name = n;
         address = a;
         email = e;
@@ -63,9 +64,11 @@ public class Member {
             case "family" -> {
                 memberDuration = memberDate.plusYears(1);
                 memberMonthCost = 217;
-                Scanner input = new Scanner(System.in);
-                System.out.println("Enter Family Member Name");
-                String familyMemberName = input.nextLine();
+//                familyMember = fMember;
+//                fMember.familyMember = this;
+//                Scanner input = new Scanner(System.in);
+//                System.out.println("Enter Family Member Name");
+//                String familyMemberName = input.nextLine();
                 //for statement needed to look through data array and compare objs in data to familyMemberName and link them together
             }
             case "student" -> {
@@ -78,38 +81,40 @@ public class Member {
             }
         }
     }
-    //set membership type with already created member
-    public Member(Member mem, String sDate, String type){
-        mem.memberDate = LocalDate.parse(sDate);
-        mem.memberType = type;
+    //set membership type
+    public void setMembership( String sDate, String type, Member fMember){
+        this.memberDate = LocalDate.parse(sDate);
+        this.memberType = type;
         switch (type) {
             case "standard" -> {
-                mem.memberDuration = mem.memberDate.plusYears(1);
-                mem.memberMonthCost = 125;
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 125;
             }
             case "trial" -> {
-                mem.memberDuration = mem.memberDate.plusMonths(1);
-                mem.memberMonthCost = 300;
+                this.memberDuration = this.memberDate.plusMonths(1);
+                this.memberMonthCost = 300;
             }
             case "special" -> {
-                mem.memberDuration = mem.memberDate.plusYears(1);
-                mem.memberMonthCost = 100;
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 100;
             }
             case "family" -> {
-                mem.memberDuration = mem.memberDate.plusYears(1);
-                mem.memberMonthCost = 217;
-                Scanner input = new Scanner(System.in);
-                System.out.println("Enter Family Member Name");
-                String familyMemberName = input.nextLine();
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 217;
+                familyMember = fMember;
+                fMember.familyMember = this;
+//                Scanner input = new Scanner(System.in);
+//                System.out.println("Enter Family Member Name");
+//                String familyMemberName = input.nextLine();
                 //for statement needed to look through data array and compare objs in data to familyMemberName and link them together
             }
             case "student" -> {
-                mem.memberDuration = mem.memberDate.plusYears(1);
-                mem.memberMonthCost = 80;
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 80;
             }
             case "early" -> {
-                mem.memberDuration = mem.memberDate.plusYears(1);
-                mem.memberMonthCost = 63;
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 63;
             }
         }
     }
@@ -128,25 +133,46 @@ public class Member {
     public String getName(){
         return name;
     }
-    public void getTourneys(){
-        System.out.println("\n--- Tournaments ---");
+    public void getTourneysUpcoming(){
+        System.out.println("\n--- Upcoming Tournaments ---");
         for(Tournament tournament : tourArray){
-            System.out.println(tournament.getName());
+            if(tournament.getStartDate().isAfter(LocalDate.now())){
+                System.out.println(tournament.getName());
+            }
         }
     }
-    public String toString(){
+    public void getTourneysCurrent(){
+        System.out.println("\n--- Current Tournaments ---");
+        for(Tournament tournament : tourArray){
+            if(tournament.getStartDate().isBefore(LocalDate.now()) && tournament.getEndDate().isAfter(LocalDate.now())){
+                System.out.println(tournament.getName());
+            }
+        }
+    }
+    public void getTourneysPast(){
+        System.out.println("\n--- Past Tournaments ---");
+        for(Tournament tournament : tourArray){
+            if(tournament.getEndDate().isBefore(LocalDate.now())){
+                System.out.println(tournament.getName());
+            }
+        }
+    }
+
+//    public String tourneysToString(){
+//        System.out.println("\n--- Members Tournaments ---");
+//        if()
+//    }
+    public String infoToString(){
         return "\nMember Name: " + this.name
                 + "\nMember Address: " + this.address
                 + "\nMember Email: " + this.email
-                + "\nMember Phone Number: " + this.phoneNum
-                + "\n"
-                + "\n--- Membership Info ---"
+                + "\nMember Phone Number: " + this.phoneNum;
+    }
+    public String membershipToString(){
+        return "\n--- Membership Info ---"
                 + "\nMembership Type: " + this.memberType
                 + "\nMembership Start Date: " + this.memberDate
-                + "\nMembership End Date: " + this.memberDuration
-                + "\n"
-                + "\n--- Members Tournaments ---"
-                + "\n ****ERROR**** WORK IN PROGRESS ****ERROR****";
+                + "\nMembership End Date: " + this.memberDuration;
     }
 }
 
