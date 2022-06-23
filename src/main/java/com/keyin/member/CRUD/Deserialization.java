@@ -1,21 +1,20 @@
 package com.keyin.member.CRUD;
-
+// reading the file
 import java.io.File;
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.keyin.member.MembersArray;
 
-public class JsonParsingJackson {
+public class Deserialization {
     
     public static void main(String[] args) {
         
+        String pathName = "sprint1/src/main/java/com/keyin/member/data/memberData2.json";
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-
-            MembersArray membersObj = mapper.readValue(new File( "sprint1/src/main/java/com/keyin/member/data/memberData2.json"), MembersArray.class);
-            System.out.println();
+            MembersArray membersObj = mapper.readValue(new File( pathName ), MembersArray.class);
             System.out.println("Members;");
             System.out.println();
             for ( MembersArray members : membersObj.getMembers() ) {
