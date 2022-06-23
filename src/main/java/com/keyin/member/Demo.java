@@ -19,6 +19,7 @@ class Demo {
 
     Tournaments newTournaments = new Tournaments("Dave's Cash", "Piper's Hole",   1500, "2022/06/23", "2022/06/26",  25000);
     System.out.println("");
+
     System.out.println("Tournament Name: " + newTournaments.getTournamentName());
     System.out.println("Tournament Location " + newTournaments.getLocation());
     System.out.println("Tournament Entry Fee $" + newTournaments.getEntryFee());
@@ -29,16 +30,16 @@ class Demo {
 
 
        ArrayList<String> Golf = new  ArrayList();
-            Golf.add("Dave's Cash");
-            Golf.add("Summer Smash");
-            Golf.add("Swing Into Canada");
-            Golf.add("Dog Days");
-            Golf.add("August Affair");
-            Golf.add("Provincials");
-            Golf.add("Slide Quietly By September");
-            Golf.add("October Harvest");
-
-            System.out.println("");
+            Golf.add("* Dave's Cash\n");
+            Golf.add("* Summer Smash\n");
+            Golf.add("* Swing Into Canada\n");
+            Golf.add("* Dog Days\n");
+            Golf.add("* August Affair\n");
+            Golf.add("* Provincials\n");
+            Golf.add("* Slide Quietly By September\n");
+            Golf.add("* October Harvest");
+            System.out.println("***Tournaments***");
+//            System.out.println("");
             System.out.println(Golf);
             System.out.println("");
 
