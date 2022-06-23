@@ -1,10 +1,11 @@
 package com.keyin.member.CRUD;
+// writing the file
 
 import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.keyin.member.Member;
 
-public class WriteDataJackson {
+public class Serialization {
     
     public static void main(String[] args) {
         
@@ -14,13 +15,13 @@ public class WriteDataJackson {
         ObjectMapper mapper = new ObjectMapper();
         
         Member member = new Member();
-            member.setName("Sherlock Holmes");
-            member.setAddress("221B Baker Street");
-            member.setEmail("s.holmes@mysterysolvers.com");
-            member.setPhone(4207777);
+               member.setName("Sherlock Holmes");
+               member.setAddress("221B Baker Street");
+               member.setEmail("s.holmes@mysterysolvers.com");
+               member.setPhone(4207777);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
 }
