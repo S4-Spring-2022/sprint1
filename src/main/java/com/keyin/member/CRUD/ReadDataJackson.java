@@ -6,15 +6,15 @@ import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.keyin.member.MembersArray;
 
-public class JsonParsingJackson {
+public class ReadDataJackson {
     
     public static void main(String[] args) {
         
-        // String memberDataFolder = "sprint1/src/main/java/com/keyin/member/data/memberData2.json";
+        String memberDataFolder = "sprint1/src/main/java/com/keyin/member/data/memberData2.json";
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            MembersArray membersObj = mapper.readValue(new File( "sprint1/src/main/java/com/keyin/member/data/memberData2.json"), MembersArray.class);
+            MembersArray membersObj = mapper.readValue(new File( memberDataFolder ), MembersArray.class);
             System.out.println("Members;");
             System.out.println();
             for ( MembersArray members : membersObj.getMembers() ) {
