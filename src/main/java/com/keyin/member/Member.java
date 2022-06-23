@@ -22,21 +22,35 @@ public class Member{
 
 
 
-    public Member(String n, String add, String email, String phoneNum, LocalDateTime memberStart, String duration, String type, Tournament current[],Tournament past[],Tournament upcoming[])
-    {
-        this.name = n;
-        this.address = add;
-        this.emailAddress = email;
-        this.phoneNumber = phoneNum;
-        this.startOfMembership = memberStart;
-        this.durationOfMembership = duration;
-        this.typeOfMembership = type;
-        this.currentTournaments = current;
-        this.pastTournaments = past;
-        this.upcomingTournaments = upcoming;
+//    public Member(String n, String add, String email, String phoneNum, LocalDateTime memberStart, String duration, String type, Tournament current[],Tournament past[],Tournament upcoming[])
+//    {
+//        this.name = n;
+//        this.address = add;
+//        this.emailAddress = email;
+//        this.phoneNumber = phoneNum;
+//        this.startOfMembership = memberStart;
+//        this.durationOfMembership = duration;
+//        this.typeOfMembership = type;
+//        this.currentTournaments = current;
+//        this.pastTournaments = past;
+//        this.upcomingTournaments = upcoming;
+//
+//    }
 
-    }
+    public Member(String name, String address, String emailAddress, String phoneNumber, LocalDateTime startOfMembership, String durationOfMembership, String typeOfMembership, Tournament currentTournaments[],Tournament pastTournaments[],Tournament upcomingTournaments[])
+ {
+     this.name = name;
+     this.address = address;
+     this.emailAddress = emailAddress;
+     this.phoneNumber = phoneNumber;
+     this.startOfMembership = startOfMembership;
+     this.durationOfMembership = durationOfMembership;
+     this.typeOfMembership = typeOfMembership;
+     this.currentTournaments = currentTournaments;
+     this.pastTournaments = pastTournaments;
+     this.upcomingTournaments = upcomingTournaments;
 
+ }
 
 
 //Getters
@@ -117,8 +131,7 @@ public class Member{
 
 
     public String toString(){
-        return "Member name: " + name + "\n"
-                + "Address: " + address + "\n"
+        return "Member name: " + name + "\n" + "Address: " + address + "\n"
                 +"Email Address: " + emailAddress + "\n"
                 +"Phone Number: " + phoneNumber  + "\n"
                 +"Start Date of Membership: " +startOfMembership + "\n"
