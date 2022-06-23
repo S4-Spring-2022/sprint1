@@ -29,7 +29,7 @@ public class MemberService {
         // User choices
         int choice;
         String memberChoice = null;
-        Member nameInput = m2;
+        Member nameInput = null;
 
         //Menus data
         int[] options2 = {1, 2, 3};
@@ -53,19 +53,21 @@ public class MemberService {
 
 
         choice = in.nextInt();
+        in.nextLine();
 
         //Menu loops -- mocked for just one member
         while (choice != EXIT2) {
             if (choice == options2[0]) {
                 System.out.println("Enter Member Name: ");
                 memberChoice = in.nextLine();
+                in.nextInt();
                 displayMenu(options, menuItems);
-                while (choice != EXIT){
-                    for(Member member : members){
-                        if(Objects.equals(member.getName(), memberChoice)){
-                            nameInput = member;
-                        }
+                for(Member member : members){
+                    if(Objects.equals(member.getName(), memberChoice)){
+                        nameInput = member;
                     }
+                }
+                while (choice != EXIT){
                     if(choice == options[0]){
                         assert nameInput != null;
                         System.out.println(nameInput.infoToString());
@@ -79,6 +81,9 @@ public class MemberService {
                         nameInput.getTourneysCurrent();
                         nameInput.getTourneysPast();
                         nameInput.getTourneysUpcoming();
+                    } else if (choice == 4){
+                        choice = EXIT2;
+                        break;
                     }
 
                     //Display menu
@@ -86,6 +91,7 @@ public class MemberService {
 
                     //Get choice from user
                     choice = in.nextInt();
+                    in.nextLine();
                 }
             } else if (choice == options2[1]) {
                 System.out.println("\nEnter Tournament: ('exit' to end program)");
