@@ -23,6 +23,7 @@ public class Member {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.startDate = startDate;
+//
 
     }
 
@@ -38,7 +39,7 @@ public class Member {
     }
 
     public String getMemberLastName(){
-        return memberFirstName;
+        return memberLastName;
     }
 
     public void setMemberLastName(String memberLastName) {
