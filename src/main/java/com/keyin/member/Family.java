@@ -55,4 +55,8 @@ public class Family {
         this.familyName = name;
     }
 
+    public String toString() {
+        return "Family members: " + getMembers(); // familyMembers?
+    }
+
 }
