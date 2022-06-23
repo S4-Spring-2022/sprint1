@@ -10,11 +10,11 @@ public class Deserialization {
     
     public static void main(String[] args) {
         
-        String memberDataFolder = "sprint1/src/main/java/com/keyin/member/data/memberData2.json";
+        String pathName = "sprint1/src/main/java/com/keyin/member/data/memberData2.json";
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            MembersArray membersObj = mapper.readValue(new File( memberDataFolder ), MembersArray.class);
+            MembersArray membersObj = mapper.readValue(new File( pathName ), MembersArray.class);
             System.out.println("Members;");
             System.out.println();
             for ( MembersArray members : membersObj.getMembers() ) {
