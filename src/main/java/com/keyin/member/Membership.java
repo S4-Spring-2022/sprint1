@@ -10,6 +10,7 @@ public class Membership {
     private String type;
     private LocalDateTime startDate;
     private String duration;
+    private Family membershipFamily;
 
     public Membership() {
         this.type = "Normal"; // default
@@ -19,13 +20,14 @@ public class Membership {
     }
 
     public Membership(String type) {
-
-       this.type = membershipTypeValidation(type);
-
         this.startDate = LocalDateTime.now();
+
+        this.type = membershipTypeValidation(type);
+        if (type == "Family Plan") {
+            System.out.println(membershipFamily.getMembers());
+        }
         // this.duration = duration;
     }
-    // to handle the family membership we will need a new class of Family
 
     // GETTERS
 
@@ -49,10 +51,18 @@ public class Membership {
         return this.duration;
     }
 
+    public Family getFamily() {
+        return this.membershipFamily;
+    }
+
     // SETTERS
 
     public void setType(String type) {
         this.type = membershipTypeValidation(type);
+    }
+
+    public void setFamily(Family family) {
+        this.membershipFamily = family;
     }
 
     // public void setDuration(String duration) {
@@ -64,10 +74,11 @@ public class Membership {
     }
 
     private String membershipTypeValidation(String type) {
-        if (type != "Normal" && type != "Trial" && type != "Special Offer" && type != "Family Plan" && type != "Other") {
+        if (type != "Normal" && type != "Trial" && type != "Special Offer" && type != "Family Plan"
+                && type != "Other") {
             System.out.println("Error! Membership must be a proper type!");
         } else {
-           return type;
+            return type;
         }
         return null;
     }
