@@ -1,19 +1,6 @@
 {
-    "Member": [ 
-    { 
-        "id": 1,
-        "name":"Ashley", 
-        "age": 30
-    },
-    { 
-        "id": 2,
-        "name":"Mike", 
-        "age": 30
-    },
-    { 
-        "id": 3,
-        "name":"Stephen", 
-        "age": 30
-    }
-]
+    "name": "Sherlock Holmes",
+    "address": "221B Baker Street",
+    "email": "s.holems@mysterysolvers.com",
+    "phone": 4207777
 }

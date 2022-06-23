@@ -1,4 +1,4 @@
-package com.keyin.member.CRUD;
+package com.keyin.member.CRUD.MayDelete;
 
 import java.util.UUID;
     import java.util.Date;
