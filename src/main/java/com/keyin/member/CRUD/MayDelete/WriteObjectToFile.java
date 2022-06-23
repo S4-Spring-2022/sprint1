@@ -1,4 +1,4 @@
-package com.keyin.member.CRUD;
+package com.keyin.member.CRUD.MayDelete;
 
 import java.io.File;
 import java.io.FileWriter;

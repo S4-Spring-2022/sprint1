@@ -1,10 +1,16 @@
 {
-	"Member": [	
-	{
-		"Name": "Michael",
-		"Address": "21 Main Street",
-		"Email": "mike@me.com",
-		"Phone": "777-1234"
-	}	
-]
+	"members": [
+		{
+		"name": "Sherlock Holmes",
+		"address": "221B Baker Street",
+		"email": "s.holmes@mysterysolvers.com",
+		"phone": 4207777
+		},
+		{
+			"name": "John H. Watson",
+			"address": "221B Baker Street",
+			"email": "j.watson@mysterysolvers.com",
+			"phone": 4208888
+		}
+	]
 }
