@@ -13,7 +13,8 @@ public class JsonParsingJackson {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            MembersArray membersObj = mapper.readValue(new File("/Users/michaeloreilly/Desktop/VSCode/SD4/SDAT/Sprint1/sprint1/src/main/java/com/keyin/member/data/memberData2.json"), MembersArray.class);
+
+            MembersArray membersObj = mapper.readValue(new File( "sprint1/src/main/java/com/keyin/member/data/memberData2.json"), MembersArray.class);
             System.out.println();
             System.out.println("Members;");
             System.out.println();

@@ -100,10 +100,10 @@ public class Member extends Person {
         return "Member name: " + memberName + "\n"
                 + "Address: " + memberAddress + "\n"
                 + "Email: " + memberEmail + "\n"
-                + "Phone: " + memberPhone + "\n";
+                + "Phone: " + memberPhone + "\n"
         // + "Membership Start Date: " + memberStartDate + "\n"
         // + "Membership Duration: " + memberDuration + "\n"
-        // + "Member Type: " + memberType + "\n";
+                + "Member Type: " + membership + "\n";
     }
 
     // this method is probably unnecesary as the constructor will call a start date
