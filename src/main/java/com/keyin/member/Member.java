@@ -2,12 +2,6 @@ package com.keyin.member;
 
 public class Member extends Person {
 
-    private String memberName;
-    private String memberAddress;
-    private String memberEmail;
-    private int memberPhone;
-    // private Date memberStartDate;
-    // private String memberDuration;
     private Membership membership;
     public static int memberCount = 0;
 
@@ -38,19 +32,19 @@ public class Member extends Person {
     // GETTERS
 
     public String getName() {
-        return this.memberName;
+        return this.name;
     }
 
     public String getAddress() {
-        return this.memberAddress;
+        return this.address;
     }
 
     public String getEmail() {
-        return this.memberEmail;
+        return this.email;
     }
 
     public int getPhone() {
-        return this.memberPhone;
+        return this.phone;
     }
 
     public Family getFamily() {
@@ -77,19 +71,19 @@ public class Member extends Person {
     // Will memberType be an object or a string?
 
     public void setName(String name) {
-        this.memberName = name;
+        this.name = name;
     }
 
     public void setAddress(String address) {
-        this.memberAddress = address;
+        this.address = address;
     }
 
     public void setEmail(String email) {
-        this.memberEmail = email;
+        this.email = email;
     }
 
     public void setPhone(int phone) {
-        this.memberPhone = phone;
+        this.phone = phone;
     }
 
     // will membership types be defined as objects or strings?
@@ -101,10 +95,10 @@ public class Member extends Person {
     }
 
     public String toString() {
-        return "Member name: " + memberName + "\n"
-                + "Address: " + memberAddress + "\n"
-                + "Email: " + memberEmail + "\n"
-                + "Phone: " + memberPhone + "\n"
+        return "Member name: " + name + "\n"
+                + "Address: " + address + "\n"
+                + "Email: " + email + "\n"
+                + "Phone: " + phone + "\n"
                 // + "Membership Start Date: " + memberStartDate + "\n"
                 // + "Membership Duration: " + memberDuration + "\n"
                 + "Member Type: " + membership + "\n";
