@@ -1,6 +1,8 @@
 package com.keyin.member;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 // we need to be able to: parse a formatted date string into a LocalDateTime object, done
@@ -10,11 +12,12 @@ public class Tournament {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String location;
-    private double entryFee; // Money or long, not double?
+    private double entryFee; // Money or long, not double? 
     private double prizeAmount;
     //private String players; // String? "5" ... Should it be called from Member class using name?
     // Final standings?
     private TournamentRoster players;
+    private List<Member> winners;
 
     public Tournament() {
         this.startDate = LocalDateTime.now();
@@ -26,13 +29,13 @@ public class Tournament {
         // final standings?
     }
 
-    public Tournament(String startDate, String endDate, String loc, double fee, double prize, TournamentRoster players) {
+    public Tournament(String startDate, String endDate, String loc, double fee, double prize) {
         this.startDate = LocalDateTime.parse(startDate);
         this.endDate = LocalDateTime.parse(endDate);
         this.location = loc;
         this.entryFee = fee;
         this.prizeAmount = prize;
-        this.players = players;
+        this.players = null;
         // final standings?
     }
 
@@ -104,6 +107,13 @@ public class Tournament {
         this.players.addMember(player);
     }
 
+    public void setWinners(Member first, Member second, Member third) {
+        this.winners = new ArrayList<Member>();
+        this.winners.add(first);
+        this.winners.add(second);
+        this.winners.add(third);
+    }
+
     public String toString() {
         return "Tournament Information: " + "\n"
                 + "Start Date:" + startDate + "\n"
@@ -111,6 +121,7 @@ public class Tournament {
                 + ", Location: " + location + "\n"
                 + "Entry Fee: " + entryFee + "\n"
                 + ", Prize Amount: " + prizeAmount + "\n"
-                + ", Number of Players: " + players.getNumberOfMembers();
+                + ", Number of Players: " + players.getNumberOfMembers() + "\n"
+                + (winners == null ? "" : "Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: " + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n");
     }
 }

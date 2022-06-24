@@ -29,6 +29,19 @@ public class TournamentService {
             case 1:
                 System.out.println("You have chosen to create a tournament.");
                 // use the sccanner to get the tournament details
+                System.out.println("Enter the start date of the tournament in the format YYYY-MM-DDTHH:MM:SS");
+                String startDate = input.next();
+                System.out.println("Enter the end date of the tournament in the format YYYY-MM-DDTHH:MM:SS or 0 if unknown");
+                // need to revisit this validation logic, it's likely to cause issues
+                String endDate = input.next();
+                if (endDate == "0") {
+                    endDate = "";
+                } else {
+                    endDate = input.next();
+                }
+                System.out.println("Enter the location of the tournament");
+                String location = input.next();
+                
                 // call the tournament constructor to create an instance of the tournament
                 // confirm the tournament was created correctly
                 // add the tournament to the tournament list
