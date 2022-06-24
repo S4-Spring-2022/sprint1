@@ -79,20 +79,21 @@ public class CLI {
                 }
             if (choiceInt == 2) {
                 System.out.println("------------------");
-                System.out.println("1. Search Tournaments by Location");
+                System.out.println("1. Search Tournaments by name");
                 System.out.println("2. Display all Tournaments");
                 int tournamentSearchChoice;
                 tournamentSearchChoice = scanner.nextInt();
                 if (tournamentSearchChoice == 1) {
-                    System.out.println(" Enter Location of tournament");
-                    String TournyLocation = scanner.next();
+                    System.out.println(" Enter Name of tournament");
+                    String TournyName = scanner.next();
                     System.out.println("show tourny details"); // enter search for exact tourny when array is made
                     MainArray mainArray = new MainArray();
                     TournamentArray tournys = new TournamentArray();
                     System.out.println(tournys);
-                    Optional<Tournament> array = tournys.selectTournamentByLocation(TournyLocation);
+                    Optional<Tournament> array = tournys.selectTournamentByName(TournyName);
                     System.out.println(array);
                     Tournament tournament = array.get();
+                    System.out.println((tournament.getTourneyName()));
                     System.out.println(tournament.getLocation());
                     System.out.println(tournament.getEntryFee());
                     System.out.println(tournament.getCashPrizeAmount());
@@ -110,7 +111,7 @@ public class CLI {
                     TournamentArray tournys = new TournamentArray();
                     for (int i = 0; i < tournys.selectAllTournaments().size(); i++){
                         Tournament tournamentlist = tournys.selectAllTournaments().get(i);
-                        System.out.println(tournamentlist.getLocation());
+                        System.out.println(tournamentlist.getTourneyName());
                     }
                 }
 

@@ -2,6 +2,7 @@ package Tournament;
 import java.util.ArrayList;
 
 public class Tournament {
+    private String tourneyName;
     private String startDate;
     private String endDate;
     private String location;
@@ -11,7 +12,8 @@ public class Tournament {
     private ArrayList<String> finalStandings; //if tournament is over
 
 
-    public Tournament( String startDate,
+    public Tournament(String tourneyName,
+                      String startDate,
                       String endDate,
                       String location,
                       double entryFee,
@@ -19,6 +21,7 @@ public class Tournament {
                       ArrayList<String> participatingMembers,
                       ArrayList<String> finalStandings
     ){
+        this.tourneyName = tourneyName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.location = location;
@@ -28,6 +31,7 @@ public class Tournament {
         this.finalStandings = finalStandings;
 
     }
+    public String getTourneyName(){return tourneyName;}
     public String getStartDate(){return startDate;}
     public String getEndDate(){return endDate;}
     public String getLocation(){return location;}

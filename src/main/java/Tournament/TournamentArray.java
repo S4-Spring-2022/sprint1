@@ -10,12 +10,16 @@ public class TournamentArray {
 
 
         public int insertTournament(Tournament tournament) {
-            DB.add(new Tournament(tournament.getStartDate(), tournament.getEndDate(), tournament.getLocation(), tournament.getEntryFee(), tournament.getCashPrizeAmount(), tournament.getParticipatingMembers(), tournament.getFinalStandings()));
+            DB.add(new Tournament( tournament.getTourneyName(), tournament.getStartDate(), tournament.getEndDate(), tournament.getLocation(), tournament.getEntryFee(), tournament.getCashPrizeAmount(), tournament.getParticipatingMembers(), tournament.getFinalStandings()));
             return 1;
         }
 
         public List<Tournament> selectAllTournaments() {
             return DB;
+        }
+
+        public Optional<Tournament> selectTournamentByName(String tourneyName) {
+            return DB.stream().filter((tournament) -> tournament.getTourneyName().equals(tourneyName)).findFirst();
         }
 
         public Optional<Tournament> selectTournamentByStartDate(String startDate) {

@@ -71,11 +71,12 @@ public class MainArray {
         membArray.insertMember(m3);
         membArray.insertMember(m4);
 
-        Tournament t1 = new Tournament("2019", "2020", "St.johns NL",60.50,450.00, new ArrayList(Arrays.asList("Johnathon Dunne")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta", "random woman from Quebec", "random man from Toronto")));
-        Tournament t2 = new Tournament("2020", "2021", "Quebec City, QC",70.00,500.00, new ArrayList(Arrays.asList("Johnathon Dunne")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta", "random woman from Quebec", "random man from Toronto")));
-        Tournament t3 = new Tournament("2021", "2022", "Edmonton, AB ",50.00,300.00, new ArrayList(Arrays.asList("Johnathon Dunne", "Nicholas Dobbin", "Da missus")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta","Nicholas Dobbin", "random woman from Quebec","Da missus", "random man from Toronto")));
-        Tournament t4 = new Tournament("2022", "2023", "Toronto, ON",150.00,2500.00, new ArrayList(Arrays.asList("Johnathon Dunne", "Nicholas Dobbin", "Da missus", "Shane Dwyer")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta","Nicholas Dobbin", "random woman from Quebec","Da Missus", "random man from Toronto", "Shane Dwyer")));
-        Tournament t5 = new Tournament("2023", "", "St.Johns, NL",175.00,2700.00, new ArrayList(Arrays.asList("Johnathon Dunne", "Nicholas Dobbin", "Da missus", "Shane Dwyer")),new ArrayList(Arrays.asList("")));
+        Tournament t1 = new Tournament("Golf","2019", "2020", "St.johns NL",60.50,450.00, new ArrayList(Arrays.asList("Johnathon Dunne")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta", "random woman from Quebec", "random man from Toronto")));
+        Tournament t2 = new Tournament("Golf-2","2020", "2021", "Quebec City, QC",70.00,500.00, new ArrayList(Arrays.asList("Johnathon Dunne")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta", "random woman from Quebec", "random man from Toronto")));
+        Tournament t3 = new Tournament("Golf-3","2021", "2022", "Edmonton, AB ",50.00,300.00, new ArrayList(Arrays.asList("Johnathon Dunne", "Nicholas Dobbin", "Da missus")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta","Nicholas Dobbin", "random woman from Quebec","Da missus", "random man from Toronto")));
+        Tournament t4 = new Tournament("Golf-4","2022", "2023", "Toronto, ON",150.00,2500.00, new ArrayList(Arrays.asList("Johnathon Dunne", "Nicholas Dobbin", "Da missus", "Shane Dwyer")),new ArrayList(Arrays.asList("Johnathon Dunne", "Random man from alberta","Nicholas Dobbin", "random woman from Quebec","Da Missus", "random man from Toronto", "Shane Dwyer")));
+        Tournament t5 = new Tournament("Golf-5","2023", "", "St.Johns, NL",175.00,2700.00, new ArrayList(Arrays.asList("Johnathon Dunne", "Nicholas Dobbin", "Da missus", "Shane Dwyer")),new ArrayList(Arrays.asList("")));
+        Tournament t6 = new Tournament("Golf 6","2023", "", "St.Johns, NL",175.00,2700.00, new ArrayList(Arrays.asList("Johnathon Dunne", "Nicholas Dobbin", "Da missus", "Shane Dwyer")),new ArrayList(Arrays.asList("")));
 
         TournamentArray tournamentArray = new TournamentArray();
         tournamentArray.insertTournament(t1);
@@ -83,6 +84,7 @@ public class MainArray {
         tournamentArray.insertTournament(t3);
         tournamentArray.insertTournament(t4);
         tournamentArray.insertTournament(t5);
+        tournamentArray.insertTournament(t6);
 
 
     }

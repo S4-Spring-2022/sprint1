@@ -19,11 +19,11 @@ public class TournamentTest {
     @InjectMocks
     private TournamentArray arrayUnderTest;
     //    Mock Tournament Data
-    Tournament t1 = new Tournament("2021-06-01", "2021-06-05", "St. John's", 100.00, 5000.00,
+    Tournament t1 = new Tournament("Golf 1","2021-06-01", "2021-06-05", "St. John's", 100.00, 5000.00,
             new ArrayList<String>(Arrays.asList("Jon Dunne", "Nick Dobbin", "Shane Dwyer", "Jamie Cornick")),
             new ArrayList<String>(Arrays.asList("Jamie Cornick", "Nick Dobbin", "Jon Dunne", "Shane Dwyer"))
     );
-    Tournament t2 = new Tournament("2022-06-01", "2022-06-05", "Mount Pearl", 100.00, 10000.00,
+    Tournament t2 = new Tournament("Golf 1","2022-06-01", "2022-06-05", "Mount Pearl", 100.00, 10000.00,
             new ArrayList<String>(Arrays.asList("Jamie Cornick", "Jon Dunne", "Nick Dobbin", "Shane Dwyer")),
             new ArrayList<String>(Arrays.asList("Jon Dunne", "Nick Dobbin", "Shane Dwyer", "Jamie Cornick"))
     );
