@@ -30,11 +30,13 @@ public class CLI {
             System.out.println("1. Search Members");
             System.out.println("2. Search Tournaments");
             System.out.println("3. Exit");
+            System.out.print("Please enter your choice 1, 2 or 3: ");
             int choiceInt = scanner.nextInt();
             if (choiceInt == 1) {
                     System.out.println("------------------");
                     System.out.println("1. Search Member by Name");
                     System.out.println("2. Display all Members");
+                    System.out.print("Please enter your choice 1 or 2: ");
                 int memberSearchChoice;
                 memberSearchChoice = scanner.nextInt();
                 if (memberSearchChoice == 1) {
@@ -43,11 +45,39 @@ public class CLI {
                     System.out.print("  Enter Member Last Name: ");
                     String memberLastName = scanner.next();
                     String memberName = memberFirstName + " " + memberLastName;
-                    System.out.println("Show Member By Name"); // enter search for member by name when array is made
                     MainArray mainArray = new MainArray();
                     MemberArray members = new MemberArray();
                     Optional<Member> array = members.selectMemberByName(memberName);
+                    if (array.isEmpty()) {
+                        while (array.isEmpty()){
+
+                            System.out.println("No users found");
+                            System.out.println("------------------");
+                            System.out.println("1. Search Member by Name");
+                            System.out.println("2. Exit");
+                            System.out.print("Please enter your choice, 1 or 2: ");
+                            int memberCatch = scanner.nextInt();
+                            if(memberCatch == 1) {
+                                System.out.print("  Enter Member First Name: ");
+                                String catchMemberFirstName = scanner.next();
+                                System.out.print("  Enter Member Last Name: ");
+                                String catchMemberLastName = scanner.next();
+                                String catchMemberName = catchMemberFirstName + " " + catchMemberLastName;
+                                MainArray catchMainArray = new MainArray();
+                                MemberArray catchMembers = new MemberArray();
+                                Optional<Member> catchArray = catchMembers.selectMemberByName(catchMemberName);
+                                if (catchArray.isPresent()){
+                                    array = catchArray;
+                                }
+                            }
+                            if(memberCatch == 2) {
+                                exit = true;
+                            }
+                        };
+
+                    }
                     Member member = array.get();
+                    System.out.println("Details of Member");
                     System.out.println(("Member Name: " + member.getMemberName()));
                     System.out.println(("Member Address: " + member.getMemberAddress()));
                     System.out.println(("Member Email: " + member.getMemberEmail()));
@@ -81,18 +111,42 @@ public class CLI {
                 System.out.println("------------------");
                 System.out.println("1. Search Tournaments By Name");
                 System.out.println("2. Display All Tournaments");
+                System.out.print("Please enter your choice 1 or 2: ");
                 int tournamentSearchChoice;
                 tournamentSearchChoice = scanner.nextInt();
                 if (tournamentSearchChoice == 1) {
                     System.out.println(" Enter Name Of Tournament");
                     String TournyName = scanner.next();
-                    System.out.println("Show Tournament Details"); // enter search for exact tourny when array is made
                     MainArray mainArray = new MainArray();
                     TournamentArray tournys = new TournamentArray();
-                    System.out.println(tournys);
                     Optional<Tournament> array = tournys.selectTournamentByName(TournyName);
-                    System.out.println(array);
+                    if (array.isEmpty()) {
+                        while (array.isEmpty()){
+
+                            System.out.println("No Tournaments by that name found");
+                            System.out.println("------------------");
+                            System.out.println("1. Search Tournament by Name");
+                            System.out.println("2. Exit");
+                            System.out.print("Please enter your choice, 1 or 2: ");
+                            int memberCatch = scanner.nextInt();
+                            if(memberCatch == 1) {
+                                System.out.print("  Enter Tournament Name: ");
+                                String catchTournamentName = scanner.next();
+                                MainArray catchMainArray = new MainArray();
+                                TournamentArray catchTournys = new TournamentArray();
+                                Optional<Tournament> catchArray = catchTournys.selectTournamentByName(catchTournamentName);
+                                if (catchArray.isPresent()){
+                                    array = catchArray;
+                                }
+                            }
+                            if(memberCatch == 2) {
+                                exit = true;
+                            }
+                        };
+
+                    }
                     Tournament tournament = array.get();
+                    System.out.println("Details of Tournament");
                     System.out.println(("Tournament Name: " + tournament.getTourneyName()));
                     System.out.println(("Location: " + tournament.getLocation()));
                     System.out.println(("Entry Fee: " + tournament.getEntryFee()));
