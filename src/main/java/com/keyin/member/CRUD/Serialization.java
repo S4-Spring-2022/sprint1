@@ -14,50 +14,35 @@ public class Serialization {
         String pathName = "sprint1/src/main/java/com/keyin/member/data/memberData.json";
         ObjectMapper mapper = new ObjectMapper();
         
+        
         try {
-            Member member = new Member();
-            Member member2 = new Member();
-            Member member3= new Member();
+            Member member = new Member("Sherlock Holmes","221B Baker Street","s.holmes@mysterysolvers.com",4207777, "Normal");
+            // member.setName("Sherlock Holmes");
+            // member.setAddress("221B Baker Street");
+            // member.setEmail("s.holmes@mysterysolvers.com");
+            // member.setPhone(4207777);
 
-               member.setName("Sherlock Holmes");
-               member.setAddress("221B Baker Street");
-               member.setEmail("s.holmes@mysterysolvers.com");
-               member.setPhone(4207777);
+            Member member2 = new Member("Sherlock Holmes2","221B Baker Street","s.holmes@mysterysolvers.com",4207777, "Normal");
+            // member2.setName("John Watson");
+            // member2.setAddress("221B Baker Street");
+            // member2.setEmail("j.watson@mysterysolvers.com");
+            // member2.setPhone(4208888);
 
-               member2.setName("John H. Watson");
-               member2.setAddress("221B Baker Street");
-               member2.setEmail("j.watson@mysterysolvers.com");
-               member2.setPhone(4208888);
+            Member member3 = new Member("Sherlock Holmes3","221B Baker Street","s.holmes@mysterysolvers.com",4207777, "Normal");
+            // member3.setName("Inspector Lestrade");
+            // member3.setAddress("221B Baker Street");
+            // member3.setEmail("mycroftholmes@mysterysolvers.com");
+            // member3.setPhone(4209999);
 
-               member3.setName("Mycroft Holmes");
-               member3.setAddress("221B Baker Street");
-               member3.setEmail("mycroftholmes@mysterysolvers.com");
-               member3.setPhone(4209999);
+            MembersArray membersArray = new MembersArray();
+            membersArray.addMember(member);
+            membersArray.addMember(member2);
+            membersArray.addMember(member3);
 
-            MembersArray members = new MembersArray();
-            members.add(member);
-            members.add(member2);
-            members.add(member3);
-            
+            mapper.writeValue( new File(pathName), membersArray );
 
-            members.addMember(member);
-            members.addMember(member2);
-            members.addMember(member3);
+            System.out.println(membersArray);
 
-            String memberInfo = mapper.writeValueAsString(members);
-            // String memberInfo2 = mapper.writeValueAsString(member2);
-            // String memberInfo3 = mapper.writeValueAsString(member3);
-            
-            mapper.writeValue( new File(pathName), member );
-            mapper.writeValue( new File(pathName), member2 );
-            mapper.writeValue( new File(pathName), member3 );
-
-            System.out.println();
-            System.out.println("Serialized member to JSON file");
-            System.out.println(memberInfo);
-            System.out.println(memberInfo2);
-            System.out.println(memberInfo3);
-            System.out.println();
             
 
         } catch (IOException e) {

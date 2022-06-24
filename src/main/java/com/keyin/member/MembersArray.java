@@ -1,22 +1,60 @@
 package com.keyin.member;
 
-public class MembersArray extends Member {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MembersArray {
 
-    private MembersArray[] members;
+    private List<Member> members;
 
     public MembersArray() {
-        members = new MembersArray[10];
+        this.members = new ArrayList();
     }
 
-    public MembersArray[] getMembers() {
-        return members;
-    }
-
-    public void setMembers(MembersArray[] members) {
+    public MembersArray(List<Member> members) {
         this.members = members;
     }
 
-    
-    
+    public List<Member> getMembers() {
+        return members;
+    }
+
+    // public void setMembers(List<Member> members) {
+    //     this.members = members;
+    // }
+
+    public void addMember(Member member) {
+        this.members.add(member);
+    }
 }
+    
+     
+
+
+
+
+
+
+
+
+
+
+
+    // private MembersArray[] members;
+
+    // public MembersArray() {
+    //     members = new MembersArray[10];
+    // }
+
+    // public MembersArray[] getMembers() {
+    //     return members;
+    // }
+
+    // public void setMembers(MembersArray[] members) {
+    //     this.members = members;
+    // }
+
+    // public void addMember(Member member) {
+    //     this.members[0] = member;
+    // }
+
