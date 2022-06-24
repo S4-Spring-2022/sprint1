@@ -38,37 +38,37 @@ public class CLI {
                 int memberSearchChoice;
                 memberSearchChoice = scanner.nextInt();
                 if (memberSearchChoice == 1) {
-                    System.out.print("  Enter member first name: ");
+                    System.out.print("  Enter Member First Name: ");
                     String memberFirstName = scanner.next();
-                    System.out.print("  Enter member last name: ");
+                    System.out.print("  Enter Member Last Name: ");
                     String memberLastName = scanner.next();
                     String memberName = memberFirstName + " " + memberLastName;
-                    System.out.println("Show member by name"); // enter search for member by name when array is made
+                    System.out.println("Show Member By Name"); // enter search for member by name when array is made
                     MainArray mainArray = new MainArray();
                     MemberArray members = new MemberArray();
                     Optional<Member> array = members.selectMemberByName(memberName);
                     Member member = array.get();
-                    System.out.println(member.getMemberName());
-                    System.out.println(member.getMemberAddress());
-                    System.out.println(member.getMemberEmail());
-                    System.out.println(member.getMemberPhone());
-                    System.out.println(member.getMembershipStartDate());
-                    System.out.println(member.getMembershipDuration());
-                    System.out.println(member.getMembershipType());
-                    System.out.println(member.getMembershipFamilyMembers());
-                    System.out.println(member.getPastTournaments());
-                    System.out.println(member.getCurrentTournaments());
-                    System.out.println(member.getUpcomingTournaments());
+                    System.out.println(("Member Name: " + member.getMemberName()));
+                    System.out.println(("Member Address: " + member.getMemberAddress()));
+                    System.out.println(("Member Email: " + member.getMemberEmail()));
+                    System.out.println(("Member Phone: " + member.getMemberPhone()));
+                    System.out.println(("Membership Start Date: " + member.getMembershipStartDate()));
+                    System.out.println(("Membership Duration: " + member.getMembershipDuration()));
+                    System.out.println(("Membership Type: " + member.getMembershipType()));
+                    System.out.println(("Membership Family Members: " + member.getMembershipFamilyMembers()));
+                    System.out.println(("Past Tournaments: " + member.getPastTournaments()));
+                    System.out.println(("Current Tournaments: " + member.getCurrentTournaments()));
+                    System.out.println(("Upcoming tournaments: " + member.getUpcomingTournaments()));
 
 
                 }
                 if (memberSearchChoice == 2){
-                    System.out.println("show all members"); // enter search for all members when array is made
+                    System.out.println("Show All Members"); // enter search for all members when array is made
                 MainArray mainArray = new MainArray();
                     MemberArray members = new MemberArray();
                     for (int i = 0; i < members.selectAllMembers().size(); i++){
                         Member memberlist = members.selectAllMembers().get(i);
-                        System.out.println("Member Name: " + memberlist.getMemberName());
+                        System.out.println("Member List: " + memberlist.getMemberName());
                     }
 
 
@@ -79,39 +79,39 @@ public class CLI {
                 }
             if (choiceInt == 2) {
                 System.out.println("------------------");
-                System.out.println("1. Search Tournaments by name");
-                System.out.println("2. Display all Tournaments");
+                System.out.println("1. Search Tournaments By Name");
+                System.out.println("2. Display All Tournaments");
                 int tournamentSearchChoice;
                 tournamentSearchChoice = scanner.nextInt();
                 if (tournamentSearchChoice == 1) {
-                    System.out.println(" Enter Name of tournament");
+                    System.out.println(" Enter Name Of Tournament");
                     String TournyName = scanner.next();
-                    System.out.println("show tourny details"); // enter search for exact tourny when array is made
+                    System.out.println("Show Tournament Details"); // enter search for exact tourny when array is made
                     MainArray mainArray = new MainArray();
                     TournamentArray tournys = new TournamentArray();
                     System.out.println(tournys);
                     Optional<Tournament> array = tournys.selectTournamentByName(TournyName);
                     System.out.println(array);
                     Tournament tournament = array.get();
-                    System.out.println(("Tournament name: " + tournament.getTourneyName()));
-                    System.out.println(tournament.getLocation());
-                    System.out.println(tournament.getEntryFee());
-                    System.out.println(tournament.getCashPrizeAmount());
-                    System.out.println(tournament.getStartDate());
-                    System.out.println(tournament.getEndDate());
-                    System.out.println(tournament.getParticipatingMembers());
-                    System.out.println(tournament.getFinalStandings());
+                    System.out.println(("Tournament Name: " + tournament.getTourneyName()));
+                    System.out.println(("Location: " + tournament.getLocation()));
+                    System.out.println(("Entry Fee: " + tournament.getEntryFee()));
+                    System.out.println(("Cash Prize Amount: " + tournament.getCashPrizeAmount()));
+                    System.out.println(("Start Date: " + tournament.getStartDate()));
+                    System.out.println(("End Date: " + tournament.getEndDate()));
+                    System.out.println(("Participating Members: " + tournament.getParticipatingMembers()));
+                    System.out.println(("Final Standings: " + tournament.getFinalStandings()));
 
 
 
                 }
                 if (tournamentSearchChoice == 2) {
-                    System.out.println("display all tournaments"); // enter search for all tournys when array is made
+                    System.out.println("Display All Tournaments"); // enter search for all tournys when array is made
                     MainArray mainArray = new MainArray();
                     TournamentArray tournys = new TournamentArray();
                     for (int i = 0; i < tournys.selectAllTournaments().size(); i++){
                         Tournament tournamentlist = tournys.selectAllTournaments().get(i);
-                        System.out.println(tournamentlist.getTourneyName());
+                        System.out.println(("Tournament List: " + tournamentlist.getTourneyName()));
                     }
                 }
 
