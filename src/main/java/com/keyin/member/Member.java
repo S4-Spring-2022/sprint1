@@ -1,3 +1,5 @@
+
+
 package com.keyin.member;
 
 
@@ -94,9 +96,10 @@ public class Member {
         return duration;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public String toString() {
+        return("First Name: " + getMemberFirstName() + " , " + "Last Name: " + getMemberLastName() + "\n" +
+                "Address: " + getMemberAddress() + " , " + "Email: " + getEmail() + " , " + "Phone Number: " + getPhoneNumber() + "\n" +
+                "Membership Duration: " + getDuration());
     }
 }
 
