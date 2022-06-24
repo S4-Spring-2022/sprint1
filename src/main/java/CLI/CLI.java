@@ -68,7 +68,7 @@ public class CLI {
                     MemberArray members = new MemberArray();
                     for (int i = 0; i < members.selectAllMembers().size(); i++){
                         Member memberlist = members.selectAllMembers().get(i);
-                        System.out.println(memberlist.getMemberName());
+                        System.out.println("Member Name: " + memberlist.getMemberName());
                     }
 
 
@@ -93,7 +93,7 @@ public class CLI {
                     Optional<Tournament> array = tournys.selectTournamentByName(TournyName);
                     System.out.println(array);
                     Tournament tournament = array.get();
-                    System.out.println((tournament.getTourneyName()));
+                    System.out.println(("Tournament name: " + tournament.getTourneyName()));
                     System.out.println(tournament.getLocation());
                     System.out.println(tournament.getEntryFee());
                     System.out.println(tournament.getCashPrizeAmount());
