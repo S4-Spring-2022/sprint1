@@ -1,6 +1,7 @@
 package com.keyin.member;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MemberService {
@@ -38,6 +39,14 @@ public class MemberService {
         // ** hard coded member array construction before starting the CLI **
         // ^^ create @ least three members and store them in a MemberArray
 
+        ArrayList<Member> members = new ArrayList<Member>();
+
+        members.add(new Member("Ashley", "123 Main St", "ash@gmail.com", 5551234, "Normal"));
+        members.add(new Member("Joe", "456 Main St", "joe@gmail.com", 5557890, "Other"));
+        members.add(new Member("Jane", "789 Main St", "jane@gmail.com", 5554321, "Trial"));
+
+        System.out.println(members); // print?
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println();
@@ -70,8 +79,8 @@ public class MemberService {
                 System.out.println("Enter your membership type: ");
                 String type = scanner.next();
 
-                Member member = new Member(name, address, email, phone, type);
-                System.out.println("Member created!" + "\n" + member); // type showing null
+                Member newMember = new Member(name, address, email, phone, type);
+                System.out.println("Member created!" + "\n" + newMember); // type showing null
                 System.out.println();
 
                 // we will use the provided information to create a member1
@@ -79,7 +88,7 @@ public class MemberService {
                 // then we will write the list to the file
                 break;
             case 2:
-            // *** very much a stretch goal ***
+                // *** very much a stretch goal ***
                 System.out.println("You have chosen to edit a member!");
                 // the logic for this step will be much trickier than the create step
                 // Look up member by unique identifier
@@ -91,7 +100,7 @@ public class MemberService {
                 // finally we will write the list to the file
                 break;
             case 3:
-            /// *** very much a stretch goal ***
+                /// *** very much a stretch goal ***
                 System.out.println("You have chosen to delete a member!");
                 // Deletion is tricky because we don't like data destruction.
                 // several validation steps will be required
@@ -108,19 +117,29 @@ public class MemberService {
                 System.out.println("You have chosen to view all members!");
 
                 Scanner scanner2 = new Scanner(System.in);
-        
+
                 System.out.println("To view all members, enter 1");
                 System.out.println("To view all members by membership type, enter 2");
                 System.out.println("To view all members by status, enter 3");
                 System.out.println("To view a specific member, enter 4");
-                System.out.println("Is another look up required? Y/N"); // ?
                 int choice2 = scanner2.nextInt();
 
                 switch (choice2) {
                     case 01:
                         System.out.println("You have chosen to view all members!");
-                        String all = scanner2.next();
+                        // String all = scanner2.next();
                         // how to view all members?
+
+                        Scanner scanner3 = new Scanner(System.in);
+                        System.out.println("Is another look up required? Enter 1 for YES, enter 2 for NO");
+                        int choice3 = scanner3.nextInt();
+
+                        switch (choice3) {
+                            case 001:
+                                if (choice3 == 1) {
+                                    scanner2.nextInt(); // how do we loop back to original choices?
+                                }
+                        }
 
                     case 02:
                         System.out.println("You have chosen to view all members by membership type!");
@@ -139,9 +158,6 @@ public class MemberService {
                         System.out.println("Enter member name: ");
                         String memberName = scanner2.next();
                         // how to view a specific member?
-
-                    case 05:
-
                 }
                 break;
             // this option will probably contain sub options for:
