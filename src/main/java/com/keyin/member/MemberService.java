@@ -78,17 +78,16 @@ public class MemberService {
                 String type = scanner.next();
 
                 Member newMember = new Member(name, address, email, phone, type);
-                System.out.println("Member created!" + "\n" + newMember); // type showing null
+                System.out.println("Member created!" + "\n" + newMember);
                 System.out.println();
 
-         
                 // then we will use the member to add to the list of members
                 members.add(newMember);
                 System.out.println("Member added to list!");
                 System.out.println(members);
 
                 // then we will write the list to the file
-                // 
+                //
                 break;
             case 2:
                 // *** very much a stretch goal ***
