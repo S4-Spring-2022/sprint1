@@ -29,15 +29,17 @@ public class Member {
 
 
 
-    public String getMemberFirstName(){
+    public String getMemberFirstName(String firstName){
+
         return memberFirstName;
     }
 
     public void setMemberFirstName(String memberFirstName) {
+
         this.memberFirstName = memberFirstName;
     }
 
-    public String getMemberLastName(){
+    public String getMemberLastName(String lastName){
         return memberFirstName;
     }
 
@@ -45,7 +47,7 @@ public class Member {
         this.memberLastName = memberLastName;
     }
 
-    public String getMemberAddress(){
+    public String getMemberAddress(String place){
         return memberAddress;
     }
 
@@ -53,7 +55,7 @@ public class Member {
         this.memberAddress = memberAddress;
     }
 
-    public String getEmail(){
+    public String getEmail(String s){
         return email;
     }
 
@@ -61,7 +63,7 @@ public class Member {
         this.email = email;
     }
 
-    public String getPhoneNumber(){
+    public String getPhoneNumber(String s){
         return phoneNumber;
     }
 
