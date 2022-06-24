@@ -11,12 +11,13 @@ public class Serialization {
     
     public static void main(String[] args) throws IOException {
          
-        String pathName = "sprint1/src/main/java/com/keyin/member/data/memberData.json";
+        String pathName = "src/main/java/com/keyin/member/data/memberData2.json";
         ObjectMapper mapper = new ObjectMapper();
         
         
         try {
             Member member = new Member("Sherlock Holmes","221B Baker Street","s.holmes@mysterysolvers.com",4207777, "Normal");
+            System.out.println(member);
             // member.setName("Sherlock Holmes");
             // member.setAddress("221B Baker Street");
             // member.setEmail("s.holmes@mysterysolvers.com");
@@ -41,7 +42,7 @@ public class Serialization {
 
             mapper.writeValue( new File(pathName), membersArray );
 
-            System.out.println(membersArray);
+            //System.out.println(membersArray);
 
             
 
