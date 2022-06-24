@@ -35,6 +35,9 @@ public class MemberService {
         // ** member list file versioning? will we save previous versions of the member
         // list for data integrity purposes? **
 
+        // ** hard coded member array construction before starting the CLI **
+        // ^^ create @ least three members and store them in a MemberArray
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println();
@@ -76,6 +79,7 @@ public class MemberService {
                 // then we will write the list to the file
                 break;
             case 2:
+            // *** very much a stretch goal ***
                 System.out.println("You have chosen to edit a member!");
                 // the logic for this step will be much trickier than the create step
                 // Look up member by unique identifier
@@ -87,6 +91,7 @@ public class MemberService {
                 // finally we will write the list to the file
                 break;
             case 3:
+            /// *** very much a stretch goal ***
                 System.out.println("You have chosen to delete a member!");
                 // Deletion is tricky because we don't like data destruction.
                 // several validation steps will be required
@@ -103,6 +108,7 @@ public class MemberService {
                 System.out.println("You have chosen to view all members!");
 
                 Scanner scanner2 = new Scanner(System.in);
+        
                 System.out.println("To view all members, enter 1");
                 System.out.println("To view all members by membership type, enter 2");
                 System.out.println("To view all members by status, enter 3");
