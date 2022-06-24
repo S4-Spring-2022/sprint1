@@ -15,11 +15,14 @@ public class MemberService {
         Member m3 = new Member("Justin Thomas", "25 Birdie Crescent", "TheJT90@gmail.com", "(222)555-1112", "2022-06-22");
         m3.setMembership("2022-06-23", "student", m2);
 
+        Member m4 = new Member("Brandon", "123 yes place", "random@gmail.com", "1231231233", "2022-06-24");
+//        m4.setMembership("2022-06-25", "Standard");
+
         Tournament Masters = new Tournament("The Masters", "2022-04-15","2022-04-19", "Agusta National",500, 2700000);
         Tournament theOpen = new Tournament("The Open", "2023-07-15","2023-07-19", "St Georges",100, 1600000);
         Tournament CAOpen = new Tournament("Canadian Open", "2022-06-20","2022-06-25", "St. Andrews",100, 2000000);
 
-        Member[] members = {m1, m2, m3};
+        Member[] members = {m1, m2, m3, m4};
         Tournament[] tournaments = {Masters, theOpen, CAOpen};
 
         m1.enterTournament(Masters);
@@ -57,6 +60,7 @@ public class MemberService {
 
         //Menu loops -- mocked for just one member
         while (choice != EXIT2) {
+
             if (choice == options2[0]) {
                 System.out.println("Enter Member Name: ");
                 memberChoice = in.nextLine();
@@ -80,9 +84,6 @@ public class MemberService {
                         nameInput.getTourneysCurrent();
                         nameInput.getTourneysPast();
                         nameInput.getTourneysUpcoming();
-                    } else if (choice == 4){
-                        choice = EXIT2;
-                        break;
                     }
 
                     //Display menu
@@ -92,6 +93,9 @@ public class MemberService {
                     choice = in.nextInt();
                     in.nextLine();
                 }
+                choice = EXIT2;
+
+
             } else if (choice == options2[1]) {
                 System.out.println("\nEnter Tournament: ('exit' to end program)");
                 String tourNameInput = in.nextLine();
