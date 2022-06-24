@@ -1,46 +1,64 @@
 package com.keyin.member;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+
+// we need to be able to: parse a formatted date string into a LocalDateTime object, done
 
 public class Tournament {
 
+    private String tournamentName;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String location;
-    private double entryFee; // Money or long, not double?
+    private double entryFee; // Money or long, not double? 
     private double prizeAmount;
-    private String players; // String? "5" ... Should it be called from Member class using name?
+    //private String players; // String? "5" ... Should it be called from Member class using name?
     // Final standings?
-    // private TournamentRoster players;
+    private TournamentRoster players;
+    private List<Member> winners;
 
     public Tournament() {
+        this.tournamentName = "";
         this.startDate = LocalDateTime.now();
-        this.endDate = LocalDateTime.now();
+        this.endDate = null;
         this.location = "";
         this.entryFee = 0;
         this.prizeAmount = 0;
-        this.players = "";
+        this.players = new TournamentRoster();
         // final standings?
     }
 
-    public Tournament(LocalDateTime start, LocalDateTime end, String loc, double fee, double prize, String players) {
-        this.startDate = start;
-        this.endDate = end;
+    public Tournament(String name, String startDate, String endDate, String loc, double fee, double prize) {
+        this.tournamentName = name;
+        this.startDate = LocalDateTime.parse(startDate);
+        this.endDate = LocalDateTime.parse(endDate);
         this.location = loc;
         this.entryFee = fee;
         this.prizeAmount = prize;
-        this.players = players;
+        this.players = new TournamentRoster();
         // final standings?
     }
 
     // GETTERS
+    // added String getters for date fields
 
     public LocalDateTime getStartDate() {
         return this.startDate;
     }
 
+    public String getStartDateString() {
+        return this.startDate.toString();
+    }
+
     public LocalDateTime getEndDate() {
         return this.endDate;
+    }
+
+    public String getEndDateString() {
+        return this.endDate.toString();
     }
 
     public String getLocation() {
@@ -55,7 +73,7 @@ public class Tournament {
         return this.prizeAmount;
     }
 
-    public String getPlayers() {
+    public TournamentRoster getPlayers() {
         return this.players;
     }
 
@@ -63,8 +81,9 @@ public class Tournament {
 
     // SETTERS
 
-    public void setStartDate(LocalDateTime start) {
-        this.startDate = start;
+    public void setStartDate(String start) {
+        // startFormatNeedsToBe = "2020-01-01T00:00:00"
+        this.startDate = LocalDateTime.parse(start);
     }
 
     public void setEndDate(LocalDateTime end) {
@@ -83,17 +102,32 @@ public class Tournament {
         this.prizeAmount = prize;
     }
 
-    public void setPlayers(String players) {
+    public void setPlayers(TournamentRoster players) {
         this.players = players;
     }
 
+    public void addMember(Member player) {
+        this.players.addMember(player);
+    }
+
+    public void setWinners(Member first, Member second, Member third) {
+        this.winners = new ArrayList<Member>();
+        this.winners.add(first);
+        this.winners.add(second);
+        this.winners.add(third);
+    }
+
     public String toString() {
+        String playerMessage = players == null ? "" : ", Number of Players: " + players.getNumberOfMembers() + "\n";
+        String winnerMessage = winners == null ? "" : "Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: " + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n";
         return "Tournament Information: " + "\n"
+                + "Tournament Name: " + this.tournamentName + "\n"
                 + "Start Date:" + startDate + "\n"
                 + ", End Date: " + endDate + "\n"
                 + ", Location: " + location + "\n"
                 + "Entry Fee: " + entryFee + "\n"
                 + ", Prize Amount: " + prizeAmount + "\n"
-                + ", Number of Players: " + players;
+                + playerMessage
+                + winnerMessage;
     }
 }

@@ -24,14 +24,19 @@ public class Family {
         this.familyMembers.add(member);
     }
 
-    // while tis could be a valid constructor, our program doesn't utilize this constructor 
+    // while tis could be a valid constructor, our program doesn't utilize this
+    // constructor
     // public Family(String name, List<Member> members) {
-    //     this.familyName = name;
-    //     this.familyMembers = members;
+    // this.familyName = name;
+    // this.familyMembers = members;
     // }
 
     public void addMember(Member member) {
         this.familyMembers.add(member);
+    }
+
+    public void removeMember(Member member) {
+        this.familyMembers.remove(member);
     }
 
     public String getName() {
@@ -49,5 +54,9 @@ public class Family {
     public void setName(String name) {
         this.familyName = name;
     }
-    
+
+    public String toString() {
+        return "Family members: " + getMembers(); // familyMembers?
+    }
+
 }

@@ -10,7 +10,7 @@ import com.keyin.member.MembersArray;
 public class Serialization {
     
     public static void main(String[] args) throws IOException {
-        
+         
         String pathName = "sprint1/src/main/java/com/keyin/member/data/memberData.json";
         ObjectMapper mapper = new ObjectMapper();
         

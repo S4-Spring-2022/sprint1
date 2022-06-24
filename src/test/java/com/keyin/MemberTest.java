@@ -3,8 +3,6 @@ package com.keyin;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Date;
-
 // not currently using mocking. remember to cut if we don't bring it back to this test suite 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -59,13 +57,12 @@ public class MemberTest {
 
     @Test
     public void testMemberFullConstructor() {
-        Member member = new Member();
-        member.setName("John");
-        member.setAddress("123 Main St");
-        member.setEmail("anemail@email.com");
-        member.setPhone(1234567890);
-        member.setMembership("Other");    
+        Member member = new Member("John", "123 Main St", "anemail.email.com", 1234567890, "Normal");
         System.out.println(member.toString());
+        assertEquals("John", member.getName());
+        assertEquals("123 Main St", member.getAddress());
+        assertEquals("anemail.email.com", member.getEmail());
+        assertEquals(1234567890, member.getPhone());
     }
    
 }
