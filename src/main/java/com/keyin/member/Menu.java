@@ -7,8 +7,6 @@ public class Menu{
     public static void displayMenu(int[] opts, String items[]){
         //Display menu
 //            System.out.println();
-        System.out.println("The Golf Club Data System");
-        System.out.println("------------------");
 
         //Loop through opts and items
         for (int i =0; i < opts.length -1; i++){
@@ -17,9 +15,8 @@ public class Menu{
 
         //Print the Exit option
         System.out.printf("%d. %s\n", opts[opts.length -1], items[items.length -1]);
-        System.out.println("------------------");
 //            System.out.println();
-        System.out.println("Enter choice: ");
+
     }
 
     public static void main(String[] args) {

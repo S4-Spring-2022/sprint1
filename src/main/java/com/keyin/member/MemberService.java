@@ -4,8 +4,10 @@ import org.mockito.internal.configuration.CaptorAnnotationProcessor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
+
 
 public class MemberService {
 
@@ -133,9 +135,6 @@ public class MemberService {
 
     public static void displayMenu(int[] opts, String[] items){
         //Display menu
-//            System.out.println();
-        System.out.println("\nThe Golf Club Data System");
-        System.out.println("------------------");
 
         //Loop through opts and items
         for (int i =0; i < opts.length -1; i++){
@@ -144,9 +143,7 @@ public class MemberService {
 
         //Print the Exit option
         System.out.printf("%d. %s\n", opts[opts.length -1], items[items.length -1]);
-        System.out.println("------------------");
 //            System.out.println();
-        System.out.println("Enter choice: ");
     }
 
     /*
