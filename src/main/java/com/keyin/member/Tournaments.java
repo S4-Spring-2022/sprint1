@@ -23,7 +23,7 @@ public class Tournaments {
 
     }
 
-    public String getTournamentName(String string) {
+    public String getTournamentName() {
         return tournamentName;
     }
 
@@ -31,7 +31,7 @@ public class Tournaments {
         this.tournamentName = tournamentName;
     }
 
-    public String getLocation(String place) {
+    public String getLocation() {
         return location;
     }
 
@@ -39,7 +39,7 @@ public class Tournaments {
         this.location = location;
     }
 
-    public double getEntryFee(double v) {
+    public double getEntryFee() {
         return entryFee;
     }
 
@@ -47,7 +47,7 @@ public class Tournaments {
         this.entryFee = entryFee;
     }
 
-    public String getStartDate(String name) {
+    public String getStartDate() {
         return startDate;
     }
 
@@ -55,7 +55,7 @@ public class Tournaments {
         this.startDate = startDate;
     }
 
-    public String getEndDate(String date) {
+    public String getEndDate() {
         return endDate;
     }
 
@@ -63,7 +63,7 @@ public class Tournaments {
         this.endDate = endDate;
     }
 
-    public double getCashPrizeAmount(double v) {
+    public double getCashPrizeAmount() {
         return cashPrizeAmount;
     }
 

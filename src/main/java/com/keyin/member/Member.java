@@ -11,7 +11,7 @@ public class Member {
     private String email;
     private String phoneNumber;
     private LocalDate startDate;
-    private LocalDate duration;
+    private String duration;
 //    private LocalDate todaysDate;
 
     public Member() {
@@ -29,7 +29,7 @@ public class Member {
 
 
 
-    public String getMemberFirstName(String firstName){
+    public String getMemberFirstName(){
 
         return memberFirstName;
     }
@@ -39,15 +39,15 @@ public class Member {
         this.memberFirstName = memberFirstName;
     }
 
-    public String getMemberLastName(String lastName){
-        return memberFirstName;
+    public String getMemberLastName(){
+        return memberLastName;
     }
 
     public void setMemberLastName(String memberLastName) {
         this.memberLastName = memberLastName;
     }
 
-    public String getMemberAddress(String place){
+    public String getMemberAddress(){
         return memberAddress;
     }
 
@@ -55,7 +55,7 @@ public class Member {
         this.memberAddress = memberAddress;
     }
 
-    public String getEmail(String s){
+    public String getEmail(){
         return email;
     }
 
@@ -63,7 +63,7 @@ public class Member {
         this.email = email;
     }
 
-    public String getPhoneNumber(String s){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
 
@@ -78,18 +78,19 @@ public class Member {
         return startDate;
     }
 
-    public void setDuration(LocalDate duration) {
-        this.duration = duration;
-    }
+//    public void setDuration(LocalDate duration) {
+//        this.duration = duration;
+//    }
 
-    public LocalDate getDuration(){
+    public String getDuration(){
 //        LocalDate startDate = LocalDate.of(2020, Month.JUNE, 21);
         LocalDate today = LocalDate.now();
         Period time = Period.between(startDate, today);
         int years = time.getYears();
         int months = time.getMonths();
         int days = time.getDays();
-        System.out.println("Membership Duration: " + years + " year(s)"  + "," + months  + " Month(s)" + ","+ days + " Day(s) " );
+
+        duration = ( years + " year(s)"  + ", " + months  + " Month(s)" + ", " + days + " Day(s) " );
         return duration;
     }
 

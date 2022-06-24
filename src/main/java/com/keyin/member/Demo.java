@@ -9,23 +9,23 @@ class Demo {
 
     Member newMember = new Member("Barry", "Poole", "101 new way", "barry@barry", "709-550-1102", LocalDate.of(2020, Month.JUNE, 21));
 
-        System.out.println("Member First Name: "+ newMember.getMemberFirstName("FirstName"));
-        System.out.println("Member Last Name: "+ newMember.getMemberLastName("LastName"));
-        System.out.println("Member Address: "+ newMember.getMemberAddress("Place") );
-        System.out.println("Member Email: "+ newMember.getEmail("Email@Email"));
-        System.out.println("Member Phone: "+ newMember.getPhoneNumber("747-3458"));
+        System.out.println("Member First Name: "+ newMember.getMemberFirstName());
+        System.out.println("Member Last Name: "+ newMember.getMemberLastName());
+        System.out.println("Member Address: "+ newMember.getMemberAddress() );
+        System.out.println("Member Email: "+ newMember.getEmail());
+        System.out.println("Member Phone: "+ newMember.getPhoneNumber());
         System.out.println("Member Start Date: "+ newMember.getStartDate());
         newMember.getDuration();
 
     Tournaments newTournaments = new Tournaments("Dave's Cash", "Piper's Hole",   1500, "2022/06/23", "2022/06/26",  25000);
     System.out.println("");
 
-    System.out.println("Tournament Name: " + newTournaments.getTournamentName("String"));
-    System.out.println("Tournament Location " + newTournaments.getLocation("Place"));
-    System.out.println("Tournament Entry Fee $" + newTournaments.getEntryFee(1500.00));
-    System.out.println("Tournament Start Date: " + newTournaments.getStartDate("Name"));
-    System.out.println("Tournament End Date: " + newTournaments.getEndDate("Date"));
-    System.out.println("Tournament Cash Prize Payout $" + newTournaments.getCashPrizeAmount(25000.00));
+    System.out.println("Tournament Name: " + newTournaments.getTournamentName());
+    System.out.println("Tournament Location " + newTournaments.getLocation());
+    System.out.println("Tournament Entry Fee $" + newTournaments.getEntryFee());
+    System.out.println("Tournament Start Date: " + newTournaments.getStartDate());
+    System.out.println("Tournament End Date: " + newTournaments.getEndDate());
+    System.out.println("Tournament Cash Prize Payout $" + newTournaments.getCashPrizeAmount());
     System.out.println("");
 
 
