@@ -35,7 +35,7 @@ public class Member{
 //
 //    }
 
-    public Member(String name, String address, String emailAddress, String phoneNumber, LocalDateTime startOfMembership, String durationOfMembership, String typeOfMembership, Tournament currentTournaments[],Tournament pastTournaments[],Tournament upcomingTournaments[])
+    public Member(String name, String address, String emailAddress, String phoneNumber, LocalDateTime startOfMembership, String durationOfMembership, String typeOfMembership, ArrayList<String> currentTournaments, ArrayList<String> pastTournaments, ArrayList<String> upcomingTournaments)
  {
      this.name = name;
      this.address = address;
