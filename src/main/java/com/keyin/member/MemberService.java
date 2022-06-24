@@ -45,8 +45,6 @@ public class MemberService {
         members.add(new Member("Joe", "456 Main St", "joe@gmail.com", 5557890, "Other"));
         members.add(new Member("Jane", "789 Main St", "jane@gmail.com", 5554321, "Trial"));
 
-        System.out.println(members); // print?
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println();
@@ -157,6 +155,21 @@ public class MemberService {
                         System.out.println("You have chosen to view a specific member!");
                         System.out.println("Enter member name: ");
                         String memberName = scanner2.next();
+
+                        switch (memberName) {
+                            case "one":
+                                if (memberName == "Ashley") {
+                                    members.get(0);
+                                }
+                            case "two":
+                                if (memberName == "Joe") {
+                                    members.get(1);
+                                }
+                            case "three":
+                                if (memberName == "Jane") {
+                                    members.get(2);
+                                }
+                        }
                         // how to view a specific member?
                 }
                 break;
