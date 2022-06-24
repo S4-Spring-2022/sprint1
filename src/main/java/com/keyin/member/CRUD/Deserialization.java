@@ -11,24 +11,15 @@ public class Deserialization {
     
     public static void main(String[] args) {
         
-        String pathName = "sprint1/src/main/java/com/keyin/member/data/memberData.json";
+        String pathName = "src/main/java/com/keyin/member/data/memberData.json";
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-        //   System.out.println(mapper.readValue(new File(pathName), MembresArray.class));
-          File myObj = new File(pathName);
-          Scanner myReader = new Scanner(myObj);
-          myReader.close();
-          
-          
-          
-          
-          
-          
-            // List<Member> membersObj = mapper.readValue(new File( pathName ), MembersArray.class);
-            // System.out.println(membersObj);
-            // System.out.println("Members;");
-            // System.out.println();
+            MembersArray membersObj = new MembersArray();
+            membersObj = mapper.readValue(new File( pathName ), MembersArray.class);
+            System.out.println(membersObj);
+            System.out.println("Members;");
+            System.out.println();
 
 
             // for ( MembersArray members : membersObj.getMembers() ) {
