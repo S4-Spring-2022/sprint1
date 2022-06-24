@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
 // we need to be able to: parse a formatted date string into a LocalDateTime object, done
 
 public class Tournament {
@@ -13,9 +12,10 @@ public class Tournament {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String location;
-    private double entryFee; // Money or long, not double? 
+    private double entryFee; // Money or long, not double?
     private double prizeAmount;
-    //private String players; // String? "5" ... Should it be called from Member class using name?
+    // private String players; // String? "5" ... Should it be called from Member
+    // class using name?
     // Final standings?
     private TournamentRoster players;
     private List<Member> winners;
@@ -118,15 +118,17 @@ public class Tournament {
     }
 
     public String toString() {
-        String playerMessage = players == null ? "" : ", Number of Players: " + players.getNumberOfMembers() + "\n";
-        String winnerMessage = winners == null ? "" : "Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: " + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n";
+        String playerMessage = players == null ? "" : "Number of Players: " + players.getNumberOfMembers() + "\n";
+        String winnerMessage = winners == null ? ""
+                : "Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: "
+                        + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n";
         return "Tournament Information: " + "\n"
                 + "Tournament Name: " + this.tournamentName + "\n"
                 + "Start Date:" + startDate + "\n"
-                + ", End Date: " + endDate + "\n"
-                + ", Location: " + location + "\n"
+                + "End Date: " + endDate + "\n"
+                + "Location: " + location + "\n"
                 + "Entry Fee: " + entryFee + "\n"
-                + ", Prize Amount: " + prizeAmount + "\n"
+                + "Prize Amount: " + prizeAmount + "\n"
                 + playerMessage
                 + winnerMessage;
     }
