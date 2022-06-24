@@ -64,6 +64,7 @@ public class MemberService {
         while (choice != EXIT2) {
 
             if (choice == options2[0]) {
+                //System.out.println(Arrays.toString(members));
                 System.out.println("Enter Member Name: ");
                 memberChoice = in.nextLine();
                 displayMenu(options, menuItems);
@@ -135,6 +136,9 @@ public class MemberService {
 
     public static void displayMenu(int[] opts, String[] items){
         //Display menu
+        System.out.println("\n");
+        System.out.println("\033[1m The Golf Club Data System \033[0m");
+        System.out.println("\033[1m -------------------------\033[0m\n");
 
         //Loop through opts and items
         for (int i =0; i < opts.length -1; i++){
@@ -143,7 +147,9 @@ public class MemberService {
 
         //Print the Exit option
         System.out.printf("%d. %s\n", opts[opts.length -1], items[items.length -1]);
+        System.out.println("\033[1m \n-------------------------\033[0m");
 //            System.out.println();
+        System.out.println("\033[1m \n\tEnter Selection:  \033[0m ");
     }
 
     /*
