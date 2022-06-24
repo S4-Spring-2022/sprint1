@@ -6,6 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sprint1 2" />
+        <module name="sprint1Friday" />
+        <module name="sprint1" />
         <module name="QAP1Example_S4_2022" />
       </profile>
     </annotationProcessing>

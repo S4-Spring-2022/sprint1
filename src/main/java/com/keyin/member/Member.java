@@ -1,7 +1,6 @@
 package com.keyin.member;
 
 // import java.time.*; // Import the LocalDateTime class
-import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -13,11 +12,12 @@ public class Member{
     private LocalDateTime startOfMembership;
     private String durationOfMembership;
     private String typeOfMembership;
-    private ArrayList<String> currentTournaments;
-    private ArrayList<String> pastTournaments;
-    private ArrayList<String> upcomingTournaments;
+    private String currentTournaments;
+    private String pastTournaments;
+    private String upcomingTournaments;
 
-
+//    private boolean active;
+//    public Member(){this.active = true};
 
 
 //    public Member(String n, String add, String email, String phoneNum, LocalDateTime memberStart, String duration, String type, Tournament current[],Tournament past[],Tournament upcoming[])
@@ -35,7 +35,7 @@ public class Member{
 //
 //    }
 
-    public Member(String name, String address, String emailAddress, String phoneNumber, LocalDateTime startOfMembership, String durationOfMembership, String typeOfMembership, ArrayList<String> currentTournaments, ArrayList<String> pastTournaments, ArrayList<String> upcomingTournaments)
+    public Member(String name, String address, String emailAddress, String phoneNumber, LocalDateTime startOfMembership, String durationOfMembership, String typeOfMembership, String currentTournaments, String pastTournaments, String upcomingTournaments)
  {
      this.name = name;
      this.address = address;
@@ -49,6 +49,11 @@ public class Member{
      this.upcomingTournaments = upcomingTournaments;
 
  }
+
+ public Member(){
+
+ }
+
 
 
 //Getters
@@ -85,15 +90,15 @@ public class Member{
         return this.typeOfMembership;
     }
 
-    public ArrayList<String> getCurrentTournaments() {
+    public String getCurrentTournaments() {
         return this.currentTournaments;
     }
 
-    public ArrayList<String> getPastTournaments() {
+    public String getPastTournaments() {
         return this.pastTournaments;
     }
 
-    public ArrayList<String> getUpcomingTournaments() {
+    public String getUpcomingTournaments() {
         return this.upcomingTournaments;
     }
 
@@ -126,15 +131,15 @@ public class Member{
 
     }
 
-    public void setCurrentTournaments(ArrayList<String> currentTournaments){
+    public void setCurrentTournaments(String currentTournaments){
         this.currentTournaments = currentTournaments;
     }
 
-    public void setPastTournaments(ArrayList<String> pastTournaments){
+    public void setPastTournaments(String pastTournaments){
         this.pastTournaments = pastTournaments;
     }
 
-    public void setUpcomingTournaments(ArrayList<String> upcomingTournaments){
+    public void setUpcomingTournaments(String upcomingTournaments){
         this.upcomingTournaments = upcomingTournaments;
     }
 

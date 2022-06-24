@@ -1,12 +1,12 @@
-// import java.time.*; // Import the LocalDateTime class
+// import java.time.*; // Import the String class
 package com.keyin.member;
 import java.time.LocalDateTime;
 
 
 
 public class Tournament {
-    public LocalDateTime startDate;
-    public LocalDateTime endDate;
+    public String startDate;
+    public String endDate;
     public String location;
     public String entryFee;
     public String cashPrize;
@@ -14,7 +14,7 @@ public class Tournament {
     public String finalStandings;
 
 
-    public Tournament(LocalDateTime start, LocalDateTime end, String loc, String fee, String cash, String part, String standings)
+    public Tournament(String start, String end, String loc, String fee, String cash, String part, String standings)
     {
         this.startDate = start;
         this.endDate = end;
@@ -24,9 +24,12 @@ public class Tournament {
         this.partMembers = part;
         this.finalStandings = standings;
     }
+    public Tournament(){
+
+    }
     //Getters
-    public LocalDateTime getStartDate(){ return this.startDate; }
-    public LocalDateTime getEndDate(){ return this.endDate; }
+    public String getStartDate(){ return this.startDate; }
+    public String getEndDate(){ return this.endDate; }
     public String getLocation(){ return this.location; }
     public String getPartMembers(){ return this.partMembers; }
     public String getFinalStandings(){ return this.finalStandings; }
@@ -34,8 +37,8 @@ public class Tournament {
     public String getCashPrize(){ return this.cashPrize;}
 
     //Setters
-    public void setStartDate(LocalDateTime startDate) {this.startDate = startDate;}
-    public void setEndDate(LocalDateTime endDate) {this.endDate = endDate;}
+    public void setStartDate(String startDate) {this.startDate = startDate;}
+    public void setEndDate(String endDate) {this.endDate = endDate;}
     public void setLocation(String location) {
         this.location = location;
     }
