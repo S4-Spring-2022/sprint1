@@ -51,6 +51,10 @@ public class Member extends Person {
         return this.membership.getFamily();
     }
 
+    public String getType() {
+        return this.membership.getType();
+    }
+
     // public Date getStartDate() {
     // return this.memberStartDate;
     // }

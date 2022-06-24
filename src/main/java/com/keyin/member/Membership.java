@@ -77,10 +77,11 @@ public class Membership {
         if (type != "Normal" && type != "Trial" && type != "Special Offer" && type != "Family Plan"
                 && type != "Other") {
             System.out.println("Error! Membership must be a proper type!");
+            return null;
         } else {
             return type;
         }
-        return null;
+        
     }
 
 }

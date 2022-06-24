@@ -46,6 +46,13 @@ public class MembershipTest {
     }
 
     @Test
+    public void testTypeConstructor() {
+        Membership membership = new Membership("Normal");
+        System.out.println(membership);
+        assertEquals("Normal", membership.getType());
+    }
+
+    @Test
     public void testMembershipDuration() {
         Membership membershipTest = new Membership();
         // the duration of this test is set to a default value of 30 days inside the method in the class, not ideal, refactor later

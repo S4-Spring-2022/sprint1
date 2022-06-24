@@ -63,6 +63,7 @@ public class MemberTest {
         assertEquals("123 Main St", member.getAddress());
         assertEquals("anemail.email.com", member.getEmail());
         assertEquals(1234567890, member.getPhone());
+        assertEquals("Normal", member.getType());
     }
    
 }
