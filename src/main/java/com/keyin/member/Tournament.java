@@ -2,6 +2,9 @@ package com.keyin.member;
 
 import java.time.LocalDateTime;
 
+
+// we need to be able to: parse a formatted date string into a LocalDateTime object, done
+
 public class Tournament {
 
     private LocalDateTime startDate;
@@ -9,23 +12,23 @@ public class Tournament {
     private String location;
     private double entryFee; // Money or long, not double?
     private double prizeAmount;
-    private String players; // String? "5" ... Should it be called from Member class using name?
+    //private String players; // String? "5" ... Should it be called from Member class using name?
     // Final standings?
-    // private TournamentRoster players;
+    private TournamentRoster players;
 
     public Tournament() {
         this.startDate = LocalDateTime.now();
-        this.endDate = LocalDateTime.now();
+        this.endDate = null;
         this.location = "";
         this.entryFee = 0;
         this.prizeAmount = 0;
-        this.players = "";
+        this.players = null;
         // final standings?
     }
 
-    public Tournament(LocalDateTime start, LocalDateTime end, String loc, double fee, double prize, String players) {
-        this.startDate = start;
-        this.endDate = end;
+    public Tournament(String startDate, String endDate, String loc, double fee, double prize, TournamentRoster players) {
+        this.startDate = LocalDateTime.parse(startDate);
+        this.endDate = LocalDateTime.parse(endDate);
         this.location = loc;
         this.entryFee = fee;
         this.prizeAmount = prize;
@@ -34,13 +37,22 @@ public class Tournament {
     }
 
     // GETTERS
+    // added String getters for date fields
 
     public LocalDateTime getStartDate() {
         return this.startDate;
     }
 
+    public String getStartDateString() {
+        return this.startDate.toString();
+    }
+
     public LocalDateTime getEndDate() {
         return this.endDate;
+    }
+
+    public String getEndDateString() {
+        return this.endDate.toString();
     }
 
     public String getLocation() {
@@ -55,7 +67,7 @@ public class Tournament {
         return this.prizeAmount;
     }
 
-    public String getPlayers() {
+    public TournamentRoster getPlayers() {
         return this.players;
     }
 
@@ -63,8 +75,9 @@ public class Tournament {
 
     // SETTERS
 
-    public void setStartDate(LocalDateTime start) {
-        this.startDate = start;
+    public void setStartDate(String start) {
+        // startFormatNeedsToBe = "2020-01-01T00:00:00"
+        this.startDate = LocalDateTime.parse(start);
     }
 
     public void setEndDate(LocalDateTime end) {
@@ -83,8 +96,12 @@ public class Tournament {
         this.prizeAmount = prize;
     }
 
-    public void setPlayers(String players) {
+    public void setPlayers(TournamentRoster players) {
         this.players = players;
+    }
+
+    public void addMember(Member player) {
+        this.players.addMember(player);
     }
 
     public String toString() {
@@ -94,6 +111,6 @@ public class Tournament {
                 + ", Location: " + location + "\n"
                 + "Entry Fee: " + entryFee + "\n"
                 + ", Prize Amount: " + prizeAmount + "\n"
-                + ", Number of Players: " + players;
+                + ", Number of Players: " + players.getNumberOfMembers();
     }
 }
