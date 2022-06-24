@@ -1,8 +1,4 @@
 package com.keyin.member;
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.ArrayList;
-import java.util.*;
 
 public class Tournaments {
     private String tournamentName;
@@ -13,8 +9,6 @@ public class Tournaments {
     private double cashPrizeAmount;
 
 
-
-
     public Tournaments(String tournamentName, String location, double entryFee, String startDate, String endDate, double cashPrizeAmount) {
         this.tournamentName = tournamentName;
         this.location = location;
@@ -22,6 +16,10 @@ public class Tournaments {
         this.startDate = startDate;
         this.endDate = endDate;
         this.cashPrizeAmount = cashPrizeAmount;
+
+    }
+
+    public Tournaments() {
 
     }
 
@@ -80,8 +78,6 @@ public class Tournaments {
         return toString();
 
     }
-
-
 
 
 }
