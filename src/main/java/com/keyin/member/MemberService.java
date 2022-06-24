@@ -64,14 +64,11 @@ public class MemberService {
                 System.out.println("Enter your phone number: ");
                 int phone = scanner.nextInt();
 
-                // System.out.println("Enter your membership type: ");
-                // String type = scanner.next();
-
                 System.out.println("Enter your membership type: ");
                 String type = scanner.next();
 
                 Member member = new Member(name, address, email, phone, type);
-                System.out.println("Member created!" + "\n" + member);
+                System.out.println("Member created!" + "\n" + member); // type showing null
                 System.out.println();
 
                 // we will use the provided information to create a member1
@@ -79,7 +76,7 @@ public class MemberService {
                 // then we will write the list to the file
                 break;
             case 2:
-                System.out.println("You have chosen to edit a member.");
+                System.out.println("You have chosen to edit a member!");
                 // the logic for this step will be much trickier than the create step
                 // Look up member by unique identifier
                 // Prompt for new information
@@ -90,7 +87,7 @@ public class MemberService {
                 // finally we will write the list to the file
                 break;
             case 3:
-                System.out.println("You have chosen to delete a member.");
+                System.out.println("You have chosen to delete a member!");
                 // Deletion is tricky because we don't like data destruction.
                 // several validation steps will be required
                 // Do you instead want to deactivate a member?
@@ -103,15 +100,51 @@ public class MemberService {
                 // this point and then write the list to the file
                 break;
             case 4:
-                System.out.println("You have chosen to view all members.");
-                // this option will probably contain sub options for:
-                // view all members
-                // view all members by membership type
-                // view all members by status
-                // look up a specific member
-                // this option will also ask if another lookup is required before returning to
-                // the main menu
+                System.out.println("You have chosen to view all members!");
+
+                Scanner scanner2 = new Scanner(System.in);
+                System.out.println("To view all members, enter 1");
+                System.out.println("To view all members by membership type, enter 2");
+                System.out.println("To view all members by status, enter 3");
+                System.out.println("To view a specific member, enter 4");
+                System.out.println("Is another look up required? Y/N"); // ?
+                int choice2 = scanner2.nextInt();
+
+                switch (choice2) {
+                    case 01:
+                        System.out.println("You have chosen to view all members!");
+                        String all = scanner2.next();
+                        // how to view all members?
+
+                    case 02:
+                        System.out.println("You have chosen to view all members by membership type!");
+                        System.out.println("Enter the membership type: ");
+                        String type2 = scanner2.next();
+                        // how to view all members by membership type?
+
+                    case 03:
+                        System.out.println("You have chosen to view all members by status!");
+                        System.out.println("Enter status: ");
+                        String status = scanner2.next();
+                        // how to view all members by status?
+
+                    case 04:
+                        System.out.println("You have chosen to view a specific member!");
+                        System.out.println("Enter member name: ");
+                        String memberName = scanner2.next();
+                        // how to view a specific member?
+
+                    case 05:
+
+                }
                 break;
+            // this option will probably contain sub options for:
+            // view all members
+            // view all members by membership type
+            // view all members by status
+            // look up a specific member
+            // this option will also ask if another lookup is required before returning to
+            // the main menu
 
             default:
                 System.out.println("You have chosen to exit.");
