@@ -144,10 +144,6 @@ public class MemberService {
 //            System.out.println();
         System.out.println("Enter choice: ");
     }
-    //enter tournament...
-
-    //input 1: member name
-    //input 2: Member info, membership info, tournament info
 
     /*
     to add:
