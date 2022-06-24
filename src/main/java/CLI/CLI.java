@@ -20,7 +20,7 @@ public class CLI {
     public static void main(String[] args) {
 
         Boolean exit = false;
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
 
             System.out.println("1. Search Members");
@@ -185,7 +185,7 @@ public class CLI {
                 System.out.print("  Enter membership family members: ");
                 ArrayList<String>  membershipFamilyMembers= new ArrayList<String>();
                 String line = scanner.next();
-                String pieces = (Arrays.toString(line.split(",")).replace("[[", "").replace("]]", ""));
+                String pieces = (Arrays.toString(line.split(",")).replace("[", "").replace("]", ""));
                 membershipFamilyMembers.add(pieces);
 
 
@@ -197,19 +197,19 @@ public class CLI {
                 System.out.print("  Enter current tournaments: ");
                 ArrayList<String>  currentTournaments= new ArrayList<String>();
                 String line1 = scanner.next();
-                String pieces1 = (Arrays.toString(line1.split(",")).replace("[[", "").replace("]]", ""));
+                String pieces1 = (Arrays.toString(line1.split(",")).replace("[", "").replace("]", ""));
                 currentTournaments.add(pieces1);
 
                 System.out.print("  Enter past tournaments: ");
                 ArrayList<String>  pastTournaments= new ArrayList<String>();
                 String line3 = scanner.next();
-                String pieces3 = (Arrays.toString(line3.split(",")).replace("[[", "").replace("]]", ""));
+                String pieces3 = (Arrays.toString(line3.split(",")).replace("[", "").replace("]", ""));
                 pastTournaments.add(pieces3);
 
                 System.out.print("  Enter upcoming tournaments: ");
                 ArrayList<String>  upcomingTournaments= new ArrayList<String>();
                 String line4 = scanner.next();
-                String pieces4 = (Arrays.toString(line4.split(",")).replace("[[", "").replace("]]", ""));
+                String pieces4 = (Arrays.toString(line4.split(",")).replace("[", "").replace("]", ""));
                 upcomingTournaments.add(pieces4);
                 String memberName = memberFirstName + " " + memberLastName;
 
