@@ -1,10 +1,7 @@
 package com.keyin.member;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.time.LocalDate;
-import java.time.Period;
 
 public class MemberServices extends MemberDatabase {
 
@@ -33,13 +30,15 @@ public class MemberServices extends MemberDatabase {
                 MemberDatabase memberInstance = new MemberDatabase();
                 memberInstance.allMembers();
                 ArrayList<Member> members = memberInstance.getMembers();
+                Member findMember = members.get(0);
+                findMember.toString();
+                System.out.println(findMember);
 
-                for (Member m : members) {
-                    System.out.format("First Name: " + m.getMemberFirstName() + " , " + "Last Name: " + m.getMemberLastName() + "\n" +
-                            "Address: " + m.getMemberAddress() + " , " + "Email: " + m.getEmail() + " , " + "Phone Number: " + m.getPhoneNumber() + "\n");
-                    System.out.println("Membership Duration: " + m.getDuration() + "\n\n");
-
-                }
+//                for (Member m : members) {
+//                    System.out.format("First Name: " + m.getMemberFirstName() + " , " + "Last Name: " + m.getMemberLastName() + "\n" +
+//                            "Address: " + m.getMemberAddress() + " , " + "Email: " + m.getEmail() + " , " + "Phone Number: " + m.getPhoneNumber() + "\n");
+//                    System.out.println("Membership Duration: " + m.getDuration() + "\n\n");
+   //         }
             } else if (option == 3) {
                 System.out.println("You've chosen to update an existing account");
             } else if (option == 4) {
@@ -58,8 +57,11 @@ public class MemberServices extends MemberDatabase {
             } else {
                 System.out.println("Invalid Selection");
             }
+
+
         }
     }
+
 }
 
     // Non-Static to static data
