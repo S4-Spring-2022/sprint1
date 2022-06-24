@@ -12,7 +12,7 @@ public class TournamentsTest {
         Tournaments tournamentsUnderTest = new Tournaments();
         Assertions.assertNotEquals(68,tournamentsUnderTest.getTournamentName("Name"));
 
-        //Assertions.assertEquals("Name", tournamentsUnderTest.getTournamentName("Name"));
+        Assertions.assertEquals(tournamentsUnderTest.getTournamentName("Name"), tournamentsUnderTest.getTournamentName("Name"));
     }
 
     @Test
@@ -21,7 +21,7 @@ public class TournamentsTest {
         Tournaments tournamentsUnderTest = new Tournaments();
         Assertions.assertNotEquals(99,tournamentsUnderTest.getLocation("Place"));
 
-        //Assertions.assertEquals("Place", tournamentsUnderTest.getLocation("Place"));
+        Assertions.assertEquals(tournamentsUnderTest.getLocation("Place"), tournamentsUnderTest.getLocation("Place"));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class TournamentsTest {
         Tournaments tournamentsUnderTest = new Tournaments();
         Assertions.assertNotEquals(44,tournamentsUnderTest.getStartDate("Date"));
 
-        //Assertions.assertEquals("null", tournamentsUnderTest.getStartDate(""));
+        Assertions.assertEquals(tournamentsUnderTest.getStartDate("Date"), tournamentsUnderTest.getStartDate("Date"));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class TournamentsTest {
         Tournaments tournamentsUnderTest = new Tournaments();
         Assertions.assertNotEquals(17,tournamentsUnderTest.getEndDate("Date"));
 
-        //Assertions.assertEquals("Date", tournamentsUnderTest.getEndDate("Date"));
+        Assertions.assertEquals(tournamentsUnderTest.getEndDate("Date"), tournamentsUnderTest.getEndDate("Date"));
     }
 
     @Test
