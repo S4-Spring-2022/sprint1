@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
-
+//test comment
 public class Member {
     private String name;
     private String address;
