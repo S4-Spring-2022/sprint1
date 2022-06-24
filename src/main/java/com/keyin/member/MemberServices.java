@@ -62,12 +62,14 @@ public class MemberServices extends MemberDatabase {
     }
 }
 
-// Non-Static to static data
+    // Non-Static to static data
 //                String answer;
 //                MemberDatabase memberInstance = new MemberDatabase();
 //                Scanner memberScan = new Scanner(System.in);
 //                System.out.println(memberInstance.allMembers());
 //                memberInstance.allMembers();
 //                memberScan.close();
+
+
 
 

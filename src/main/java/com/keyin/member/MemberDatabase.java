@@ -42,11 +42,13 @@ public class MemberDatabase extends Member {
         return members;
     }
 
-    public void setMembers(ArrayList members){
-        this.members = members;
+        public void setMembers(ArrayList members){
+            this.members = members;
+        }
+        public ArrayList getMembers(){
+            return members;
+        }
     }
-    public ArrayList getMembers(){
-        return members;
-    }
-}
+
+
 
