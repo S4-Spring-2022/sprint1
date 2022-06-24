@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Tournament {
 
+    private String tournamentName;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String location;
@@ -20,22 +21,24 @@ public class Tournament {
     private List<Member> winners;
 
     public Tournament() {
+        this.tournamentName = "";
         this.startDate = LocalDateTime.now();
         this.endDate = null;
         this.location = "";
         this.entryFee = 0;
         this.prizeAmount = 0;
-        this.players = null;
+        this.players = new TournamentRoster();
         // final standings?
     }
 
-    public Tournament(String startDate, String endDate, String loc, double fee, double prize) {
+    public Tournament(String name, String startDate, String endDate, String loc, double fee, double prize) {
+        this.tournamentName = name;
         this.startDate = LocalDateTime.parse(startDate);
         this.endDate = LocalDateTime.parse(endDate);
         this.location = loc;
         this.entryFee = fee;
         this.prizeAmount = prize;
-        this.players = null;
+        this.players = new TournamentRoster();
         // final standings?
     }
 
@@ -115,13 +118,16 @@ public class Tournament {
     }
 
     public String toString() {
+        String playerMessage = players == null ? "" : ", Number of Players: " + players.getNumberOfMembers() + "\n";
+        String winnerMessage = winners == null ? "" : "Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: " + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n";
         return "Tournament Information: " + "\n"
+                + "Tournament Name: " + this.tournamentName + "\n"
                 + "Start Date:" + startDate + "\n"
                 + ", End Date: " + endDate + "\n"
                 + ", Location: " + location + "\n"
                 + "Entry Fee: " + entryFee + "\n"
                 + ", Prize Amount: " + prizeAmount + "\n"
-                + ", Number of Players: " + players.getNumberOfMembers() + "\n"
-                + (winners == null ? "" : "Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: " + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n");
+                + playerMessage
+                + winnerMessage;
     }
 }

@@ -14,7 +14,7 @@ import com.keyin.member.Tournament;
 import com.keyin.member.TournamentRoster;
 import com.keyin.member.Member;
 
-@ ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class)
 public class TournamentTest {
 
     @Mock
@@ -37,17 +37,15 @@ public class TournamentTest {
         // not sure now to mock these relations correctly
         // Mockito.when(players.getNumberOfMembers()).thenReturn(3);
 
-
         Tournament tournament = new Tournament();
         players.addMember(member1);
         players.addMember(member2);
         players.addMember(member3);
 
-
         tournament.setWinners(member1, member2, member3);
-        //System.out.println(tournament.toString());   
-         
-        
+        System.out.println("message test");
+        System.out.println(tournament);
+
     }
-    
+
 }
