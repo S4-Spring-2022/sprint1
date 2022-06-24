@@ -96,6 +96,7 @@ public class TournamentService {
                 break;
             case 3:
                 System.out.println("You have chosen to view all tournaments.");
+                //the same almost to the T
                 // load the tournament list from the file ( ensure list is loaded?)
                 // print the tournament list
                 // for(Tournament eachTournament : tournamentList) {
