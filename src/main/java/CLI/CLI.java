@@ -9,11 +9,7 @@ import Tournament.TournamentArray;
 import com.keyin.member.Member;
 import com.keyin.member.MemberArray;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
-
+import java.util.*;
 
 
 public class CLI {
@@ -29,8 +25,9 @@ public class CLI {
 
             System.out.println("1. Search Members");
             System.out.println("2. Search Tournaments");
-            System.out.println("3. Exit");
-            System.out.print("Please enter your choice 1, 2 or 3: ");
+            System.out.println("3. Enter new members");
+            System.out.println("4. Exit");
+            System.out.print("Please enter your choice 1, 2 ,3 or 4: ");
             int choiceInt = scanner.nextInt();
             if (choiceInt == 1) {
                     System.out.println("------------------");
@@ -171,8 +168,78 @@ public class CLI {
 
 
             }
-
             if (choiceInt == 3){
+                System.out.print("  Enter member first name: ");
+                String memberFirstName = scanner.next();
+                System.out.print("  Enter member last name: ");
+                String memberLastName = scanner.next();
+                System.out.print("  Enter member address: ");
+                String memberAddress = scanner.next();
+                System.out.print("  Enter member phone number: ");
+                String memberPhone = scanner.next();
+                System.out.print("  Enter member email: ");
+                String memberEmail = scanner.next();
+                System.out.print("  Enter Membership membership type: ");
+                String membershipType = scanner.next();
+
+                System.out.print("  Enter membership family members: ");
+                ArrayList<String>  membershipFamilyMembers= new ArrayList<String>();
+                String line = scanner.next();
+                String pieces = (Arrays.toString(line.split(",")).replace("[[", "").replace("]]", ""));
+                membershipFamilyMembers.add(pieces);
+
+
+                System.out.print("  Enter membership duration: ");
+                int membershipDuration = scanner.nextInt();
+                System.out.print("  Enter membership start date: ");
+                String membershipStartDate = scanner.next();
+
+                System.out.print("  Enter current tournaments: ");
+                ArrayList<String>  currentTournaments= new ArrayList<String>();
+                String line1 = scanner.next();
+                String pieces1 = (Arrays.toString(line1.split(",")).replace("[[", "").replace("]]", ""));
+                currentTournaments.add(pieces1);
+
+                System.out.print("  Enter past tournaments: ");
+                ArrayList<String>  pastTournaments= new ArrayList<String>();
+                String line3 = scanner.next();
+                String pieces3 = (Arrays.toString(line3.split(",")).replace("[[", "").replace("]]", ""));
+                pastTournaments.add(pieces3);
+
+                System.out.print("  Enter upcoming tournaments: ");
+                ArrayList<String>  upcomingTournaments= new ArrayList<String>();
+                String line4 = scanner.next();
+                String pieces4 = (Arrays.toString(line4.split(",")).replace("[[", "").replace("]]", ""));
+                upcomingTournaments.add(pieces4);
+                String memberName = memberFirstName + " " + memberLastName;
+
+
+
+                Member newMem = new Member( memberName, memberAddress, memberEmail, memberPhone, membershipStartDate,
+                        (int) membershipDuration, membershipType,  membershipFamilyMembers,  currentTournaments,
+                        pastTournaments, upcomingTournaments);
+
+                MemberArray membArray = new MemberArray();
+                membArray.insertMember(newMem);
+                Optional<Member> array = membArray.selectMemberByName(memberName);
+                Member newMember = array.get();
+                System.out.print("-----------New Member Added------------------");
+                System.out.print("\nMember Name: " + (newMember.getMemberName()));
+                System.out.print("\nMember Email: " + newMember.getMemberEmail());
+                System.out.print("\nMember Phone Number: " + newMember.getMemberPhone());
+                System.out.print("\nMember Address: " + newMember.getMemberAddress());
+                System.out.print("\nFamily Members: " + newMember.getMembershipFamilyMembers()) ;
+                System.out.print("\nMembership Duration: " + newMember.getMembershipDuration());
+                System.out.print("\nMembership Type: " + newMember.getMembershipType());
+                System.out.print("\nMembership Start Date: " + newMember.getMembershipStartDate());
+                System.out.print("\nPast Tournaments: " + newMember.getPastTournaments());
+                System.out.print("\nCurrent Tournament: " + newMember.getCurrentTournaments());
+                System.out.print("\nUpcoming Tournaments: " +newMember.getUpcomingTournaments());
+
+            }
+
+
+            if (choiceInt == 4){
                 exit = true;
             }
             }

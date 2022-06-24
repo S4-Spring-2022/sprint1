@@ -34,29 +34,79 @@ public class Member {
         return this.memberName;
     }
 
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
     public String getMemberAddress() {
         return this.memberAddress;
+    }
+
+    public void setMemberAddress(String memberAddress) {
+        this.memberAddress = memberAddress;
     }
 
     public String getMemberEmail() {
         return this.memberEmail;
     }
 
+    public void setMemberEmail(String memberEmail) {
+        this.memberEmail = memberEmail;
+    }
+
     public String getMemberPhone() {
         return this.memberPhone;
     }
 
+    public void setMemberPhone(String memberPhone) {
+        this.memberPhone = memberPhone;
+    }
+
+
     public String getMembershipStartDate() {
         return this.membershipStartDate;
+    }
+
+    public void setMembershipDuration(int membershipDuration) {
+        this.membershipDuration = membershipDuration;
+    }
+
+    public void setMembershipStartDate(String membershipStartDate) {
+        this.membershipStartDate = membershipStartDate;
+    }
+
+    public void setMembershipType(String membershipType) {
+        this.membershipType = membershipType;
+    }
+
+    public void setCurrentTournaments(ArrayList<String> currentTournaments) {
+        this.currentTournaments = currentTournaments;
+    }
+
+    public void setMembershipFamilyMembers(ArrayList<String> membershipFamilyMembers) {
+        this.membershipFamilyMembers = membershipFamilyMembers;
+    }
+
+    public void setPastTournaments(ArrayList<String> pastTournaments) {
+        this.pastTournaments = pastTournaments;
+    }
+
+    public void setUpcomingTournaments(ArrayList<String> upcomingTournaments) {
+        this.upcomingTournaments = upcomingTournaments;
     }
 
     public int getMembershipDuration() {
         return this.membershipDuration;
     }
 
+
+
+
+
     public String getMembershipType() {
         return this.membershipType;
     }
+
+
 
     public ArrayList<String> getMembershipFamilyMembers() {
         return this.membershipFamilyMembers;
