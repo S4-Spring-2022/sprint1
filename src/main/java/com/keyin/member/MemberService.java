@@ -131,17 +131,17 @@ public class MemberService {
                     case 01:
                         System.out.println("You have chosen to view all members!");
                         // String all = scanner2.next();
-                        // how to view all members?
+                        for (Member member : members) {
+                            System.out.println(member);
+                        }
 
                         Scanner scanner3 = new Scanner(System.in);
                         System.out.println("Is another look up required? Enter 1 for YES, enter 2 for NO");
                         int choice3 = scanner3.nextInt();
 
                         switch (choice3) {
-                            case 001:
-                                if (choice3 == 1) {
-                                    scanner2.nextInt(); // how do we loop back to original choices?
-                                }
+                            case 1:
+                                // while loop
                         }
 
                     case 02:
@@ -162,20 +162,14 @@ public class MemberService {
                         String memberName = scanner2.next();
 
                         switch (memberName) {
-                            case "one":
-                                if (memberName == "Ashley") {
-                                    members.get(0);
-                                }
-                            case "two":
-                                if (memberName == "Joe") {
-                                    members.get(1);
-                                }
-                            case "three":
-                                if (memberName == "Jane") {
-                                    members.get(2);
-                                }
+                            case "Ashley":
+                                System.out.println(members.get(0));
+                            case "Joe":
+                                System.out.println(members.get(1));
+                            case "Jane":
+                                System.out.println(members.get(2));
                         }
-                        // how to view a specific member?
+
                 }
                 break;
             // this option will probably contain sub options for:
