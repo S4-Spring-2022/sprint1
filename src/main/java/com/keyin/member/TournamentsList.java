@@ -15,13 +15,13 @@ public class TournamentsList {
         tableModel.addColumn("Start Date");
         tableModel.addColumn("End Date");
         tableModel.addColumn("Location");
-        tableModel.addColumn("Entry Fee");
-        tableModel.addColumn("Cash Prize");
+        tableModel.addColumn("Entry Fee($)");
+        tableModel.addColumn("Cash Prize($)");
         tableModel.addColumn("Participating Members");
         tableModel.addColumn("Final Standings");
 
         table.getTableHeader().setResizingAllowed(false);
-        tableModel.addRow(new Object[] { "01/01/2019", "02/01/2019", "123 Main St", "$100", "$1000",
+        tableModel.addRow(new Object[] { "01/01/2019", "02/01/2019", "123 Main St", "100", "1000",
                 "John, Fran, Jimmy", "John" });
         tableModel.addRow(new Object[] { "05/12/2021", "07/12/2021", "Fake Road Golf Course", "100", "500",
                 "Cleopatra, Othello, Kaela", "Kaela" });
