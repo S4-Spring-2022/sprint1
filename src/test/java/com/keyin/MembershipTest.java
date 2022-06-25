@@ -2,10 +2,8 @@ package com.keyin;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.time.LocalDateTime;
-
 import org.junit.jupiter.api.extension.ExtendWith;
+
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -19,28 +17,15 @@ public class MembershipTest {
     @Mock
     private Membership membership1 = Mockito.mock(Membership.class);
 
-    // test needs to be fixed or removed
     @Test
     public void testMembership() {
         Membership membership = new Membership();
-        // this test cannot have any other operations between instantiation and assertion
-        // in fact changing to a LocalDateTime.now() broke this test as it is more specific down to the millisecond than the previous method
-        // assertEquals(LocalDateTime.now(), membership.getStartDate());
         assertNotNull(membership);
     }
 
     @Test
     public void testMembershipDefaultType() {
         Membership membership = new Membership();
-        membership.setType("Normal");
-        assertEquals("Normal", membership.getType());
-    }
-
-    @Test
-    public void testMembershipType() {
-        Membership membership = new Membership();
-        membership.setType("Premium");
-        assertNull(membership.getType());
         membership.setType("Normal");
         assertEquals("Normal", membership.getType());
     }
@@ -59,6 +44,16 @@ public class MembershipTest {
         assertEquals("30", membershipTest.getDuration());
     }
 
+    @Test
+    public void testMembershipDurationConstructor() {
+        Membership membership = new Membership("Normal");
+        assertNotNull(membership.getDuration());
+    }
 
-    
+    @Test
+    public void testFamilyMembership() {
+        Membership membership = new Membership("Family Plan");
+        assertEquals("Family Plan", membership.getType());
+    }
+
 }

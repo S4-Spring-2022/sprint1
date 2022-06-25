@@ -2,10 +2,13 @@ package com.keyin.member.CRUD;
 // reading the file
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.keyin.member.MembersArray;
+
+//*** Not fully factored into the program ***
+// Able to read simple objects as JSON and convert them into useful java objects
+// However the project required the ability to read complex, aggregated objects, which has created a stall at this point in development
 
 public class Deserialization {
     
@@ -21,7 +24,7 @@ public class Deserialization {
             System.out.println("Members;");
             System.out.println();
 
-
+            // the following loop prints the simple members
             // for ( MembersArray members : membersObj.getMembers() ) {
             //     System.out.println(members.getName());
             //     System.out.println(members.getAddress());

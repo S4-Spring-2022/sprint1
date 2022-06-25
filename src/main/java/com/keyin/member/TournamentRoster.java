@@ -23,7 +23,6 @@ public class TournamentRoster {
         return this.membersRegistered;
     }
 
-    // copy a list of members into this roster
     public void setMembersRegistered(List<Member> membersRegistered) {
         this.membersRegistered = membersRegistered;
     }
@@ -31,9 +30,5 @@ public class TournamentRoster {
     public int getNumberOfMembers() {
         return this.membersRegistered.size();
     }
-
-    // toString method
-
-
     
 }

@@ -3,28 +3,16 @@ package com.keyin;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-// not currently using mocking. remember to cut if we don't bring it back to this test suite 
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
-
 import com.keyin.member.Member;
 
-@ExtendWith(MockitoExtension.class)
 public class MemberTest {
-
-    // not currently using mocking. remember to cut if we don't bring it back to this test suite 
-    @Mock
-    private Member member1 = Mockito.mock(Member.class);
-
 
     @Test 
     public void testMember() {
         Member member = new Member();
         // this test must be updated to reflect the number of members created in the test suite
         // it will also fail if run alone when the expected value is set to match the number of tests
-        assertEquals(5, Member.memberCount);
+        assertEquals(6, Member.memberCount);
     }
 
     @Test

@@ -2,13 +2,13 @@ package com.keyin;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.List;
-
 import org.junit.jupiter.api.extension.ExtendWith;
+
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.List;
 
 import com.keyin.member.Member;
 import com.keyin.member.TournamentRoster;
@@ -16,7 +16,6 @@ import com.keyin.member.TournamentRoster;
 
 @ExtendWith(MockitoExtension.class)
 public class TournamentRosterTest {
-
 
     @Mock
     private Member member1 = Mockito.mock(Member.class); 
@@ -76,5 +75,4 @@ public class TournamentRosterTest {
         assertEquals(3, roster.getNumberOfMembers());
     }
 
-    
 }

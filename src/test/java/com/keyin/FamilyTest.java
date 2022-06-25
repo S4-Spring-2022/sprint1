@@ -2,8 +2,8 @@ package com.keyin;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.extension.ExtendWith;
+
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -37,7 +37,6 @@ public class FamilyTest {
         assertEquals(4, familyUnderTest.getMembers().size());
     }
 
-    // this method does not exist yet, but it should
     @Test
     public void testFamilyRemoveMember() {
         familyUnderTest.addMember(memberDad);

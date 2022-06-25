@@ -4,19 +4,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-// we need to be able to: parse a formatted date string into a LocalDateTime object, done
-
 public class Tournament {
 
     private String tournamentName;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String location;
-    private double entryFee; // Money or long, not double?
+    private double entryFee; 
     private double prizeAmount;
-    // private String players; // String? "5" ... Should it be called from Member
-    // class using name?
-    // Final standings?
     private TournamentRoster players;
     private List<Member> winners;
 
@@ -28,7 +23,8 @@ public class Tournament {
         this.entryFee = 0;
         this.prizeAmount = 0;
         this.players = new TournamentRoster();
-        // final standings?
+        this.winners = new ArrayList<Member>(10);
+
     }
 
     public Tournament(String name, String startDate, String endDate, String loc, double fee, double prize) {
@@ -39,11 +35,9 @@ public class Tournament {
         this.entryFee = fee;
         this.prizeAmount = prize;
         this.players = new TournamentRoster();
-        // final standings?
-    }
+        this.winners = new ArrayList<Member>(10);
 
-    // GETTERS
-    // added String getters for date fields
+    }
 
     public LocalDateTime getStartDate() {
         return this.startDate;
@@ -76,10 +70,6 @@ public class Tournament {
     public TournamentRoster getPlayers() {
         return this.players;
     }
-
-    // final standings?
-
-    // SETTERS
 
     public void setStartDate(String start) {
         // startFormatNeedsToBe = "2020-01-01T00:00:00"
@@ -118,10 +108,10 @@ public class Tournament {
     }
 
     public String toString() {
-        String playerMessage = players == null ? "" : "Number of Players: " + players.getNumberOfMembers() + "\n";
-        String winnerMessage = winners == null ? ""
-                : "Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: "
-                        + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n";
+        String playerMessage = (players.getNumberOfMembers() == 0 ? (""): ("Number of Players: " + players.getNumberOfMembers() + "\n"));
+        String winnerMessage = (winners.isEmpty() ? ("")
+                : ("Winners:  \nFirst Place: " + winners.get(0).getName() + ", \nSecond Place: "
+                        + winners.get(1).getName() + ", \nThird Place: " + winners.get(2).getName() + "\n"));
         return "Tournament Information: " + "\n"
                 + "Tournament Name: " + this.tournamentName + "\n"
                 + "Start Date:" + startDate + "\n"

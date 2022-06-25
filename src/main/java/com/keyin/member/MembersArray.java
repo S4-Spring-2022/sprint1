@@ -19,10 +19,6 @@ public class MembersArray {
         return members;
     }
 
-    // public void setMembers(List<Member> members) {
-    //     this.members = members;
-    // }
-
     public void addMember(Member member) {
         this.members.add(member);
     }
