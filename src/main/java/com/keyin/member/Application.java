@@ -1,11 +1,8 @@
 package com.keyin.member;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class Application implements ActionListener {
+public class Application {
     JFrame frame = new JFrame();
 
     Application() {
