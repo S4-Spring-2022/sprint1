@@ -10,7 +10,7 @@ public class Member {
     private String memberAddress;
     private String email;
     private String phoneNumber;
-    private LocalDate startDate;
+    private static LocalDate startDate;
     private String duration;
 //    private LocalDate todaysDate;
 
@@ -74,7 +74,7 @@ public class Member {
     public void  setStartDate(LocalDate date) {
         this.startDate = date;
     }
-    public LocalDate getStartDate(){
+    public static LocalDate getStartDate(){
         return startDate;
     }
 
