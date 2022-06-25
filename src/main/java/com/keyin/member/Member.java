@@ -1,3 +1,5 @@
+
+
 package com.keyin.member;
 
 
@@ -11,7 +13,7 @@ public class Member {
     private String email;
     private String phoneNumber;
     private LocalDate startDate;
-    private LocalDate duration;
+    private String duration;
 //    private LocalDate todaysDate;
 
     public Member() {
@@ -30,15 +32,17 @@ public class Member {
 
 
     public String getMemberFirstName(){
+
         return memberFirstName;
     }
 
     public void setMemberFirstName(String memberFirstName) {
+
         this.memberFirstName = memberFirstName;
     }
 
     public String getMemberLastName(){
-        return memberFirstName;
+        return memberLastName;
     }
 
     public void setMemberLastName(String memberLastName) {
@@ -76,24 +80,26 @@ public class Member {
         return startDate;
     }
 
-    public void setDuration(LocalDate duration) {
-        this.duration = duration;
-    }
+//    public void setDuration(LocalDate duration) {
+//        this.duration = duration;
+//    }
 
-    public LocalDate getDuration(){
+    public String getDuration(){
 //        LocalDate startDate = LocalDate.of(2020, Month.JUNE, 21);
         LocalDate today = LocalDate.now();
         Period time = Period.between(startDate, today);
         int years = time.getYears();
         int months = time.getMonths();
         int days = time.getDays();
-        System.out.println("Membership Duration: " + years + " year(s)"  + "," + months  + " Month(s)" + ","+ days + " Day(s) " );
+
+        duration = ( years + " year(s)"  + ", " + months  + " Month(s)" + ", " + days + " Day(s) " );
         return duration;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public String toString() {
+        return("First Name: " + getMemberFirstName() + " , " + "Last Name: " + getMemberLastName() + "\n" +
+                "Address: " + getMemberAddress() + " , " + "Email: " + getEmail() + " , " + "Phone Number: " + getPhoneNumber() + "\n" +
+                "Membership Duration: " + getDuration());
     }
 }
 

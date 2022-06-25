@@ -10,53 +10,53 @@ public class TournamentsTest {
     public void testTournamentName(){
 
         Tournaments tournamentsUnderTest = new Tournaments();
-        Assertions.assertNotEquals(68,tournamentsUnderTest.getTournamentName("Name"));
+        Assertions.assertNotEquals(68,tournamentsUnderTest.getTournamentName());
 
-        //Assertions.assertEquals("Name", tournamentsUnderTest.getTournamentName("Name"));
+        Assertions.assertEquals(tournamentsUnderTest.getTournamentName(), tournamentsUnderTest.getTournamentName());
     }
 
     @Test
     public void testLocation(){
 
         Tournaments tournamentsUnderTest = new Tournaments();
-        Assertions.assertNotEquals(99,tournamentsUnderTest.getLocation("Place"));
+        Assertions.assertNotEquals(99,tournamentsUnderTest.getLocation());
 
-        //Assertions.assertEquals("Place", tournamentsUnderTest.getLocation("Place"));
+        Assertions.assertEquals(tournamentsUnderTest.getLocation(), tournamentsUnderTest.getLocation());
     }
 
     @Test
     public void testEntryFee(){
 
         Tournaments tournamentsUnderTest = new Tournaments();
-        Assertions.assertNotEquals(68,tournamentsUnderTest.getEntryFee(1500.00));
+        Assertions.assertNotEquals(68,tournamentsUnderTest.getEntryFee());
 
-        Assertions.assertEquals(0.0, tournamentsUnderTest.getEntryFee(0.0));
+        Assertions.assertEquals(0.0, tournamentsUnderTest.getEntryFee());
     }
 
     @Test
     public void testStartDate(){
 
         Tournaments tournamentsUnderTest = new Tournaments();
-        Assertions.assertNotEquals(44,tournamentsUnderTest.getStartDate("Date"));
+        Assertions.assertNotEquals(44,tournamentsUnderTest.getStartDate());
 
-        //Assertions.assertEquals("null", tournamentsUnderTest.getStartDate(""));
+        Assertions.assertEquals(tournamentsUnderTest.getStartDate(), tournamentsUnderTest.getStartDate());
     }
 
     @Test
     public void testEndDate(){
 
         Tournaments tournamentsUnderTest = new Tournaments();
-        Assertions.assertNotEquals(17,tournamentsUnderTest.getEndDate("Date"));
+        Assertions.assertNotEquals(17,tournamentsUnderTest.getEndDate());
 
-        //Assertions.assertEquals("Date", tournamentsUnderTest.getEndDate("Date"));
+        Assertions.assertEquals(tournamentsUnderTest.getEndDate(), tournamentsUnderTest.getEndDate());
     }
 
     @Test
     public void testCashPrizeAmount(){
 
         Tournaments tournamentsUnderTest = new Tournaments();
-        Assertions.assertNotEquals(2500.00,tournamentsUnderTest.getCashPrizeAmount(25000.00));
+        Assertions.assertNotEquals(2500.00,tournamentsUnderTest.getCashPrizeAmount());
 
-        Assertions.assertEquals(0.0, tournamentsUnderTest.getCashPrizeAmount(0.0));
+        Assertions.assertEquals(0.0, tournamentsUnderTest.getCashPrizeAmount());
     }
 }
