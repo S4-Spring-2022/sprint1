@@ -36,7 +36,7 @@ public class MembersList {
                                 "24/12/2014", "8", "Regular", "CancerSociety", "YouthSociety", "N/A" });
                 tableModel.addRow(new Object[] { "Kaela Turgoose", "72650 Anthes Lane", "kturgoose2@microsoft.com",
                                 "763-954-7498",
-                                "02/04/2021", "1", "Other", });
+                                "02/04/2021", "1", "Other","N/A", "YouthSociety", "N/A"  });
                 tableModel.addRow(new Object[] { "Timmy Carnaman", "2 Holy Cross Parkway", "tcarnaman3@addtoany.com",
                                 "965-681-9819",
                                 "04/02/2019", "3", "Family", "CancerSociety", "YouthSociety", "N/A" });
