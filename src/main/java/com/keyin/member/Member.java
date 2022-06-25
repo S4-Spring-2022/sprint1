@@ -1,5 +1,3 @@
-
-
 package com.keyin.member;
 
 
@@ -31,7 +29,7 @@ public class Member {
 
 
 
-    public String getMemberFirstName(){
+    public String getMemberFirstName(String barry){
 
         return memberFirstName;
     }
@@ -41,7 +39,7 @@ public class Member {
         this.memberFirstName = memberFirstName;
     }
 
-    public String getMemberLastName(){
+    public String getMemberLastName(String peter){
         return memberLastName;
     }
 
@@ -91,17 +89,19 @@ public class Member {
         int years = time.getYears();
         int months = time.getMonths();
         int days = time.getDays();
-
-        duration = ( years + " year(s)"  + ", " + months  + " Month(s)" + ", " + days + " Day(s) " );
+        duration = ("Years: " + years +", " + " Months: " + months + ", " + "Days: " + days);
         return duration;
     }
-
-    public String toString() {
-        return("First Name: " + getMemberFirstName() + " , " + "Last Name: " + getMemberLastName() + "\n" +
-                "Address: " + getMemberAddress() + " , " + "Email: " + getEmail() + " , " + "Phone Number: " + getPhoneNumber() + "\n" +
-                "Membership Duration: " + getDuration());
-    }
+public String toString() {
+        return("First Name: " + getMemberFirstName("Barry") + " , " + "Last Name: " + getMemberLastName("Peter") +
+                " , " + "Address: " +getMemberAddress() + " , " + "Email" + getEmail() + " , " + "Phone Number: " + getPhoneNumber()
+                + " , " + "Length of Membership: " + getDuration()  + "\n\n");
 }
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj);
+    }
+
 
 
 
