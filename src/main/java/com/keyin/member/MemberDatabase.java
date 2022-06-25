@@ -18,7 +18,7 @@ public class MemberDatabase extends Member {
         Member m1 = new Member("Dave", "Temple", "5 Thomas Gardens",
                 "dave@dave.com", "709-555-7777", "Normal", LocalDate.of(2011, 6, 20));
         members.add(m1);
-
+        members.remove(m1);
         Member m2 = new Member("Gerald", "Bartlett", "100 Out-Of-The Way",
                 "gerald@gerald.com", "709-555-4444","Trial", LocalDate.of(2021, 12, 31));
         members.add(m2);
