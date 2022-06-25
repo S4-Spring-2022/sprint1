@@ -9,8 +9,8 @@ class Demo {
 
     Member newMember = new Member("Barry", "Poole", "101 new way", "barry@barry", "709-550-1102", LocalDate.of(2020, Month.JUNE, 21));
 
-        System.out.println("Member First Name: "+ newMember.getMemberFirstName());
-        System.out.println("Member Last Name: "+ newMember.getMemberLastName());
+        System.out.println("Member First Name: "+ newMember.getMemberFirstName("Barry"));
+        System.out.println("Member Last Name: "+ newMember.getMemberLastName("Peter"));
         System.out.println("Member Address: "+ newMember.getMemberAddress() );
         System.out.println("Member Email: "+ newMember.getEmail());
         System.out.println("Member Phone: "+ newMember.getPhoneNumber());

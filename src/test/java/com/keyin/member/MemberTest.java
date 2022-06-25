@@ -9,18 +9,18 @@ public class MemberTest {
     public void testMemberFirstName(){
 
         Member memberUnderTest = new Member();
-        Assertions.assertNotEquals(68,memberUnderTest.getMemberFirstName());
+        Assertions.assertNotEquals(68,memberUnderTest.getMemberFirstName("Barry"));
 
-        Assertions.assertEquals(memberUnderTest.getMemberFirstName(), memberUnderTest.getMemberFirstName());
+        Assertions.assertEquals(memberUnderTest.getMemberFirstName("Barry"), memberUnderTest.getMemberFirstName("Barry"));
     }
 
     @Test
     public void testMemberLastName(){
 
         Member memberUnderTest = new Member();
-        Assertions.assertNotEquals(100,memberUnderTest.getMemberLastName());
+        Assertions.assertNotEquals(100,memberUnderTest.getMemberLastName("Peter"));
 
-        Assertions.assertEquals(memberUnderTest.getMemberLastName(), memberUnderTest.getMemberLastName());
+        Assertions.assertEquals(memberUnderTest.getMemberLastName("Peter"), memberUnderTest.getMemberLastName("Peter"));
     }
 
     @Test
@@ -50,13 +50,6 @@ public class MemberTest {
         Assertions.assertEquals(memberUnderTest.getPhoneNumber(), memberUnderTest.getPhoneNumber());
     }
 
-//    @Test
-//    public void testStartDate(Object LocalDate){
-//
-//        Member memberUnderTest = new Member();
-//        Assertions.assertNotEquals(88,memberUnderTest.getStartDate());
-//
-//        Assertions.assertEquals(memberUnderTest.getStartDate(), memberUnderTest.getStartDate());
-//    }
+
 
 }
