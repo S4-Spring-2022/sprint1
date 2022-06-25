@@ -1,5 +1,6 @@
 package com.keyin.member;
 import java.io.*;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -56,8 +57,14 @@ public class MemberArrayList {
                     str.append(memberId ).append(newline );
                     str.append(email ).append(newline );
                     str.append(phone );
-                    Files.write(output, Collections.singleton(str.toString()));
-                    System.out.println(output.toFile().getAbsolutePath());
+                    if(new File(output_path).isFile()) {
+                        Files.write(output, Collections.singleton(str.toString()), StandardOpenOption.APPEND);
+                    }
+                    else {
+                        Files.write(output, Collections.singleton(str.toString()));
+                    }
+
+                    System.out.format(output.toFile().getAbsolutePath());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

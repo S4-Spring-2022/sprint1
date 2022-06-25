@@ -255,7 +255,7 @@ public class MemberServices extends MemberDatabase {
                 System.out.println("All Accounts in Database");
                 System.out.println();
                 MemberDatabase memberInstance = new MemberDatabase();
-                memberInstance.allMembers();
+//                memberInstance.allMembers();
                 ArrayList<Member> members = memberInstance.getMembers();
                 for (int print = 0; print < members.size(); print++) {
                    System.out.print(members.get(print));
