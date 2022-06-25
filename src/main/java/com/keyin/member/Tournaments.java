@@ -72,10 +72,9 @@ public class Tournaments {
     }
 
     public String toString() {
-        System.out.println("Tournament " + this.tournamentName + " will be held at this location: " + this.location
-                + " with an entry fee of " + this.entryFee + " and a payout prize money of this " + this.cashPrizeAmount
-                + " and set for this starting date " + this.startDate + " and this finishing date " + this.endDate);
-        return toString();
+        return  ("Tournament " + getTournamentName() + " will be held at this location: " + getLocation() + "\n"
+                + " with an entry fee of " + getEntryFee()+ " and a payout prize money of this " + getCashPrizeAmount() + "\n"
+                + " and set for this starting date " + getStartDate() + " and this finishing date " + getEndDate());
 
     }
 

@@ -17,4 +17,9 @@ public class MockTest {
         Assertions.assertNotNull(databaseMock);
 
     }
+
+    @Test
+    public void workingTest(){
+
+    }
 }
