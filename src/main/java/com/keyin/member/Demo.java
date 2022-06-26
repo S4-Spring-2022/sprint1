@@ -17,7 +17,8 @@ class Demo {
         System.out.println("Member Start Date: "+ newMember.getStartDate());
         newMember.getDuration();
 
-    Tournaments newTournaments = new Tournaments("Dave's Cash", "Piper's Hole",   1500, "2022/06/23", "2022/06/26",  25000);
+    Tournaments newTournaments = new Tournaments("Dave's Cash", "Piper's Hole",   1500, "2022/06/23", "2022/06/26",  25000, "Dave Temple, Barry Poole, Mike Tyson, Patrick Roy",
+            "Mike Tyson 1st, Dave Temple 9th, Barry Poole 18th, Patrick Roy 25th");
     System.out.println("");
 
     System.out.println("Tournament Name: " + newTournaments.getTournamentName());
