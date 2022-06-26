@@ -17,7 +17,7 @@ public class MemberServices extends MemberDatabase {
         System.out.println("3. View All Accounts");
         System.out.println("4. View All Tournaments");
         System.out.println("5. Remove Account");
-        System.out.println("5. Add Account");
+        System.out.println("6. Add Account");
         System.out.println();
         Scanner input = new Scanner(System.in);
         x = input.nextInt();

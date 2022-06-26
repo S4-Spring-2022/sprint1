@@ -53,11 +53,11 @@ public class MemberArrayList {
                 try {
                     String newline = System.getProperty("line.separator");
                     StringBuilder str = new StringBuilder();
-                    str.append(firstName ).append(newline );
-                    str.append(lastName ).append(newline  );
-                    str.append(memberId ).append(newline );
-                    str.append(email ).append(newline );
-                    str.append(phone );
+                    str.append("First Name: " + firstName ).append(newline );
+                    str.append("Last Name: " + lastName ).append(newline  );
+                    str.append("Member Id: " + memberId ).append(newline );
+                    str.append("Email: " + email ).append(newline );
+                    str.append("Phone: " + phone );
                     if(new File(output_path).isFile()) {
                         Files.write(output, Collections.singleton(str.toString()), StandardOpenOption.APPEND);
                     }
