@@ -32,6 +32,12 @@ public class MemberService {
         Tournament[] tournaments = {t1, t2, t3};
 
 
+        for(Tournament tournament : tournaments){
+            for(Member member : members){
+                member.enterTournament(tournament);
+            }
+        }
+
         // User choices
         int choice;
         String memberChoice = null;

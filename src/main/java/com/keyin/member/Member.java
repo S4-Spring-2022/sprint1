@@ -257,7 +257,7 @@ public class Member {
 //            }
 //        }
         for(Tournament tournament : tourArray){
-            if(tournament.getEndDate().isBefore(LocalDate.now())){
+            if(tournament.getStartDate().isAfter(LocalDate.now())){
                 upcomingTourArray.add( tournament.getName());
             }
         }
@@ -271,7 +271,7 @@ public class Member {
 //            }
 //        }
         for(Tournament tournament : tourArray){
-            if(tournament.getEndDate().isBefore(LocalDate.now())){
+            if(tournament.getEndDate().isAfter(LocalDate.now()) && tournament.getStartDate().isBefore(LocalDate.now())){
                 currentTourArray.add( tournament.getName());
             }
         }
@@ -299,12 +299,18 @@ public class Member {
                 + "\nMember Phone Number: " + this.phoneNum;
     }
     public String membershipToString(){
+        String fMemberOutput;
+        if (this.familyMember == null){
+            fMemberOutput = "N/A";
+        } else {
+            fMemberOutput = this.familyMember.name;
+        }
         return "\n--- Membership Info ---"
                 + "\nMembership Type: " + this.memberType
                 + "\nMembership Start Date: " + this.memberDate
                 + "\nMembership End Date: " + this.memberDuration
                 + "\nMembership Monthly Fee: " + this.memberMonthCost
-                + "\nFamily Member: " + this.familyMember.name;
+                + "\nFamily Member: " + fMemberOutput;
     }
 
     public String allTournamentsToString(){
