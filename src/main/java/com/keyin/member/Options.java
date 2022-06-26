@@ -45,7 +45,7 @@ public class Options implements ActionListener {
         } else if (arg0.getSource() == frame.getContentPane().getComponent(1)) {
             new MembersList();
         } else if (arg0.getSource() == frame.getContentPane().getComponent(2)) {
-            new TournamentList();
+            new TournamentsList();
         }
 
     }
