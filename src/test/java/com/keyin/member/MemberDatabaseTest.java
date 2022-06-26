@@ -23,6 +23,14 @@ class MemberDatabaseTest {
         Assertions.assertEquals(memberUnderTest.getMemberLastName(), memberUnderTest.getMemberLastName());
     }
 
+    @Test
+    public void testMemberAddress(){
+
+        Member memberUnderTest = new Member();
+        Assertions.assertNotEquals("171 Canada Way",memberUnderTest.getMemberAddress());
+
+        Assertions.assertEquals(memberUnderTest.getMemberAddress(), memberUnderTest.getMemberAddress());
+    }
 //    @Test
 //
 //    public void testMembersMatch() {
