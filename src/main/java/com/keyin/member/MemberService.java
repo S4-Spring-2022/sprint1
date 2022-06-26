@@ -12,24 +12,25 @@ import java.util.Scanner;
 public class MemberService {
 
     public static void main(String[] args){
-        Member m1 = new Member("Bryson Dechambeau", "23 Random Avenue", "bdechambeau123@gmail.com", "(222)555-4474", "2022-06-22");
-        Member m2 = new Member("Phil Mickelson", "24 New Street", "PM89@gmail.com", "(222)555-3213", "2022-06-22");
-        Member m3 = new Member("Justin Thomas", "25 Birdie Crescent", "TheJT90@gmail.com", "(222)555-1112", "2022-06-22");
-        m3.setMembership("2022-06-23", "student", m2);
+        //mock members
+        Member m8 = new Member("James Thomas", "1 Stroke Street", "JTJ@pga.com", "12223324448", "2022-06-25");
+        Member m1 = new Member("Scottie Scheffler", "1232 Birdie Blvd.", "theace1@hotmail.com", "12223334455", "2022-06-25", "trial");
+        Member m2 = new Member("Sam Burns", "70 Eagle Avenue", "sideBurns77@msn.live.ca", "12223334375", "2022-06-25");
+        Member m3 = new Member("Rory Mcilroy", "02302 Albatros Avenue", "TheIrishGolfer@gmail.com", "12223334455", "2022-06-25", "special");
+        Member m4 = new Member("Justin Thomas", "1 Stroke Street", "JT1@pga.com", "12223330055", "2022-06-25", "family", m8);
+        Member m5 = new Member("Hideki Matsuyama", "55 Chip Crescent", "HideNoMore@sympatico.jp", "12323336655", "2022-06-25", "Student");
+        Member m6 = new Member("Cameron Smith", "99 Putting Pl.", "strayaNum1@gmail.aus", "12223337004", "2022-06-25", "early");
+        Member m7 = new Member("Bryson Dechambeau", "4 BogieFree Blvd.", "BAD@thePGA.com", "12223357703", "2022-06-25");
 
-        Member m4 = new Member("Brandon", "123 yes place", "random@gmail.com", "1231231233", "2022-06-24");
-//        m4.setMembership("2022-06-25", "Standard");
+        //mock tournaments
+        Tournament t1 = new Tournament("The Masters", "2022-04-07", "2022-04-10", "Agusta National", 250, 2700000);
+        Tournament t2 = new Tournament("The Open", "2022-06-20", "2022-07-01", "St. Andrews Links", 200, 2100000);
+        Tournament t3 = new Tournament("The Canadian Open", "2022-09-01", "2022-09-04", "St. Georges", 100, 1500000);
 
-        Tournament Masters = new Tournament("The Masters", "2022-04-15","2022-04-19", "Agusta National",500, 2700000);
-        Tournament theOpen = new Tournament("The Open", "2023-07-15","2023-07-19", "St Georges",100, 1600000);
-        Tournament CAOpen = new Tournament("Canadian Open", "2022-06-20","2022-06-25", "St. Andrews",100, 2000000);
 
-        Member[] members = {m1, m2, m3, m4};
-        Tournament[] tournaments = {Masters, theOpen, CAOpen};
+        Member[] members = {m1, m2, m3, m4, m5, m6, m7, m8};
+        Tournament[] tournaments = {t1, t2, t3};
 
-        m1.enterTournament(Masters);
-        m1.enterTournament(theOpen);
-        m1.enterTournament(CAOpen);
 
         // User choices
         int choice;
@@ -54,8 +55,6 @@ public class MemberService {
         Scanner in = new Scanner(System.in);
 
         //Get choices from user
-//        memberChoice = "Bryson Dechambeau";
-
 
         choice = in.nextInt();
         in.nextLine();
@@ -84,9 +83,9 @@ public class MemberService {
                     }
                     else if (choice == options[2]){
                         assert nameInput != null;
-                        nameInput.getTourneysCurrent();
-                        nameInput.getTourneysPast();
-                        nameInput.getTourneysUpcoming();
+                        System.out.println(nameInput.getTourneysCurrent());
+                        System.out.println(nameInput.getTourneysPast());
+                        System.out.println(nameInput.getTourneysUpcoming());
                     }
 
                     //Display menu
@@ -112,10 +111,6 @@ public class MemberService {
                 }
             }
         }
-
-
-//        System.out.println("Goodbye, call again!");
-
 
     }
 

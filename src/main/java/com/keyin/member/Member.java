@@ -17,7 +17,10 @@ public class Member {
     private String memberType;
     private int memberMonthCost;
     private ArrayList<Tournament> tourArray = new ArrayList<Tournament>();
-    private Member familyMember;
+    private ArrayList<String> currentTourArray = new ArrayList<String>();
+    private ArrayList<String> pastTourArray = new ArrayList<String>();
+    private ArrayList<String> upcomingTourArray = new ArrayList<String>();
+    private Member familyMember = null;
 
     /*
     Member Types: if not specified memberships last 365 days
@@ -65,7 +68,8 @@ public class Member {
                 memberDuration = memberDate.plusYears(1);
                 memberMonthCost = 217;
 //                familyMember = fMember;
-//                fMember.familyMember = this;
+//                fMember.setMembership(sDate, "family", this);
+
 //                Scanner input = new Scanner(System.in);
 //                System.out.println("Enter Family Member Name");
 //                String familyMemberName = input.nextLine();
@@ -81,7 +85,89 @@ public class Member {
             }
         }
     }
+
+    public Member(String n, String a, String e, String num, String sDate, String mem, Member fMember){ //find out how to have 'if' parameter
+        name = n;
+        address = a;
+        email = e;
+        phoneNum = num;
+        memberDate = LocalDate.parse(sDate);
+        memberType = mem;
+        switch (mem) {
+            case "standard" -> {
+                memberDuration = memberDate.plusYears(1);
+                memberMonthCost = 125;
+            }
+            case "trial" -> {
+                memberDuration = memberDate.plusMonths(1);
+                memberMonthCost = 300;
+            }
+            case "special" -> {
+                memberDuration = memberDate.plusYears(1);
+                memberMonthCost = 100;
+            }
+            case "family" -> {
+                memberDuration = memberDate.plusYears(1);
+                memberMonthCost = 217;
+                familyMember = fMember;
+                fMember.familyMember = this;
+                fMember.setMembership(sDate, "family");
+
+//                Scanner input = new Scanner(System.in);
+//                System.out.println("Enter Family Member Name");
+//                String familyMemberName = input.nextLine();
+                //for statement needed to look through data array and compare objs in data to familyMemberName and link them together
+            }
+            case "student" -> {
+                memberDuration = memberDate.plusYears(1);
+                memberMonthCost = 80;
+            }
+            case "early" -> {
+                memberDuration = memberDate.plusYears(1);
+                memberMonthCost = 63;
+            }
+        }
+    }
+
+
     //set membership type
+    public void setMembership( String sDate, String type){
+        this.memberDate = LocalDate.parse(sDate);
+        this.memberType = type;
+        switch (type) {
+            case "standard" -> {
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 125;
+            }
+            case "trial" -> {
+                this.memberDuration = this.memberDate.plusMonths(1);
+                this.memberMonthCost = 300;
+            }
+            case "special" -> {
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 100;
+            }
+            case "family" -> {
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 217;
+
+//                fMember.setMembership(sDate, "family", this);
+//                Scanner input = new Scanner(System.in);
+//                System.out.println("Enter Family Member Name");
+//                String familyMemberName = input.nextLine();
+                //for statement needed to look through data array and compare objs in data to familyMemberName and link them together
+            }
+            case "student" -> {
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 80;
+            }
+            case "early" -> {
+                this.memberDuration = this.memberDate.plusYears(1);
+                this.memberMonthCost = 63;
+            }
+        }
+    }
+
     public void setMembership( String sDate, String type, Member fMember){
         this.memberDate = LocalDate.parse(sDate);
         this.memberType = type;
@@ -103,6 +189,9 @@ public class Member {
                 this.memberMonthCost = 217;
                 familyMember = fMember;
                 fMember.familyMember = this;
+                fMember.setMembership(sDate, "family");
+
+//                fMember.setMembership(sDate, "family", this);
 //                Scanner input = new Scanner(System.in);
 //                System.out.println("Enter Family Member Name");
 //                String familyMemberName = input.nextLine();
@@ -119,49 +208,90 @@ public class Member {
         }
     }
 
+
+
     //use isAfter and isBefore
     //current tournaments //Past tournaments //upcoming tournaments
-    public Object enterTournament(Tournament t){
+    public void enterTournament(Tournament t){
         t.addMember(this);
         tourArray.add(t);
-        return tourArray;
     }
 
     //sets
+    public String setName(String n){
+        name = n;
+        return name;
+    }
 
+    public String setAddress(String a){
+        address = a;
+        return address;
+    }
+    public String setEmail(String e){
+        email = e;
+        return email;
+    }
+    public String setPhone(String p){
+        phoneNum = p;
+        return phoneNum;
+    }
     //gets
     public String getName(){
         return name;
     }
-    public void getTourneysUpcoming(){
-        System.out.println("\n--- Upcoming Tournaments ---");
-        for(Tournament tournament : tourArray){
-            if(tournament.getStartDate().isAfter(LocalDate.now())){
-                System.out.println(tournament.getName());
-            }
-        }
+    public String getAddress(){
+        return address;
     }
-    public void getTourneysCurrent(){
-        System.out.println("\n--- Current Tournaments ---");
-        for(Tournament tournament : tourArray){
-            if(tournament.getStartDate().isBefore(LocalDate.now()) && tournament.getEndDate().isAfter(LocalDate.now())){
-                System.out.println(tournament.getName());
-            }
-        }
+    public String getEmail(){
+        return email;
     }
-    public void getTourneysPast(){
-        System.out.println("\n--- Past Tournaments ---");
-        for(Tournament tournament : tourArray){
-            if(tournament.getEndDate().isBefore(LocalDate.now())){
-                System.out.println(tournament.getName());
-            }
-        }
+    public String getPhone(){
+        return phoneNum;
     }
 
-//    public String tourneysToString(){
-//        System.out.println("\n--- Members Tournaments ---");
-//        if()
-//    }
+    public String getTourneysUpcoming(){
+//        System.out.println("\n--- Upcoming Tournaments ---");
+//        for(Tournament tournament : tourArray){
+//            if(tournament.getStartDate().isAfter(LocalDate.now())){
+//                System.out.println(tournament.getName());
+//            }
+//        }
+        for(Tournament tournament : tourArray){
+            if(tournament.getEndDate().isBefore(LocalDate.now())){
+                upcomingTourArray.add( tournament.getName());
+            }
+        }
+        return "\n--- Upcoming Tournaments ---\n" + upcomingTourArray;
+    }
+    public String getTourneysCurrent(){
+//        System.out.println("\n--- Current Tournaments ---");
+//        for(Tournament tournament : tourArray){
+//            if(tournament.getStartDate().isBefore(LocalDate.now()) && tournament.getEndDate().isAfter(LocalDate.now())){
+//                System.out.println(tournament.getName());
+//            }
+//        }
+        for(Tournament tournament : tourArray){
+            if(tournament.getEndDate().isBefore(LocalDate.now())){
+                currentTourArray.add( tournament.getName());
+            }
+        }
+        return "\n--- Current Tournaments ---\n" + currentTourArray;
+    }
+    public String getTourneysPast(){
+//        System.out.println("\n--- Past Tournaments ---");
+//        for(Tournament tournament : tourArray){
+//            if(tournament.getEndDate().isBefore(LocalDate.now())){
+//                System.out.println(tournament.getName());
+//            }
+//        }
+        for(Tournament tournament : tourArray){
+            if(tournament.getEndDate().isBefore(LocalDate.now())){
+                pastTourArray.add( tournament.getName());
+            }
+        }
+        return "\n--- Past Tournaments ---\n" + pastTourArray;
+    }
+
     public String infoToString(){
         return "\nMember Name: " + this.name
                 + "\nMember Address: " + this.address
@@ -172,7 +302,14 @@ public class Member {
         return "\n--- Membership Info ---"
                 + "\nMembership Type: " + this.memberType
                 + "\nMembership Start Date: " + this.memberDate
-                + "\nMembership End Date: " + this.memberDuration;
+                + "\nMembership End Date: " + this.memberDuration
+                + "\nMembership Monthly Fee: " + this.memberMonthCost
+                + "\nFamily Member: " + this.familyMember.name;
+    }
+
+    public String allTournamentsToString(){
+        return "\n--- All Tournaments ---"
+                + this.tourArray;
     }
 }
 
