@@ -73,7 +73,7 @@ public class CLI {
                         };
 
                     }
-                    Member member = array.get();
+                    Member member = array.get(); // shows all member details
                     System.out.println("Details of Member");
                     System.out.println(("Member Name: " + member.getMemberName()));
                     System.out.println(("Member Address: " + member.getMemberAddress()));
@@ -142,7 +142,7 @@ public class CLI {
                         };
 
                     }
-                    Tournament tournament = array.get();
+                    Tournament tournament = array.get(); // shows all Tournament details
                     System.out.println("Details of Tournament");
                     System.out.println(("Tournament Name: " + tournament.getTourneyName()));
                     System.out.println(("Location: " + tournament.getLocation()));
