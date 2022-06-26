@@ -61,7 +61,7 @@ public class Menu{
             //Get choice from user
             choice = in.nextInt();
         }
-        System.out.println("Goodbye, call again!");
+        System.out.println("Thanks For Using The Golf Club's Data System!");
 
     }
 }
