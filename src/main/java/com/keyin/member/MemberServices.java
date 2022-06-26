@@ -1,72 +1,3 @@
-//package com.keyin.member;//package com.keyin.member;
-//
-//import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Path;
-//import java.nio.file.Paths;
-//import java.util.ArrayList;
-//import java.util.Collections;
-//import java.util.Scanner;
-//
-//
-//public class MemberServices extends MemberDatabase {
-//    public static void main(String[] args) throws IOException {
-//        int option;
-//        {
-//            System.out.println("Option Menu");
-//            System.out.println("1. Add new member\n 2. View Account\n " +
-//                    "3. Update Account\n 4. Delete Account\n 5. View Tournaments\n ");
-//            System.out.println();
-//            System.out.println("Insert your option:");
-//            Scanner input = new Scanner(System.in);
-//            option = input.nextInt();
-//            if (option == 1) {
-//                System.out.println("You've chose to create a new member");
-//            } else if (option == 2) {
-//                System.out.println("You've chosen to view an account");
-//                System.out.println();
-//                MemberDatabase memberInstance = new MemberDatabase();
-//                memberInstance.allMembers();
-//                ArrayList<Member> members = memberInstance.getMembers();
-//                System.out.println("Please enter Members Id (m1-m9)");
-//                System.out.println();
-//                Member findMember = members.get(0);
-//                findMember.toString();
-//                System.out.println(findMember);
-//
-//                // Non-Static to static data
-//                input.close();
-//                String answer;
-//                memberInstance = new MemberDatabase();
-//                Scanner memberScan = new Scanner(System.in);
-//                System.out.println(memberInstance.allMembers());
-//                memberInstance.allMembers();
-//                memberScan.close();
-//
-//            } else if (option == 3) {
-//                System.out.println("You've chose to update an existing account");
-//            } else if (option == 4) {
-//                System.out.println("You've chosen to delete an account");
-//            } else if (option == 5) {
-//                System.out.println("You've chosen to View Tournaments");
-//                TournamentsDatabase tournamentsInstance = new TournamentsDatabase();
-//                tournamentsInstance.allTournaments();
-//                ArrayList<Tournaments> tournaments = tournamentsInstance.getTournaments();
-//                if (tournaments.size() <= 8) {
-//                    Tournaments findTournaments = tournaments.get(7);
-//                    findTournaments.toString();
-//                    System.out.println(findTournaments);
-//                } else {
-//                    System.out.println("exceeds selection");
-//                }
-//            } else {
-//            System.out.println("Invalid Selection");
-//        }
-//     }
-//    }
-//
-//}
-
 package com.keyin.member;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -76,6 +7,7 @@ public class MemberServices extends MemberDatabase {
         int y = 0;
         int z = 0;
         int w = 0;
+        int v = 0;
         System.out.println("------------------------------------------------------");
         System.out.println("-------WELCOME TO OUR Golf Club MANAGEMENT SYSTEM-------");
         System.out.println("------------------------------------------------------");
@@ -85,6 +17,7 @@ public class MemberServices extends MemberDatabase {
         System.out.println("3. View All Accounts");
         System.out.println("4. View All Tournaments");
         System.out.println("5. Remove Account");
+        System.out.println("5. Add Account");
         System.out.println();
         Scanner input = new Scanner(System.in);
         x = input.nextInt();
@@ -258,7 +191,7 @@ public class MemberServices extends MemberDatabase {
 //                memberInstance.allMembers();
                 ArrayList<Member> members = memberInstance.getMembers();
                 for (int print = 0; print < members.size(); print++) {
-                   System.out.print(members.get(print));
+                    System.out.print(members.get(print));
 //                members.toString();
 //                System.out.println(members);
 //
@@ -281,8 +214,102 @@ public class MemberServices extends MemberDatabase {
                 System.out.println(" Enter Membership Account to Delete from 1-9");
                 Scanner input4 = new Scanner(System.in);
                 w = input4.nextInt();
-                    switch (w) {
+                switch (w) {
+                    case 1:
+
+                        MemberDatabase memberInstance = new MemberDatabase();
+                        memberInstance.allMembers();
+                        ArrayList<Member> members = memberInstance.getMembers();
+                        Member removeMember = members.remove(0);
+                        removeMember.toString();
+                        System.out.println(removeMember);
+                        break;
+                    case 2:
+                        MemberDatabase memberInstance1 = new MemberDatabase();
+                        memberInstance1.allMembers();
+                        ArrayList<Member> members1 = memberInstance1.getMembers();
+                        Member removeMember1 = members1.remove(1);
+                        removeMember1.toString();
+                        System.out.println(removeMember1);
+                        break;
+                    case 3:
+                        MemberDatabase memberInstance2 = new MemberDatabase();
+                        memberInstance2.allMembers();
+                        ArrayList<Member> members2 = memberInstance2.getMembers();
+                        Member removeMember2 = members2.remove(2);
+                        removeMember2.toString();
+                        System.out.println(removeMember2);
+                        break;
+                    case 4:
+                        MemberDatabase memberInstance3 = new MemberDatabase();
+                        memberInstance3.allMembers();
+                        ArrayList<Member> members3 = memberInstance3.getMembers();
+                        Member findMember3 = members3.remove(3);
+                        findMember3.toString();
+                        System.out.println(findMember3);
+                        break;
+                    case 5:
+                        MemberDatabase memberInstance4 = new MemberDatabase();
+                        memberInstance4.allMembers();
+                        ArrayList<Member> members4 = memberInstance4.getMembers();
+                        Member findMember4 = members4.remove(4);
+                        findMember4.toString();
+                        System.out.println(findMember4);
+                        break;
+                    case 6:
+                        MemberDatabase memberInstance5 = new MemberDatabase();
+                        memberInstance5.allMembers();
+                        ArrayList<Member> members5 = memberInstance5.getMembers();
+                        Member findMember5 = members5.remove(5);
+                        findMember5.toString();
+                        System.out.println(findMember5);
+                        break;
+                    case 7:
+                        MemberDatabase memberInstance6 = new MemberDatabase();
+                        memberInstance6.allMembers();
+                        ArrayList<Member> members6 = memberInstance6.getMembers();
+                        Member findMember6 = members6.remove(6);
+                        findMember6.toString();
+                        System.out.println(findMember6);
+                        break;
+                    case 8:
+                        MemberDatabase memberInstance7 = new MemberDatabase();
+                        memberInstance7.allMembers();
+                        ArrayList<Member> members7 = memberInstance7.getMembers();
+                        Member findMember7 = members7.remove(7);
+                        findMember7.toString();
+                        System.out.println(findMember7);
+                        break;
+                    case 9:
+                        MemberDatabase memberInstance8 = new MemberDatabase();
+                        memberInstance8.allMembers();
+                        ArrayList<Member> members8 = memberInstance8.getMembers();
+                        Member findMember8 = members8.remove(8);
+                        findMember8.toString();
+                        System.out.println(findMember8);
+                        break;
+                }
+            }
+                case 6 -> {
+
+
+                    switch (v) {
                         case 1:
+                            System.out.println("Member info: ");
+//                            Scanner input = new Scanner(System.in);
+//                            v = input.nextInt();
+//                            System.out.println("Please enter Member First Name: ");
+//                            Scanner input = new Scanner(System.in);
+//                            v = input6.nextInt();
+//                            firstName.add(scanner.next());
+//                            System.out.println("Please enter Member Last Name: ");
+//                            lastName.add(scanner.next());
+//                            System.out.println("Please enter Member Id number: ");
+//                            memberId.add(scanner.next());
+//                            System.out.println("Please enter Member Email: ");
+//                            email.add(scanner.next());
+//                            System.out.println("Please enter Member phone: ");
+//                            phone.add(scanner.next());
 
                             MemberDatabase memberInstance = new MemberDatabase();
                             memberInstance.allMembers();
@@ -291,78 +318,16 @@ public class MemberServices extends MemberDatabase {
                             removeMember.toString();
                             System.out.println(removeMember);
                             break;
-                        case 2:
-                            MemberDatabase memberInstance1 = new MemberDatabase();
-                            memberInstance1.allMembers();
-                            ArrayList<Member> members1 = memberInstance1.getMembers();
-                            Member removeMember1 = members1.remove(1);
-                            removeMember1.toString();
-                            System.out.println(removeMember1);
-                            break;
-                        case 3:
-                            MemberDatabase memberInstance2 = new MemberDatabase();
-                            memberInstance2.allMembers();
-                            ArrayList<Member> members2 = memberInstance2.getMembers();
-                            Member removeMember2 = members2.remove(2);
-                            removeMember2.toString();
-                            System.out.println(removeMember2);
-                            break;
-                        case 4:
-                            MemberDatabase memberInstance3 = new MemberDatabase();
-                            memberInstance3.allMembers();
-                            ArrayList<Member> members3 = memberInstance3.getMembers();
-                            Member findMember3 = members3.remove(3);
-                            findMember3.toString();
-                            System.out.println(findMember3);
-                            break;
-                        case 5:
-                            MemberDatabase memberInstance4 = new MemberDatabase();
-                            memberInstance4.allMembers();
-                            ArrayList<Member> members4 = memberInstance4.getMembers();
-                            Member findMember4 = members4.remove(4);
-                            findMember4.toString();
-                            System.out.println(findMember4);
-                            break;
-                        case 6:
-                            MemberDatabase memberInstance5 = new MemberDatabase();
-                            memberInstance5.allMembers();
-                            ArrayList<Member> members5 = memberInstance5.getMembers();
-                            Member findMember5 = members5.remove(5);
-                            findMember5.toString();
-                            System.out.println(findMember5);
-                            break;
-                        case 7:
-                            MemberDatabase memberInstance6 = new MemberDatabase();
-                            memberInstance6.allMembers();
-                            ArrayList<Member> members6 = memberInstance6.getMembers();
-                            Member findMember6 = members6.remove(6);
-                            findMember6.toString();
-                            System.out.println(findMember6);
-                            break;
-                        case 8:
-                            MemberDatabase memberInstance7 = new MemberDatabase();
-                            memberInstance7.allMembers();
-                            ArrayList<Member> members7 = memberInstance7.getMembers();
-                            Member findMember7 = members7.remove(7);
-                            findMember7.toString();
-                            System.out.println(findMember7);
-                            break;
-                        case 9:
-                            MemberDatabase memberInstance8 = new MemberDatabase();
-                            memberInstance8.allMembers();
-                            ArrayList<Member> members8 = memberInstance8.getMembers();
-                            Member findMember8 = members8.remove(8);
-                            findMember8.toString();
-                            System.out.println(findMember8);
-                            break;
-                    }
-            }
-//                default -> throw new IllegalStateException("Wrong selection chosen: " + x);
-                    default -> System.out.println("Wrong Selection Try again");
 
+                    }
                 }
+//                default -> throw new IllegalStateException("Wrong selection chosen: " + x);
+                default -> System.out.println("Wrong Selection Try again");
+
             }
         }
+    }
+
 
 
 
