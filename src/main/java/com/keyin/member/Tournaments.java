@@ -8,14 +8,20 @@ public class Tournaments {
     private String endDate;
     private double cashPrizeAmount;
 
+    private String participatingMembers;
 
-    public Tournaments(String tournamentName, String location, double entryFee, String startDate, String endDate, double cashPrizeAmount) {
+    private String finalStandings;
+
+
+    public Tournaments(String tournamentName, String location, double entryFee, String startDate, String endDate, double cashPrizeAmount, String participatingMembers, String finalStandings) {
         this.tournamentName = tournamentName;
         this.location = location;
         this.entryFee = entryFee;
         this.startDate = startDate;
         this.endDate = endDate;
         this.cashPrizeAmount = cashPrizeAmount;
+        this.participatingMembers = participatingMembers;
+        this.finalStandings = finalStandings;
 
     }
 
@@ -71,10 +77,27 @@ public class Tournaments {
         this.cashPrizeAmount = cashPrizeAmount;
     }
 
+    public String getParticipatingMembers(){
+        return participatingMembers;
+    }
+
+    public void setParticipatingMembers(String participatingMembers){
+        this.participatingMembers = participatingMembers;
+    }
+
+    public String getFinalStandings(){
+        return finalStandings;
+    }
+
+    public void setFinalStandings(String finalStandings){
+        this.finalStandings = finalStandings;
+    }
+
     public String toString() {
         return("Tournament Name: " + getTournamentName() + "\n" + "Location: " + getLocation() +
                 "\n" + "Entry Fee: $" + getEntryFee() + "\n" + "Start Date: " + getStartDate() + " - " + "End Date: " + getEndDate()
-                + "\n" + "Prize Payout : $" + getCashPrizeAmount() + "\n\n");
+                + "\n" + "Prize Payout : $" + getCashPrizeAmount() + "\n" + "Participating Members: " + getParticipatingMembers() + "\n" +
+                "Final Standings: " + getFinalStandings() + "\n\n");
     }
 
 

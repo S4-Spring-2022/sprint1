@@ -1,14 +1,7 @@
 package com.keyin.member;
 
-import lombok.EqualsAndHashCode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.function.BooleanSupplier;
-
-import static java.util.Arrays.asList;
 
 
 class MemberDatabaseTest {
@@ -18,16 +11,16 @@ class MemberDatabaseTest {
     public void testMemberLastName() {
 
         Member memberUnderTest = new Member();
-        Assertions.assertNotEquals("Hello", memberUnderTest.getMemberLastName("Peter"));
-        Assertions.assertEquals(memberUnderTest.getMemberLastName("Peter"), memberUnderTest.getMemberLastName("Peter"));
+        Assertions.assertNotEquals("Hello", memberUnderTest.getMemberLastName());
+        Assertions.assertEquals(memberUnderTest.getMemberLastName(), memberUnderTest.getMemberLastName());
     }
 
     @Test
     public void testMemberFirstName() {
 
         Member memberUnderTest = new Member();
-        Assertions.assertNotEquals("Rawsthorne", memberUnderTest.getMemberLastName("Peter"));
-        Assertions.assertEquals(memberUnderTest.getMemberLastName("Peter"), memberUnderTest.getMemberLastName("Peter"));
+        Assertions.assertNotEquals("Rawsthorne", memberUnderTest.getMemberLastName());
+        Assertions.assertEquals(memberUnderTest.getMemberLastName(), memberUnderTest.getMemberLastName());
     }
 
 //    @Test

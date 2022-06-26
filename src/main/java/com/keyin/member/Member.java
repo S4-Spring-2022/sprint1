@@ -12,7 +12,7 @@ public class Member {
     private String phoneNumber;
     private static LocalDate startDate;
     private String duration;
-//    private LocalDate todaysDate;
+
 
     public Member() {
     }
@@ -29,7 +29,7 @@ public class Member {
 
 
 
-    public String getMemberFirstName(String barry){
+    public String getMemberFirstName(){
 
         return memberFirstName;
     }
@@ -39,7 +39,7 @@ public class Member {
         this.memberFirstName = memberFirstName;
     }
 
-    public String getMemberLastName(String peter){
+    public String getMemberLastName(){
         return memberLastName;
     }
 
@@ -93,13 +93,11 @@ public class Member {
         return duration;
     }
 public String toString() {
-        return("First Name: " + getMemberFirstName("Barry") + " , " + "Last Name: " + getMemberLastName("Peter") +
-                " , " + "Address: " +getMemberAddress() + " , " + "Email" + getEmail() + " , " + "Phone Number: " + getPhoneNumber()
-                + " , " + "Length of Membership: " + getDuration()  + "\n\n");
+        return("First Name: " + getMemberFirstName() + " , " + "Last Name: " + getMemberLastName() + " \n"
+                + "Address: " +getMemberAddress() + " , " + "Email " + getEmail() + " , " + "Phone Number: " + getPhoneNumber()+ " \n"
+                + "Length of Membership: " + getDuration()  + "\n\n");
 }
-//    @Override
-//    public boolean equals(Object obj) {
-//        return super.equals(obj);
+
     }
 
 

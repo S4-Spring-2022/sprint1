@@ -4,21 +4,24 @@ package com.keyin.member;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class MemberServices extends MemberDatabase {
+
+
     public static void main(String[] args) {
-        int w = 0;
+
+
         int x = 0;
         int y = 0;
         int z = 0;
-        System.out.println("Please elect 1 to View Accounts, 2 to View Tournaments, 3 to vies All Accounts Or 4 to view All Tournaments ");
+        System.out.println("Please select 1 to View Individual Accounts:\nPlease select 2 to View Individual Tournaments:\nPlease select 3 to View All Accounts:\nPlease select 4 to View All Tournaments: ");
         Scanner input = new Scanner(System.in);
         x = input.nextInt();
-//
+
         switch (x) {
             case 1 -> {
                 System.out.println("Please select a Member between 1- 10");
                 Scanner input2 = new Scanner(System.in);
                 y = input2.nextInt();
-//
+
                 switch (y) {
                     case 1:
                         MemberDatabase memberInstance = new MemberDatabase();
@@ -95,7 +98,7 @@ public class MemberServices extends MemberDatabase {
                 }
             }
             case 2 -> {
-                System.out.println("Please Select a Tournament between 1-10");
+                System.out.println("Please Select a Tournament between 1-8");
                 Scanner input3 = new Scanner(System.in);
                 z = input3.nextInt();
                 switch (z) {
@@ -174,38 +177,38 @@ public class MemberServices extends MemberDatabase {
                 }
 
             }
-            case 3 -> {
-                System.out.println("All Tournaments in Database");
-                System.out.println();
-                TournamentsDatabase tournamentsInstance = new TournamentsDatabase();
-                tournamentsInstance.allTournaments();
-                ArrayList<Tournaments> tournaments = tournamentsInstance.getTournaments();
-                tournaments.toString();
-                System.out.println(tournaments);;
-                break;
 
-            }
-            case 4 -> {
+            case 3 -> {
                 System.out.println("All Accounts in Database");
                 System.out.println();
                 MemberDatabase memberInstance = new MemberDatabase();
                 memberInstance.allMembers();
                 ArrayList<Member> members = memberInstance.getMembers();
-                members.toString();
-                System.out.println(members);
-                break;
+                for (int print = 0; print < members.size(); print++) {
+                    System.out.print(members.get(print));
 
+                }
             }
+            case 4 -> {
+
+                System.out.println("All Tournaments in Database");
+                System.out.println();
+                TournamentsDatabase tournamentsInstance = new TournamentsDatabase();
+                tournamentsInstance.allTournaments();
+                ArrayList<Tournaments> tournaments = tournamentsInstance.getTournaments();
+                for(int print = 0; print < tournaments.size(); print++){
+                    System.out.print(tournaments.get(print) );
+
+
+
+                }
+            }
+
+
 
                 default -> throw new IllegalStateException("Wrong selection chosen: " + x);
 
             }
         }
     }
-
-
-
-
-
-
 

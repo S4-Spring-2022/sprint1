@@ -9,18 +9,18 @@ public class MemberTest {
     public void testMemberFirstName(){
 
         Member memberUnderTest = new Member();
-        Assertions.assertNotEquals(68,memberUnderTest.getMemberFirstName("Barry"));
+        Assertions.assertNotEquals(68,memberUnderTest.getMemberFirstName());
 
-        Assertions.assertEquals(memberUnderTest.getMemberFirstName("Barry"), memberUnderTest.getMemberFirstName("Barry"));
+        Assertions.assertEquals(memberUnderTest.getMemberFirstName(), memberUnderTest.getMemberFirstName());
     }
 
     @Test
     public void testMemberLastName(){
 
         Member memberUnderTest = new Member();
-        Assertions.assertNotEquals(100,memberUnderTest.getMemberLastName("Peter"));
+        Assertions.assertNotEquals(100,memberUnderTest.getMemberLastName());
 
-        Assertions.assertEquals(memberUnderTest.getMemberLastName("Peter"), memberUnderTest.getMemberLastName("Peter"));
+        Assertions.assertEquals(memberUnderTest.getMemberLastName(), memberUnderTest.getMemberLastName());
     }
 
     @Test
