@@ -10,18 +10,21 @@ public class Member {
     private String memberAddress;
     private String email;
     private String phoneNumber;
+
+    private String membershipType;
     private static LocalDate startDate;
     private String duration;
 
 
     public Member() {
     }
-    public Member(String memberFirstName, String memberLastName, String memberAddress, String email, String phoneNumber, LocalDate startDate){
+    public Member(String memberFirstName, String memberLastName, String memberAddress, String email, String phoneNumber,String membershipType, LocalDate startDate){
         this.memberFirstName = memberFirstName;
         this.memberLastName = memberLastName;
         this.memberAddress = memberAddress;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.membershipType = membershipType;
         this.startDate = startDate;
 
     }
@@ -71,6 +74,14 @@ public class Member {
         this.phoneNumber = phoneNumber;
     }
 
+    public void setMembershipType(String membershipType){
+        this.membershipType = membershipType;
+    }
+
+    public String getMembershipType(){
+        return membershipType;
+    }
+
     public void  setStartDate(LocalDate date) {
         this.startDate = date;
     }
@@ -94,7 +105,7 @@ public class Member {
     }
 public String toString() {
         return("First Name: " + getMemberFirstName() + " , " + "Last Name: " + getMemberLastName() + " \n"
-                + "Address: " +getMemberAddress() + " , " + "Email " + getEmail() + " , " + "Phone Number: " + getPhoneNumber()+ " \n"
+                + "Address: " +getMemberAddress() + " , " + "Email " + getEmail() + " , " + "Phone Number: " + getPhoneNumber()+"\n"+ "Membership Type: " + getMembershipType()+" \n"
                 + "Length of Membership: " + getDuration()  + "\n\n");
 }
 

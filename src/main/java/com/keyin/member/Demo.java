@@ -7,17 +7,19 @@ import java.util.ArrayList;
 class Demo {
     public static void main(String[] args) {
 
-    Member newMember = new Member("Barry", "Poole", "101 new way", "barry@barry", "709-550-1102", LocalDate.of(2020, Month.JUNE, 21));
+    Member newMember = new Member("Barry", "Poole", "101 new way", "barry@barry", "709-550-1102", "Special Offer", LocalDate.of(2020, Month.JUNE, 21));
 
-        System.out.println("Member First Name: "+ newMember.getMemberFirstName("Barry"));
-        System.out.println("Member Last Name: "+ newMember.getMemberLastName("Peter"));
+        System.out.println("Member First Name: "+ newMember.getMemberFirstName());
+        System.out.println("Member Last Name: "+ newMember.getMemberLastName());
         System.out.println("Member Address: "+ newMember.getMemberAddress() );
         System.out.println("Member Email: "+ newMember.getEmail());
         System.out.println("Member Phone: "+ newMember.getPhoneNumber());
         System.out.println("Member Start Date: "+ newMember.getStartDate());
         newMember.getDuration();
 
-    Tournaments newTournaments = new Tournaments("Dave's Cash", "Piper's Hole",   1500, "2022/06/23", "2022/06/26",  25000);
+    Tournaments newTournaments = new Tournaments("Dave's Cash", "Piper's Hole",   1500, "2022/06/23", "2022/06/26",  25000,
+            "Dave Temple, Barry Poole, Mike Tyson, Patrick Roy",
+            "Mike Tyson 1st, Dave temple 9th, Barry Poole 18th, Patrick Roy 25th");
     System.out.println("");
 
     System.out.println("Tournament Name: " + newTournaments.getTournamentName());
@@ -30,16 +32,16 @@ class Demo {
 
 
        ArrayList<String> Golf = new  ArrayList();
-            Golf.add("* Dave's Cash\n");
-            Golf.add("* Summer Smash\n");
-            Golf.add("* Swing Into Canada\n");
-            Golf.add("* Dog Days\n");
-            Golf.add("* August Affair\n");
-            Golf.add("* Provincials\n");
-            Golf.add("* Slide Quietly By September\n");
-            Golf.add("* October Harvest");
-            System.out.println("***Tournaments***");
-//            System.out.println("");
+            Golf.add(" Dave's Cash\n");
+            Golf.add(" Summer Smash\n");
+            Golf.add(" Swing Into Canada\n");
+            Golf.add(" Dog Days\n");
+            Golf.add(" August Affair\n");
+            Golf.add(" Provincials\n");
+            Golf.add(" Slide Quietly By September\n");
+            Golf.add(" October Harvest");
+            System.out.println("***      Tournaments      ***");
+            System.out.println("");
             System.out.println(Golf);
             System.out.println("");
 
