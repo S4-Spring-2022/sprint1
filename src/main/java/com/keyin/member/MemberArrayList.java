@@ -5,7 +5,6 @@ import java.util.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 public class MemberArrayList {
     public static void main(String[] args) {
         ArrayList<String> firstName = new ArrayList<String>();
@@ -13,11 +12,8 @@ public class MemberArrayList {
         ArrayList<String> memberId = new ArrayList<String>();;
         ArrayList<String> email = new ArrayList<String>();
         ArrayList<String> phone = new ArrayList<String>();
-
-
         Scanner scanner = new Scanner(System.in);
         String answer = " ";
-
         {
             do {
                 System.out.println("Please enter Member First Name: ");
@@ -36,10 +32,8 @@ public class MemberArrayList {
             if (answer.equals("yes")) ; //want it to go back to start another directory here
             else {
                 System.out.println("Thanks for adding to the Members directory");
-
                 System.out.println("");
                 for (int i = 0; i < firstName.size(); i++) {
-
                     System.out.print("First Name " + firstName.get(i) + "\t");
                     System.out.print("Last Name " + lastName.get(i) + "\t");
                     System.out.print("Member Id " + memberId.get(i) + "\t");
@@ -48,30 +42,27 @@ public class MemberArrayList {
                     System.out.println("");
                 }
 //                Path output = Paths.get("/Users/MXZ User/Desktop/ArrayOutput.txt");
-                String output_path = "/Users/MXZ User/Desktop/SD_Architecture_&_Design/SDAT_Week_6/sprint1/src/main/java/com/keyin/member/ArrayOutput.txt";
+                String output_path = "/Users/keyinstudent/IdeaProjects/sprint1/src/main/java/com/keyin/member/ArrayOutput.txt";
                 Path output = Paths.get(output_path);
                 try {
                     String newline = System.getProperty("line.separator");
                     StringBuilder str = new StringBuilder();
-                    str.append(firstName ).append(newline );
-                    str.append(lastName ).append(newline  );
-                    str.append(memberId ).append(newline );
-                    str.append(email ).append(newline );
-                    str.append(phone );
+                    str.append("First Name: " + firstName ).append(newline );
+                    str.append("Last Name: " + lastName ).append(newline  );
+                    str.append("Member Id: " + memberId ).append(newline );
+                    str.append("Email: " + email ).append(newline );
+                    str.append("Phone: " + phone );
                     if(new File(output_path).isFile()) {
                         Files.write(output, Collections.singleton(str.toString()), StandardOpenOption.APPEND);
                     }
                     else {
                         Files.write(output, Collections.singleton(str.toString()));
                     }
-
                     System.out.format(output.toFile().getAbsolutePath());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-            }
             }
         }
     }
-
+}

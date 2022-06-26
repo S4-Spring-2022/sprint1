@@ -17,17 +17,17 @@ public class MemberServices extends MemberDatabase {
         System.out.println("3. View All Accounts");
         System.out.println("4. View All Tournaments");
         System.out.println("5. Remove Account");
-        System.out.println("5. Add Account");
+        System.out.println("6. Add Account");
         System.out.println();
         Scanner input = new Scanner(System.in);
         x = input.nextInt();
-//
+
         switch (x) {
             case 1 -> {
                 System.out.println("Please select a Member between 1- 9");
                 Scanner input2 = new Scanner(System.in);
                 y = input2.nextInt();
-//
+
                 switch (y) {
                     case 1:
                         MemberDatabase memberInstance = new MemberDatabase();
@@ -188,13 +188,13 @@ public class MemberServices extends MemberDatabase {
                 System.out.println("All Accounts in Database");
                 System.out.println();
                 MemberDatabase memberInstance = new MemberDatabase();
-//                memberInstance.allMembers();
+                memberInstance.allMembers();
                 ArrayList<Member> members = memberInstance.getMembers();
                 for (int print = 0; print < members.size(); print++) {
                     System.out.print(members.get(print));
-//                members.toString();
-//                System.out.println(members);
-//
+
+
+
                 }
             }
             case 4 -> {
@@ -205,8 +205,8 @@ public class MemberServices extends MemberDatabase {
                 ArrayList<Tournaments> tournaments = tournamentsInstance.getTournaments();
                 for (int print = 0; print < tournaments.size(); print++) {
                     System.out.print(tournaments.get(print));
-//                    tournaments.toString();
-//                    System.out.println(tournaments);
+
+
 
                 }
             }
