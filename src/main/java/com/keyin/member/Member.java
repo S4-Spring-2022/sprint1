@@ -29,10 +29,6 @@ public class Member {
 
 
     }
-
-
-
-
     public String getMemberFirstName(){
 
         return memberFirstName;
