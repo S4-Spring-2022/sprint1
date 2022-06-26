@@ -17,17 +17,17 @@ public class MemberServices extends MemberDatabase {
         System.out.println("3. View All Accounts");
         System.out.println("4. View All Tournaments");
         System.out.println("5. Remove Account");
-        System.out.println("6. Add Account");
+
         System.out.println();
         Scanner input = new Scanner(System.in);
         x = input.nextInt();
-//
+
         switch (x) {
             case 1 -> {
                 System.out.println("Please select a Member between 1- 9");
                 Scanner input2 = new Scanner(System.in);
                 y = input2.nextInt();
-//
+
                 switch (y) {
                     case 1:
                         MemberDatabase memberInstance = new MemberDatabase();
@@ -188,14 +188,11 @@ public class MemberServices extends MemberDatabase {
                 System.out.println("All Accounts in Database");
                 System.out.println();
                 MemberDatabase memberInstance = new MemberDatabase();
-//                memberInstance.allMembers();
+               memberInstance.allMembers();
                 ArrayList<Member> members = memberInstance.getMembers();
                 for (int print = 0; print < members.size(); print++) {
                     System.out.print(members.get(print));
-//                members.toString();
-//                System.out.println(members);
-//
-                }
+            }
             }
             case 4 -> {
                 System.out.println("All Tournaments in Database");
@@ -205,8 +202,7 @@ public class MemberServices extends MemberDatabase {
                 ArrayList<Tournaments> tournaments = tournamentsInstance.getTournaments();
                 for (int print = 0; print < tournaments.size(); print++) {
                     System.out.print(tournaments.get(print));
-//                    tournaments.toString();
-//                    System.out.println(tournaments);
+
 
                 }
             }
@@ -290,38 +286,7 @@ public class MemberServices extends MemberDatabase {
                         break;
                 }
             }
-                case 6 -> {
 
-
-                    switch (v) {
-                        case 1:
-                            System.out.println("Member info: ");
-//                            Scanner input = new Scanner(System.in);
-//                            v = input.nextInt();
-//                            System.out.println("Please enter Member First Name: ");
-//                            Scanner input = new Scanner(System.in);
-//                            v = input6.nextInt();
-//                            firstName.add(scanner.next());
-//                            System.out.println("Please enter Member Last Name: ");
-//                            lastName.add(scanner.next());
-//                            System.out.println("Please enter Member Id number: ");
-//                            memberId.add(scanner.next());
-//                            System.out.println("Please enter Member Email: ");
-//                            email.add(scanner.next());
-//                            System.out.println("Please enter Member phone: ");
-//                            phone.add(scanner.next());
-
-                            MemberDatabase memberInstance = new MemberDatabase();
-                            memberInstance.allMembers();
-                            ArrayList<Member> members = memberInstance.getMembers();
-                            Member removeMember = members.remove(0);
-                            removeMember.toString();
-                            System.out.println(removeMember);
-                            break;
-
-                    }
-                }
-//                default -> throw new IllegalStateException("Wrong selection chosen: " + x);
                 default -> System.out.println("Wrong Selection Try again");
 
             }

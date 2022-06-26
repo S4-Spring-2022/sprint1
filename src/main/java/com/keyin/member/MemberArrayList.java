@@ -47,8 +47,8 @@ public class MemberArrayList {
                     System.out.print("Phone " + phone.get(i) );
                     System.out.println("");
                 }
-//                Path output = Paths.get("/Users/MXZ User/Desktop/ArrayOutput.txt");
-                String output_path = "/Users/MXZ User/Desktop/SD_Architecture_&_Design/SDAT_Week_6/sprint1/src/main/java/com/keyin/member/ArrayOutput.txt";
+//                Path output = Paths.get("/Users/MXZ User/Desktop/MemberArrayOutput.txt");
+                String output_path = "/Users/MXZ User/Desktop/SD_Architecture_&_Design/SDAT_Week_6/sprint1/src/main/java/com/keyin/member/MemberArrayOutput.txt";
                 Path output = Paths.get(output_path);
                 try {
                     String newline = System.getProperty("line.separator");
