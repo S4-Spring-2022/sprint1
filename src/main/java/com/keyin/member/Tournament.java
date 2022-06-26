@@ -50,10 +50,10 @@ public class Tournament {
         return "\n--- Tournament Info ---"
                 + "\nTournament Name: " + this.name
                 + "\nTournament Start Date: " + this.startDate
-                + "\nTournament Name: " + this.endDate
-                + "\nTournament Name: " + this.location
-                + "\nTournament Name: $" + this.entryFee
-                + "\nTournament Name: $" + this.prizeAmount;
+                + "\nTournament End Date: " + this.endDate
+                + "\nTournament Location: " + this.location
+                + "\nTournament Fee: $" + this.entryFee
+                + "\nTournament Prize: $" + this.prizeAmount;
     }
 
     //more sets

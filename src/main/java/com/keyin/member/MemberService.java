@@ -99,7 +99,7 @@ public class MemberService {
 
 
             } else if (choice == options2[1]) {
-                System.out.println("\nEnter Tournament: ('exit' to end program)");
+                System.out.println("\nEnter Tournament Name ('exit' to end program): ");
                 String tourNameInput = in.nextLine();
                 for(Tournament tournament : tournaments){
                     if(Objects.equals(tournament.getName(), tourNameInput)){
