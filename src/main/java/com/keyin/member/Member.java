@@ -1,5 +1,3 @@
-
-
 package com.keyin.member;
 
 
@@ -7,30 +5,30 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Member {
+
     private String memberFirstName;
     private String memberLastName;
     private String memberAddress;
     private String email;
     private String phoneNumber;
-    private LocalDate startDate;
+    private String membershipType;
+    private static LocalDate startDate;
     private String duration;
 //    private LocalDate todaysDate;
 
     public Member() {
     }
-    public Member(String memberFirstName, String memberLastName, String memberAddress, String email, String phoneNumber, LocalDate startDate){
+    public Member(String memberFirstName, String memberLastName, String memberAddress, String email, String phoneNumber,String membershipType, LocalDate startDate){
         this.memberFirstName = memberFirstName;
         this.memberLastName = memberLastName;
         this.memberAddress = memberAddress;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.membershipType = membershipType;
         this.startDate = startDate;
 
+
     }
-
-
-
-
     public String getMemberFirstName(){
 
         return memberFirstName;
@@ -41,7 +39,7 @@ public class Member {
         this.memberFirstName = memberFirstName;
     }
 
-    public String getMemberLastName(){
+    public  String getMemberLastName(){
         return memberLastName;
     }
 
@@ -49,7 +47,7 @@ public class Member {
         this.memberLastName = memberLastName;
     }
 
-    public String getMemberAddress(){
+    public  String getMemberAddress(){
         return memberAddress;
     }
 
@@ -57,7 +55,7 @@ public class Member {
         this.memberAddress = memberAddress;
     }
 
-    public String getEmail(){
+    public  String getEmail(){
         return email;
     }
 
@@ -72,17 +70,22 @@ public class Member {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    public void setMembershipType(String membershipType) {
+        this.membershipType =  membershipType;
+    }
+    public String getMembershipType(){
+        return membershipType;
+    }
 
     public void  setStartDate(LocalDate date) {
         this.startDate = date;
     }
-    public LocalDate getStartDate(){
+    public static LocalDate getStartDate(){
         return startDate;
     }
 
-//    public void setDuration(LocalDate duration) {
-//        this.duration = duration;
-//    }
+
+
 
     public String getDuration(){
 //        LocalDate startDate = LocalDate.of(2020, Month.JUNE, 21);
@@ -91,18 +94,13 @@ public class Member {
         int years = time.getYears();
         int months = time.getMonths();
         int days = time.getDays();
-
-        duration = ( years + " year(s)"  + ", " + months  + " Month(s)" + ", " + days + " Day(s) " );
+        duration = ("Years: " + years +", " + " Months: " + months + ", " + "Days: " + days);
         return duration;
     }
-
     public String toString() {
-        return("First Name: " + getMemberFirstName() + " , " + "Last Name: " + getMemberLastName() + "\n" +
-                "Address: " + getMemberAddress() + " , " + "Email: " + getEmail() + " , " + "Phone Number: " + getPhoneNumber() + "\n" +
-                "Membership Duration: " + getDuration());
+        return("First Name: " + getMemberFirstName() + " , " + "Last Name: " + getMemberLastName() +"\n" +
+                "Address: " +getMemberAddress() + " , " + "Email" + getEmail() + " , " + "Phone Number: " + getPhoneNumber() + "\n" + "Membership Type: " + getMembershipType() + "\n" + "Length of Membership: " + getDuration()  + "\n\n");
     }
+
 }
 
-
-
-  
