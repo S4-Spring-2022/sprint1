@@ -24,16 +24,13 @@ public class Tournament {
         prizeAmount = prize;
     }
 
-    public Tournament() {
-
-    }
 
     public Object addMember(Member member){
         members.add(member);
         return members;
     }
 
-    public void getStandings(){
+    public boolean getStandings(){
         LocalDate today = LocalDate.now();
         //if the end date has passed then standings are final and can be published
 
@@ -42,9 +39,11 @@ public class Tournament {
             for(int i = 0; i < members.size(); i ++){
                 System.out.println(i+1 + ". " + members.get(i).getName());
             }
+            return true;
 
         } else {
             System.out.println("\nEvent not ended.");
+            return false;
         }
     }
 
@@ -76,21 +75,9 @@ public class Tournament {
         return this.name;
     }
 
-    public void setName(String agusta_national) {
-    }
+    public String getLocation() {return this.location;}
 
-    public void setstartDate(String s) {
-    }
+    public int getFee(){return this.entryFee;}
 
-    public void setendDate(String s) {
-    }
-
-    public void setlocation(String s) {
-    }
-
-    public void setentryFee(String willows) {
-    }
-
-    public void setPrizeMoney(String s) {
-    }
+    public int getPrizeAmount() {return this.prizeAmount;}
 }

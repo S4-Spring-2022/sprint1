@@ -110,6 +110,7 @@ public class MemberService {
                 for(Tournament tournament : tournaments){
                     if(Objects.equals(tournament.getName(), tourNameInput)){
                         System.out.println(tournament);
+                        tournament.getStandings();
                     } else if(Objects.equals(tourNameInput, "Exit")){
                         choice = EXIT2;
                     }
@@ -117,7 +118,6 @@ public class MemberService {
                 }
             }
         }
-
     }
 
     /*

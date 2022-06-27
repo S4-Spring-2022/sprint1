@@ -317,6 +317,15 @@ public class Member {
         return "\n--- All Tournaments ---"
                 + this.tourArray;
     }
+
+
+    public Member getFMember(){
+        return familyMember;
+    }
+
+    public String getMemberType(){
+        return memberType;
+    }
 }
 
 // Hello

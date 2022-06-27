@@ -1,50 +1,66 @@
 package com.keyin;
 
+import com.keyin.member.Member;
 import com.keyin.member.Tournament;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberServiceTest {
     @Test
     public void MemberTest(){
-        Member memberUnderTest = new Member();
+        Member m1 = new Member("Scottie Scheffler", "1232 Birdie Blvd.", "theace1@hotmail.com", "12223334455", "2022-06-25", "standard");
+        Member m2 = new Member("Bryson Dechambeau", "43 Eagle Street", "BombsOnly@hotmail.com", "12223312055", "2022-06-25", "early");
 
-        memberUnderTest.setName("Rick Giles");
-        assertEquals("Rick Giles","Rick Giles");
-        assertNotEquals("Anything Else", "Rick Giles");
+        //mock tournaments
+        Tournament t1 = new Tournament("The Masters", "2022-04-07", "2022-04-10", "Agusta National", 250, 2700000);
+        Tournament t2 = new Tournament("The Open", "2022-06-20", "2022-07-01", "St. Andrews Links", 200, 2100000);
+        Tournament t3 = new Tournament("The Canadian Open", "2022-09-01", "2022-09-04", "St. Georges", 100, 1500000);
 
-        memberUnderTest.setAddress("307 Elderberry Ter.");
-        assertEquals("307 Elderberry Ter.", "307 Elderberry Ter." );
-        assertNotEquals("211 Harris Dr.", "307 Elderberry Ter.");
 
-        memberUnderTest.setEMAIL("BF@HOTMAIL.COM");
-        assertEquals("BF@HOTMAIL.COM", "BF@HOTMAIL.COM" );
-        assertNotEquals("ERIC.EDWARDS@OUTLOOK.COM", "BF@HOTMAIL.COM");
+        Member[] members = {m1, m2};
+        Tournament[] tournaments = {t1, t2, t3};
 
-        memberUnderTest.setPhomeNum("709-754-0783");
-        assertEquals("709-754-0783", "709-754-0783" );
-        assertNotEquals("754-0783", "709-754-0783");
 
-        memberUnderTest.setMemberDate("2022-06-25");
-        assertEquals("2022-06-25", "2022-06-25" );
-        assertNotEquals("20220625", "2022-06-25");
+        for(Tournament tournament : tournaments){
+            for(Member member : members){
+                member.enterTournament(tournament);
+            }
+        }
 
-        memberUnderTest.setMemberType("Standard");
-        assertEquals("Standard", "Standard" );
-        assertNotEquals("Family", "Standard");
-        assertNotEquals("Corp", "Standard");
+        m1.setName("Rick Giles");
+        assertEquals("Rick Giles",m1.getName());
+        assertNotEquals(m2.getName(), m1.getName());
 
-        memberUnderTest.setmemberDuration("1");
-        assertEquals("1", "1" );
-        assertNotEquals("2", "1");
-        assertNotEquals("0", "1");
+        m1.setAddress("307 Elderberry Ter.");
+        assertEquals("307 Elderberry Ter.", m1.getAddress() );
+        assertNotEquals("211 Harris Dr.", m1.getAddress());
 
-        memberUnderTest.setMemberMonthCost("125");
-        assertEquals("125", "125" );
-        assertNotEquals("200", "125");
-        assertNotEquals("0", "125");
+        m1.setEmail("BF@HOTMAIL.COM");
+        assertEquals("BF@HOTMAIL.COM", m1.getEmail() );
+        assertNotEquals("ERIC.EDWARDS@OUTLOOK.COM", m1.getEmail());
+
+        m1.setPhone("709-754-0783");
+        assertEquals("709-754-0783", m1.getPhone());
+        assertNotEquals("754-0783", m1.getPhone());
+
+        m2.setMembership("2022-06-25", "student");
+        assertNotEquals("trial", m2.getMemberType());
+        assertNotEquals("early", m2.getMemberType());
+        assertNotNull(m1.membershipToString());
+
+        assertNull(m2.getFMember());
+        m1.setMembership("2022-06-26", "family", m2);
+        assertEquals(m1, m2.getFMember());
+
+        assertNotNull(m2.getTourneysUpcoming());
+        assertNotNull(m1.getTourneysPast());
+        assertEquals("\n--- Current Tournaments ---\n[The Open]",  m1.getTourneysCurrent());
+
+
 
     }
     //Tournament t1 = new Tournament("The Masters", "2022-04-07", "2022-04-10", "Agusta National", 250, 2700000);
@@ -58,63 +74,38 @@ public class MemberServiceTest {
 
     @Test
     public void TournamentTest() {
-        Tournament tournamentUnderTest = new Tournament();
+        Tournament t1 = new Tournament("The Masters", "2022-04-07", "2022-04-10", "Agusta National", 250, 2700000);
 
-        tournamentUnderTest.setName("Agusta National");
-        assertEquals("Agusta National", "Agusta National");
-        assertNotEquals("Dorioo Classic", "Agusta National");
-        assertNotEquals("PipersRevnge", "Agusta National");
+        Member m1 = new Member("Scottie Scheffler", "1232 Birdie Blvd.", "theace1@hotmail.com", "12223334455", "2022-06-25", "standard");
+        Member m2 = new Member("Bryson Dechambeau", "43 Eagle Street", "BombsOnly@hotmail.com", "12223312055", "2022-06-25", "early");
 
-        tournamentUnderTest.setstartDate("2022-07-25");
-        assertEquals("2022-07-25", "2022-07-25");
-        assertNotEquals("may 20 2023", "2022-07-25");
-        assertNotEquals("20220725", "2022-07-25");
+        m1.enterTournament(t1);
+        m2.enterTournament(t1);
 
-        tournamentUnderTest.setendDate("2023-08-20");
-        assertEquals("2023-08-20", "2023-08-20");
-        assertNotEquals("may 20 2023", "2023-08-20");
-        assertNotEquals("20220725", "2023-08-20");
 
-        tournamentUnderTest.setlocation("Willows");
-        assertEquals("Willows", "Willows");
-        assertNotEquals("grand meadows", "Willows");
-        assertNotEquals("Balle Hallie", "Willows");
+        assertEquals("The Masters", t1.getName());
+        assertNotEquals("The Open", t1.getName());
 
-        tournamentUnderTest.setentryFee("250");
-        assertEquals("250", "250");
-        assertNotEquals("25", "250");
+        assertEquals(LocalDate.parse("2022-04-07"), t1.getStartDate());
+        assertNotNull(t1.getStartDate());
 
-        tournamentUnderTest.setPrizeMoney("500");
-        assertEquals("500", "500");
-        assertNotEquals("300", "500");
-        assertNotEquals(" ", "500");
+        assertEquals(LocalDate.parse("2022-04-10"), t1.getEndDate());
+        assertNotNull(t1.getEndDate());
+
+        assertEquals("Agusta National", t1.getLocation());
+        assertNotEquals("grand meadows", t1.getLocation());
+
+        assertEquals(250, t1.getFee());
+        assertNotNull( t1.getFee());
+
+        assertEquals(2700000, t1.getPrizeAmount());
+        assertNotEquals(2.700000, t1.getPrizeAmount());
+
+        assertNotNull(t1.getMembers());
+
+        assertTrue(t1.getStandings());
+
+
     }
 
-
-
-    private void setMemberMonthCost(String s) {
-    }
-
-    private void setmemberDuration(String s) {
-    }
-
-    private void setMemberType(String standard) {
-    }
-
-    private void setMemberDate(String s) {
-    }
-
-    private void setPhomeNum(String s) {
-    }
-
-    private void setEMAIL(String s) {
-    }
-
-    private void setAddress(String s) {
-    }
-
-
-    private void setName(String rick_giles) {
-
-    }
 }
