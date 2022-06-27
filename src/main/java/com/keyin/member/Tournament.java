@@ -24,6 +24,10 @@ public class Tournament {
         prizeAmount = prize;
     }
 
+    public Tournament() {
+
+    }
+
     public Object addMember(Member member){
         members.add(member);
         return members;
@@ -70,5 +74,23 @@ public class Tournament {
     }
     public String getName(){
         return this.name;
+    }
+
+    public void setName(String agusta_national) {
+    }
+
+    public void setstartDate(String s) {
+    }
+
+    public void setendDate(String s) {
+    }
+
+    public void setlocation(String s) {
+    }
+
+    public void setentryFee(String willows) {
+    }
+
+    public void setPrizeMoney(String s) {
     }
 }
