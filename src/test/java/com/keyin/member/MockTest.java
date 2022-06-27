@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -48,5 +49,23 @@ public class MockTest {
         list.isEmpty();
         Assertions.assertNotNull(list);
         // an empty array is still not null
+    }
+    @Mock
+    private Member mamber;
+    @Test
+    public void mockMyMamber(){
+        Member aMember = new Member();
+        aMember.setMemberFirstName("Dave");
+        Mockito.when(mamber.getMemberFirstName()).thenReturn(null);
+        Assertions.assertNotEquals("Rick", mamber.getMemberFirstName());
+    }
+    @Mock
+    private Tournaments tournamentMock;
+    @Test
+    public void mockMeTournaments(){
+        Tournaments mockMyTournaments = new Tournaments();
+        mockMyTournaments.setTournamentName("Billy's Bucks");
+        Mockito.when(tournamentsMock.getTournamentName()).thenReturn(null);
+        Assertions.assertEquals(tournamentsMock.getTournamentName(), tournamentsMock.getTournamentName());
     }
 }
